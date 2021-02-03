@@ -40,17 +40,17 @@ function Gallery() {
         
     `;
 
-    const GalleyImage = styled.div`
-        background-image: url('averie-woodard-axTG1hSQ6W4-unsplash.jpg');
-        height: 100%;
-        width: 100%;
-    `;
+    // const GalleyImage = styled.div`
+    //     background-image: url('averie-woodard-axTG1hSQ6W4-unsplash.jpg');
+    //     height: 100%;
+    //     width: 100%;
+    // `;
 
-    const GalleyImage2 = styled.div`
-    background-color: green;
-    height: 100%;
-    width: 100%;
-    `;
+    // const GalleyImage2 = styled.div`
+    // background-color: green;
+    // height: 100%;
+    // width: 100%;
+    // `;
 
     const Border = styled.div`
     position: absolute;

@@ -13,9 +13,11 @@ function Search() {
         margin-top: 185px;
         border-radius: 90px;
         height: 100px;
-        width: 80rem;
+        width: 65rem;
         z-index: 1;
         opacity: 0.9;
+
+        
 
         ::placeholder {
             position: relative;
@@ -30,7 +32,7 @@ function Search() {
 
     return(
         <>
-        <SearchInput type="text" id="search" placeholder="Look for a service"></SearchInput>
+        <SearchInput  type="text" id="search" placeholder="Look for a service"></SearchInput>
         </>
     )
 }
