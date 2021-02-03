@@ -13,7 +13,7 @@ function Search() {
         margin-top: 185px;
         border-radius: 90px;
         height: 100px;
-        width: 60rem;
+        width: 80rem;
         z-index: 1;
         opacity: 0.9;
 
