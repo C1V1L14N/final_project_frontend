@@ -1,8 +1,32 @@
 import React, {useState, useEffect} from 'react';
 import { Link } from "react-router-dom";
 import axios from 'axios';
+import styled from 'styled-components';
 
 const Shop = () => {
+
+  const Border = styled.div`
+    position: absolute;
+    height: 600px;
+    width: 100vw;
+    background-color: #333333;
+    left: -5px;
+    z-index: 0;
+    top: 150px;
+  `;
+
+  const ShopForm = styled.div`
+      position: relative;
+      z-index: 1;
+      top: 100px;
+      margin: 30px;
+  `;
+
+  const FormButton = styled.button`
+    width: 150px;
+    padding: 2px;
+    margin: 1px;
+  `;
 
   const [shopList, setShopList] = useState([]);
 
@@ -20,18 +44,24 @@ const Shop = () => {
   }, []);
 
   return(
+
     <div>
-      <h3>Shop Component</h3>
-      <Link to="/new-shop"><button className="btn">Create New Profile</button></Link>
-      {shopList
-        ? shopList.map((shop, index) => {
-          return(
-            <div key={index}>
-              <Link to={`/shop/${shop.id}`}><button>{shop.name}</button></Link>
-            </div>
-          );
-        })
-        : "Loading..."}
+        <ShopForm>
+          <Link to="/new-shop"><FormButton className="btn">Create New Profile</FormButton></Link>
+          {shopList
+            ? shopList.map((shop, index) => {
+              return(
+                <div key={index}>
+                  <Link to={`/shop/${shop.id}`}><FormButton>{shop.name}</FormButton></Link>
+                </div>
+              );
+            })
+            : "Loading..."}
+
+            
+        </ShopForm>
+    
+      <Border/>
     </div>
   );
 }
