@@ -63,10 +63,6 @@ function NavBar() {
         <Header>
             <Link style={{Text}} to="/"><Logo src={logo} alt="logo"></Logo></Link>
 
-            <Categories/>
-
-            
-
             <Ul>
                 <Li>
                     <Link to="/about"><Text>About</Text></Link>

@@ -30,7 +30,7 @@ function Search() {
 
     return(
         <>
-        <SearchInput type="text" id="search" placeholder="Look for a service here"></SearchInput>
+        <SearchInput type="text" id="search" placeholder="Look for a service"></SearchInput>
         </>
     )
 }

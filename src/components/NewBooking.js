@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import axios from 'axios';
 
 function NewBooking() {
@@ -9,7 +9,7 @@ function NewBooking() {
     const getUserList = () => {
         axios.get(`http://localhost:8080/users/`)
         .then(res => {
-          console.log(res);
+        //   console.log(res);
           setUserList(res.data)
         });
       };
@@ -25,11 +25,11 @@ function NewBooking() {
       const [formData, setFormData] = useState({
         comments: '',
         user: null,
-        services: null,
-        date_booking_made: "2021-01-25",
-        date_of_booking: "2021-01-30",
-        arrival_time: 1030,
-        departure_time: 1130
+        // services: [],
+        date_booking_made: '',
+        date_of_booking: '',
+        arrival_time: '',
+        departure_time: ''
         
     });
 
@@ -49,6 +49,7 @@ function NewBooking() {
 
     const handleSubmit = (evt) => {
         evt.preventDefault();
+        console.log(formData);
         onFormSubmit(formData);
     }
 
@@ -62,30 +63,78 @@ function NewBooking() {
         })
         .then(() => window.location = "/booking")
     }
-    
-  
 
     return(
         <div>
             <h3>Create new booking</h3>
             <p>Select user</p>
-    <form onSubmit={handleSubmit}>
-        <select name="user" onChange={handleUser} defaultValue="select-user">
-            <option disabled value='select-user'>Select a user</option>
-            {userOptions}
-        </select>
-        <p></p>
-    <label htmlFor="comments">Comments:</label><p></p>
-        <input 
-        onChange={handleChange}
-        type="text"
-        name="comments"
-        id="name"
-        placeholder=""
-        value={formData.comments}
-        required/><p></p>
-        <button type="submit">Submit</button>
-    </form>
+            <form onSubmit={handleSubmit}>
+                
+                <div className="form_wrap">
+                    <label htmlFor="comments">Comments:</label>
+                    <input 
+                    onChange={handleChange}
+                    type="text"
+                    name="comments"
+                    id="name"
+                    placeholder="Comments"
+                    value={formData.comments}
+                    required/>  
+                </div>
+
+                <select name="user" onChange={handleUser} defaultValue="select-user">
+                    <option disabled value="select-user">Select a user</option>
+                    {userOptions}
+                </select>
+
+                {/* SERVICES */}
+
+                <div className="form_wrap">
+                    <label htmlFor="date_booking_made">Booking issued on:</label>
+                    <input 
+                    onChange={handleChange}
+                    type="date"
+                    name="date_booking_made"
+                    id="date_booking_made"
+                    value={formData.date_booking_made}
+                    required/>
+                </div>
+
+                <div className="form_wrap">
+                    <label htmlFor="date_of_booking">Booking date for:</label>
+                    <input 
+                    onChange={handleChange}
+                    type="date"
+                    name="date_of_booking"
+                    id="date_of_booking"
+                    value={formData.date_of_booking}
+                    required/>
+                </div>
+
+                <div className="form_wrap">
+                    <label htmlFor="arrival_time">Arrival Time:</label>
+                    <input 
+                    onChange={handleChange}
+                    type="time"
+                    name="arrival_time"
+                    id="arrival_time"
+                    value={formData.arrival_time}
+                    required/>
+                </div>
+
+                <div className="form_wrap">
+                    <label htmlFor="departure_time">Departure Time:</label>
+                    <input 
+                    onChange={handleChange}
+                    type="time"
+                    name="departure_time"
+                    id="departure_time"
+                    value={formData.departure_time}
+                    required/>
+                </div>
+            
+                <button type="submit">Submit</button>
+            </form>
         </div>
     )
 }

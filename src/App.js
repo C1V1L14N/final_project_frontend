@@ -15,11 +15,14 @@ import Services from "./components/Services";
 import ServiceDetails from "./components/ServiceDetails";
 import Bookings from "./components/Bookings";
 import BookingDetails from "./components/BookingDetails";
+import Slots from "./components/Slots";
+import SlotDetails from "./components/SlotDetails";
 import NewUser from "./components/NewUser";
 import NewShop from "./components/NewShop";
 import NewCategory from "./components/NewCategory";
 import NewService from "./components/NewService";
 import NewBooking from "./components/NewBooking";
+import NewSlot from "./components/NewSlot";
 import Basket from "./components/Basket";
 import Footer from "./components/Footer";
 import styled from 'styled-components';
@@ -42,7 +45,7 @@ function App() {
             <NavBar/>
 
           <Switch>
-            <Route path="/" component={Home} exact/>
+            <Route path="/" component={Home} exact />
             <Route path="/search" component={Search}/>
             <Route path="/about" component={About}/>
             <Route path="/user" component={User} exact/>
@@ -55,11 +58,14 @@ function App() {
             <Route path="/service/:serviceId" component={ServiceDetails}/>
             <Route path="/booking/" component={Bookings} exact/>
             <Route path="/booking/:bookingId" component={BookingDetails}/>
+            <Route path="/slot" component={Slots} exact/>
+            <Route path="/slot/:slotId" component={SlotDetails}/>
             <Route path="/new-user" component={NewUser}/>
             <Route path="/new-shop" component={NewShop}/>
             <Route path="/new-category" component={NewCategory}/>
             <Route path="/new-service" component={NewService}/>
             <Route path="/new-booking" component={NewBooking}/>
+            <Route path="/new-slot" component={NewSlot}/>
             <Route path="/basket" component={Basket}/>
             
             
