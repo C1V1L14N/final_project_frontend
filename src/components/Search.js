@@ -7,10 +7,10 @@ function Search() {
 
     const SearchInput = styled.input`
         align-self: center;
-        border: none;
-        margin: auto;
-        margin-top: 230px;
-        left: 30%;
+        border: 3px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 185px;
         border-radius: 90px;
         height: 100px;
         width: 60rem;

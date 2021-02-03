@@ -1,5 +1,5 @@
 import React from "react";
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import laundrette from '../assets/averie-woodard-axTG1hSQ6W4-unsplash.jpg'
 import pole from '../assets/tim-mossholder-q49oU8NeOHQ-unsplash.jpg'
 import local from '../assets/priscilla-du-preez-acNPOikiDRw-unsplash.jpg'
@@ -65,7 +65,12 @@ function Gallery() {
         height: 100%;
         width: 100%;
         object-fit: cover;
+        perspective: 10px;
+        perspective-origin: top;
     `;
+
+    
+
 
     
 
