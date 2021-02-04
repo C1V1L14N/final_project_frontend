@@ -28,6 +28,15 @@ code {
   margin: 10px;
 }
 
+.details > h4{
+  color: #e3e3e3;
+  font-size: 40px;
+}
+
+.details > p{
+  color: #e3e3e3;
+}
+
 .shop-image{
   margin: 10px;
 }
