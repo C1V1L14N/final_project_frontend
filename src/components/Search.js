@@ -10,12 +10,14 @@ function Search() {
         border: 3px;
         margin-left: auto;
         margin-right: auto;
-        margin-top: 185px;
+        margin-top: 130px;
         border-radius: 90px;
         height: 100px;
-        width: 60rem;
+        width: 65rem;
         z-index: 1;
         opacity: 0.9;
+
+        
 
         ::placeholder {
             position: relative;
@@ -30,7 +32,8 @@ function Search() {
 
     return(
         <>
-        <SearchInput type="text" id="search" placeholder="Look for a service"></SearchInput>
+        <SearchInput  type="text" id="search" placeholder="Look for a service"></SearchInput>
+        
         </>
     )
 }
