@@ -1,8 +1,40 @@
 import React, { useEffect, useState } from "react";
 import {useParams, BrowserRouter as Router} from 'react-router-dom';
-
+import styled from "styled-components";
 
 const CategoryDetails = () => {
+
+    const Title = styled.h4`
+    color: #e3e3e3;
+    font-family: Didot, sans-serif;
+    font-size: 40px;
+    padding: 0px;
+    margin: 0px;
+    `;
+
+    const Ptag = styled.p`
+    color: #e3e3e3;
+    font-family: Didot, sans-serif;
+    font-size: 25px;
+    padding: 0px;
+    margin: 0px;
+    `;
+
+    const ImageSize = styled.div`
+    height: 300px;
+    width: 400px;
+    `;
+
+    const Pic = styled.img`
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    `;
+
+    const Margin = styled.div`
+    margin-left: 15px;
+    position: relative;
+    `;
 
     const categoryId = useParams().categoryId;
 
@@ -19,11 +51,13 @@ const CategoryDetails = () => {
         return <p>Loading...</p>
     }
     return (
-        <div>
-            <h4>{category.name}</h4>
-            <p>{category.description}</p>
-            <img src={category.image} alt="no available"/>
-        </div>
+        <Margin>
+            <Title>{category.name}</Title>
+            <Ptag>{category.description}</Ptag>
+            <ImageSize>
+            <Pic src={category.image} alt="no available"/>
+            </ImageSize>
+        </Margin>
     )
 
 }
