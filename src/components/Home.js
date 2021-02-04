@@ -28,7 +28,7 @@ function Home() {
     return(
         <HomeContainer>
             
-            <Categories/>
+            
             <Gallery/>
             <Search onSubmit={searchData} />
             <Results keyword={keyword}/>
