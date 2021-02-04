@@ -1,7 +1,8 @@
-import React, {useState} from "react";
-// import axios from 'axios';
+import React, {useState, useEffect} from "react";
+import axios from 'axios';
 
 function NewShop() {
+
     const [formData, setFormData] = useState({
         name: '',
         address: '',
@@ -11,9 +12,9 @@ function NewShop() {
         closingHour: '',
         telephoneNumber: '',
         email: '',
-        image: ''
-        // category: '',
-        // services: ''
+        image: '',
+        category: null,
+        services: null
     });
 
     const handleChange = (evt) => {
@@ -22,8 +23,64 @@ function NewShop() {
         setFormData(newState);
     }
 
+    // Add Service
+    const [serviceList, setServiceList] = useState([]);
+
+    const getServiceList = () => {
+        axios.get(`http://localhost:8080/services/`)
+        .then(res => {
+        // console.log(res);
+        setServiceList(res.data)
+        });
+    };
+
+    const serviceOptions = serviceList.map((service, index) => {
+        return <option key={index} value={index}>{service.name}</option>
+    })
+
+    const handleService = function(event){
+        const index = parseInt(event.target.value)
+        const selectedService = serviceList[index]
+        let copiedService = {...formData};
+        copiedService['service'] = selectedService
+        setFormData(copiedService)
+    }
+
+
+    // Add Category
+    const [categoryList, setCategoryList] = useState([]);
+
+    const getCategoryList = () => {
+        axios.get(`http://localhost:8080/categories/`)
+        .then(res => {
+        //   console.log(res);
+        setCategoryList(res.data)
+        });
+    };
+
+    const categoryOptions = categoryList.map((category, index) => {
+        return <option key={index} value={index}>{category.name}</option>
+    })
+
+    const handleCategory = function(event){
+        const index = parseInt(event.target.value)
+        const selectedCategory = categoryList[index]
+        let copiedCategory = {...formData};
+        copiedCategory['category'] = selectedCategory
+        setFormData(copiedCategory)
+    }
+
+
+
+    useEffect(() => {
+        getServiceList();
+        getCategoryList();
+      }, []);
+
+
     const handleSubmit = (evt) => {
         evt.preventDefault();
+        console.log(evt);
         onFormSubmit(formData);
     }
 
@@ -32,62 +89,11 @@ function NewShop() {
             method: 'POST',
             body: JSON.stringify(formData),
             headers: {
-            'Content-Type': 'application/json'
+                'Content-Type': 'application/json'
             }
         })
         .then(() => window.location = "/shop")
     }
-
-
-
-
-    // // Add Service
-    // const [serviceList, setServiceList] = useState([]);
-
-    // const getServiceList = () => {
-    //     axios.get(`http://localhost:8080/services/`)
-    //     .then(res => {
-    //     //   console.log(res);
-    //     setServiceList(res.data)
-    //     });
-    // };
-
-    // const serviceOptions = serviceList.map((service, index) => {
-    //     return <option key={index} value={index}>{service.name}</option>
-    // })
-
-    // const handleService = function(event){
-    //     const index = parseInt(event.target.value)
-    //     const selectedService = serviceList[index]
-    //     let copiedService = {...formData};
-    //     copiedService['service'] = selectedService
-    //     setFormData(copiedService)
-    // }
-
-
-    // // Add Category
-    // const [categoryList, setCategoryList] = useState([]);
-
-    // const getCategoryList = () => {
-    //     axios.get(`http://localhost:8080/categories/`)
-    //     .then(res => {
-    //     //   console.log(res);
-    //     setCategoryList(res.data)
-    //     });
-    // };
-
-    // const categoryOptions = categoryList.map((category, index) => {
-    //     return <option key={index} value={index}>{category.name}</option>
-    // })
-
-
-
-    // useEffect(() => {
-    //     getServiceList();
-    //     getCategoryList();
-    //   }, []);
-
-
 
     return(
         <div>
@@ -200,23 +206,18 @@ function NewShop() {
                 </div>
 
             
-            {/* <form onSubmit={handleSubmit}>
-                <select name="service" onChange={handleService} defaultValue="select-service"> */}
+
+                <select name="service" onChange={handleService} defaultValue="select-service">
                 {/* <select name="service" defaultValue="select-service"> */}
-                    {/* <option disabled value="select-service">Select a service</option> */}
-                    {/* {serviceOptions} */}
-                {/* </select>
-            </form> */}
-    
-            {/* <button className="add-service-btn">Add service</button> */}
-
-
-                {/* <select name="category" onChange={handleCategory} defaultValue="select-category"> */}
-            {/* <select name="category" defaultValue="select-category">
-                <option disabled value="select-category">Select a category</option>
-                {categoryOptions}
-            </select>
-            <button className="add-category-btn">Add category</button> */}
+                    <option disabled value="select-service">Select a service</option>
+                    {serviceOptions}
+                </select>
+            
+                <select name="category" onChange={handleCategory} defaultValue="select-category">
+                {/* <select name="category" defaultValue="select-category"> */}
+                    <option disabled value="select-category">Select a category</option>
+                    {categoryOptions}
+                </select>
 
                 <input onClick={handleSubmit} type="submit" value="submit" />
             </form>
