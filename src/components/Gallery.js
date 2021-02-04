@@ -37,7 +37,9 @@ function Gallery() {
         border: 0;
         top: -5px;
         left: -200px;
-        /* perspective: 2000; */
+        perspective: 2000;
+        perspective-origin: left;
+
     `;
 
 
@@ -46,7 +48,6 @@ function Gallery() {
         height: 100%;
         width: 100%;
         object-fit: cover;
-        perspective-origin: top;
         transition: 1s;
         perspective: 500;  
         transform: rotateY(60deg);
