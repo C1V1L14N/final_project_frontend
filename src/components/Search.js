@@ -52,7 +52,6 @@ function Search({onSubmit}) {
             width: 120px;
         }
     `;
-
     
     return(
         <div>
