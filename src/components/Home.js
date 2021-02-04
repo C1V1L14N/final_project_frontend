@@ -6,6 +6,7 @@ import styled from 'styled-components';
 import Gallery from "./Gallery";
 import Results from "./Results";
 
+
 function Home() {
 
     const [keyword, setKeyword] = useState();
@@ -20,13 +21,6 @@ function Home() {
         top: 40px;
     `;
 
-<<<<<<< HEAD
-    const SearchPosition = styled.div`
-        position: absolute;
-        left: 50%;
-        top: 50%;
-
-=======
     const ResultContainer = styled.div`
         height: 200px;
         width: 80vw;
@@ -47,7 +41,6 @@ function Home() {
         position: relative;
         margin: auto;
         
->>>>>>> be9dfe868e84a2f2398fa8efcebfb6bd6f849461
     `;
 
     
@@ -61,21 +54,10 @@ function Home() {
 
     return(
         <HomeContainer>
-<<<<<<< HEAD
-            
-            <Gallery/>
-
-            <SearchPosition>
-                <Search onSubmit={searchData} />
-            </SearchPosition>
-
-
-=======
             <Gallery/>
             <SearchPosition>
                 <Search onSubmit={searchData} />
             </SearchPosition>
->>>>>>> be9dfe868e84a2f2398fa8efcebfb6bd6f849461
             <Results keyword={keyword}/>
 
         </HomeContainer>

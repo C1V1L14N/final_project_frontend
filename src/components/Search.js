@@ -18,22 +18,18 @@ function Search({onSubmit}) {
 
     const SearchInput = styled.input`
         border: 3px;
-<<<<<<< HEAD
-        border: 0;
-        padding: 0;
-        margin: 0;
-=======
         padding-left: 30px;
         margin-left: auto;
         margin-right: auto;
         margin-top: 195px;
->>>>>>> be9dfe868e84a2f2398fa8efcebfb6bd6f849461
         border-radius: 90px;
         height: 100px;
         width: 65rem;
         z-index: 1;
         opacity: 0.9;
         font-size: 40px;
+        
+        :focus {outline:none;};
 
         
 
@@ -42,6 +38,25 @@ function Search({onSubmit}) {
             color: #333333;
             font-size: 50px;
             font-family: Didot, sans-serif;
+        }
+    `;
+
+    const SubmitButton = styled.button`
+    position: absolute;
+    top: 215px;
+    right: 25px;
+        border-radius: 30px;
+        height: 60px;
+        width: 60px;
+        background-color: #2c66a8;
+        transition: 0.3s;
+        color: #e3e3e3;
+        font-family: Didot, sans-serif;
+        font-size: 14px;
+        
+
+        :hover {
+            width: 120px;
         }
     `;
 
@@ -57,7 +72,7 @@ function Search({onSubmit}) {
                 value={formData}
                 autoFocus 
                 required/>
-                <input onClick={handleSubmit} type="submit" value="submit" />
+                <SubmitButton onClick={handleSubmit} type="submit" value="submit">Submit</SubmitButton>
             </form>
         </div>
     )
