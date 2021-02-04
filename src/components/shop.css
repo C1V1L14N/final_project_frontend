@@ -32,9 +32,18 @@
     //     width: 100%;
     //     object-fit: cover;
     //     `; */
+    /* const SwitchContainer = styled.div`
+    background-color: #333333;
+    position: relative;
+    top: 40px;
+    height: 65vh;
+    width: 100vw;
+    padding: 0;
+  `; */
 
 
 .shops-container{
+    background-color: #333333;
 
     display: grid;
     height: 65vh;
@@ -44,6 +53,7 @@
     overflow: scroll;
     padding-top: 36px;
     padding-left: 50px;
+    padding-bottom: 0;
 
 }
 

@@ -21,8 +21,7 @@ function Services() {
 
 
     return(
-        <div>
-            <h3>Service Component</h3>
+        <div className="services-container">
             <Link to="/new-service"><button className="btn">Add Service</button></Link>
             {serviceList
                 ? serviceList.map((service, index) => {
