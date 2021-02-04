@@ -23,7 +23,6 @@ function Home() {
     return(
         <HomeContainer>
             
-            <Categories/>
             <Gallery/>
             <Search/>
         </HomeContainer>

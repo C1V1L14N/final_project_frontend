@@ -10,7 +10,7 @@ function Search() {
         border: 3px;
         margin-left: auto;
         margin-right: auto;
-        margin-top: 130px;
+        margin-top: 195px;
         border-radius: 90px;
         height: 100px;
         width: 65rem;

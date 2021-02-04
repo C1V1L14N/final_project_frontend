@@ -37,8 +37,7 @@ function Gallery() {
         border: 0;
         top: -5px;
         left: -200px;
-        perspective: 2000;
-        perspective-origin: left;
+        /* perspective: 2000; */
 
     `;
 
@@ -50,24 +49,383 @@ function Gallery() {
         object-fit: cover;
         transition: 1s;
         perspective: 500;  
-        transform: rotateY(60deg);
+        /* transform: rotateY(60deg); */
         transform-origin: left;
         animation: picMove 10s ease forwards;
 
-        :hover {
+        /* :hover {
             transform: rotateY(0deg);
-        }
+        } */
 
         @keyframes picMove {
-            0% {transform: rotateY(100deg);
-
+            0% {transform: rotateY(90deg);
             }
             100% {transform: rotateY(0deg);
-
-            }
-            
+            }            
     }
     `;
+
+    const Image2 = styled.img`
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transition: 1s;
+    perspective: 500;  
+    /* transform: rotateY(60deg); */
+    transform-origin: left;
+    animation: picMove 10s ease forwards;
+    animation-delay: 0.3s;
+
+    /* :hover {
+        transform: rotateY(0deg);
+    } */
+
+    @keyframes picMove {
+        0% {transform: rotateY(90deg);
+        }
+        100% {transform: rotateY(0deg);
+        }            
+    }
+    `;
+
+    const Image3 = styled.img`
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transition: 1s;
+    perspective: 500;  
+    /* transform: rotateY(60deg); */
+    transform-origin: left;
+    animation: picMove 10s ease forwards;
+    animation-delay: 0.6s;
+
+    /* :hover {
+        transform: rotateY(0deg);
+    } */
+
+    @keyframes picMove {
+        0% {transform: rotateY(90deg);
+        }
+        100% {transform: rotateY(0deg);
+        }            
+    }
+    `;
+
+const Image4 = styled.img`
+object-fit: cover;
+height: 100%;
+width: 100%;
+object-fit: cover;
+transition: 1s;
+perspective: 500;  
+/* transform: rotateY(60deg); */
+transform-origin: left;
+animation: picMove 10s ease forwards;
+
+/* :hover {
+    transform: rotateY(0deg);
+} */
+
+@keyframes picMove {
+    0% {transform: rotateY(90deg);
+    }
+    100% {transform: rotateY(0deg);
+    }            
+}
+`;
+
+const Image5 = styled.img`
+object-fit: cover;
+height: 100%;
+width: 100%;
+object-fit: cover;
+transition: 1s;
+perspective: 500;  
+/* transform: rotateY(60deg); */
+transform-origin: right;
+animation: picMove 10s ease forwards;
+animation-delay: 0.3s;
+
+/* :hover {
+transform: rotateY(0deg);
+} */
+
+@keyframes picMove {
+0% {transform: rotateY(90deg);
+}
+100% {transform: rotateY(0deg);
+}            
+}
+`;
+
+const Image6 = styled.img`
+object-fit: cover;
+height: 100%;
+width: 100%;
+object-fit: cover;
+transition: 1s;
+perspective: 500;  
+/* transform: rotateY(60deg); */
+transform-origin: right;
+animation: picMove 10s ease forwards;
+animation-delay: 0.6s;
+
+/* :hover {
+transform: rotateY(0deg);
+} */
+
+@keyframes picMove {
+0% {transform: rotateY(90deg);
+}
+100% {transform: rotateY(0deg);
+}            
+}
+`;
+
+const Image7 = styled.img`
+object-fit: cover;
+height: 100%;
+width: 100%;
+object-fit: cover;
+transition: 1s;
+perspective: 500;  
+/* transform: rotateY(60deg); */
+transform-origin: right;
+animation: picMove 10s ease forwards;
+
+
+/* :hover {
+transform: rotateY(0deg);
+} */
+
+@keyframes picMove {
+0% {transform: rotateY(90deg);
+}
+100% {transform: rotateY(0deg);
+}            
+}
+`;
+
+const Image8 = styled.img`
+object-fit: cover;
+height: 100%;
+width: 100%;
+object-fit: cover;
+transition: 1s;
+perspective: 500;  
+/* transform: rotateY(60deg); */
+transform-origin: right;
+animation: picMove 10s ease forwards;
+animation-delay: 0.3s;
+
+/* :hover {
+transform: rotateY(0deg);
+} */
+
+@keyframes picMove {
+0% {transform: rotateY(90deg);
+}
+100% {transform: rotateY(0deg);
+}            
+}
+`;
+
+
+const Image9 = styled.img`
+object-fit: cover;
+height: 100%;
+width: 100%;
+object-fit: cover;
+transition: 1s;
+perspective: 500;  
+/* transform: rotateY(60deg); */
+transform-origin: left;
+animation: picMove 10s ease forwards;
+
+/* :hover {
+    transform: rotateY(0deg);
+} */
+
+@keyframes picMove {
+    0% {transform: rotateY(90deg);
+    }
+    100% {transform: rotateY(0deg);
+    }            
+}
+`;
+
+const Image10 = styled.img`
+object-fit: cover;
+height: 100%;
+width: 100%;
+object-fit: cover;
+transition: 1s;
+perspective: 500;  
+/* transform: rotateY(60deg); */
+transform-origin: left;
+animation: picMove 10s ease forwards;
+animation-delay: 0.3s;
+
+/* :hover {
+transform: rotateY(0deg);
+} */
+
+@keyframes picMove {
+0% {transform: rotateY(90deg);
+}
+100% {transform: rotateY(0deg);
+}            
+}
+`;
+
+const Image11 = styled.img`
+object-fit: cover;
+height: 100%;
+width: 100%;
+object-fit: cover;
+transition: 1s;
+perspective: 500;  
+/* transform: rotateY(60deg); */
+transform-origin: left;
+animation: picMove 10s ease forwards;
+animation-delay: 0.6s;
+
+/* :hover {
+transform: rotateY(0deg);
+} */
+
+@keyframes picMove {
+0% {transform: rotateY(90deg);
+}
+100% {transform: rotateY(0deg);
+}            
+}
+`;
+
+const Image12 = styled.img`
+object-fit: cover;
+height: 100%;
+width: 100%;
+object-fit: cover;
+transition: 1s;
+perspective: 500;  
+/* transform: rotateY(60deg); */
+transform-origin: left;
+animation: picMove 10s ease forwards;
+
+/* :hover {
+transform: rotateY(0deg);
+} */
+
+@keyframes picMove {
+0% {transform: rotateY(90deg);
+}
+100% {transform: rotateY(0deg);
+}            
+}
+`;
+
+const Image13 = styled.img`
+object-fit: cover;
+height: 100%;
+width: 100%;
+object-fit: cover;
+transition: 1s;
+perspective: 500;  
+/* transform: rotateY(60deg); */
+transform-origin: right;
+animation: picMove 10s ease forwards;
+animation-delay: 0.3s;
+
+/* :hover {
+transform: rotateY(0deg);
+} */
+
+@keyframes picMove {
+0% {transform: rotateY(90deg);
+}
+100% {transform: rotateY(0deg);
+}            
+}
+`;
+
+const Image14 = styled.img`
+object-fit: cover;
+height: 100%;
+width: 100%;
+object-fit: cover;
+transition: 1s;
+perspective: 500;  
+/* transform: rotateY(60deg); */
+transform-origin: right;
+animation: picMove 10s ease forwards;
+animation-delay: 0.6s;
+
+/* :hover {
+transform: rotateY(0deg);
+} */
+
+@keyframes picMove {
+0% {transform: rotateY(90deg);
+}
+100% {transform: rotateY(0deg);
+}            
+}
+`;
+
+const Image15 = styled.img`
+object-fit: cover;
+height: 100%;
+width: 100%;
+object-fit: cover;
+transition: 1s;
+perspective: 500;  
+/* transform: rotateY(60deg); */
+transform-origin: right;
+animation: picMove 10s ease forwards;
+
+
+/* :hover {
+transform: rotateY(0deg);
+} */
+
+@keyframes picMove {
+0% {transform: rotateY(90deg);
+}
+100% {transform: rotateY(0deg);
+}            
+}
+`;
+
+const Image16 = styled.img`
+object-fit: cover;
+height: 100%;
+width: 100%;
+object-fit: cover;
+transition: 1s;
+perspective: 500;  
+/* transform: rotateY(60deg); */
+transform-origin: right;
+animation: picMove 10s ease forwards;
+animation-delay: 0.3s;
+
+/* :hover {
+transform: rotateY(0deg);
+} */
+
+@keyframes picMove {
+0% {transform: rotateY(90deg);
+}
+100% {transform: rotateY(0deg);
+}            
+}
+`;
+
+
+
+
 
     
 
@@ -83,11 +441,11 @@ function Gallery() {
 
                 <Gallery>
                     <Image src={rural} alt="rural-village"/>
-                    <Image src={glasses} alt="glasses"/>
-                    <Image src={therapy} alt="therapy"/>
-                    <Image src={shoes} alt="shoes"/>
-                    <Image src={laundrette} alt="laundrette"/>
-                    <Image src={barber} alt="barber"/>
+                    <Image2 src={glasses} alt="glasses"/>
+                    <Image3 src={therapy} alt="therapy"/>
+                    <Image4 src={shoes} alt="shoes"/>
+                    <Image5 src={laundrette} alt="laundrette"/>
+                    <Image6 src={barber} alt="barber"/>
                     <Image src={pole} alt="barber-pole"/>
                     <Image src={clean} alt="cleaner"/>
                     
