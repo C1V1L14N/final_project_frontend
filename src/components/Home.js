@@ -20,11 +20,34 @@ function Home() {
         top: 40px;
     `;
 
+<<<<<<< HEAD
     const SearchPosition = styled.div`
         position: absolute;
         left: 50%;
         top: 50%;
 
+=======
+    const ResultContainer = styled.div`
+        height: 200px;
+        width: 80vw;
+        top: 10px;
+        margin: auto;
+        background-color: #e3e3e3;
+        opacity: 0.9;
+        position: relative;
+        z-index: 4;
+        border-radius: 10px;
+        overflow: scroll;
+        /* display: flex;
+        flex-direction: column;
+        align-items: center; */
+    `;
+
+    const SearchPosition = styled.div`
+        position: relative;
+        margin: auto;
+        
+>>>>>>> be9dfe868e84a2f2398fa8efcebfb6bd6f849461
     `;
 
     
@@ -32,8 +55,13 @@ function Home() {
         setKeyword(searchTerm);
     }
 
+    // function searchHasResults = (Results) => {
+    //     if()
+    // }
+
     return(
         <HomeContainer>
+<<<<<<< HEAD
             
             <Gallery/>
 
@@ -42,7 +70,14 @@ function Home() {
             </SearchPosition>
 
 
+=======
+            <Gallery/>
+            <SearchPosition>
+                <Search onSubmit={searchData} />
+            </SearchPosition>
+>>>>>>> be9dfe868e84a2f2398fa8efcebfb6bd6f849461
             <Results keyword={keyword}/>
+
         </HomeContainer>
     )
 }
