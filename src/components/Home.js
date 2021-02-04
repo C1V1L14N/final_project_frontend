@@ -20,18 +20,45 @@ function Home() {
         top: 40px;
     `;
 
+    const ResultContainer = styled.div`
+        height: 200px;
+        width: 80vw;
+        top: 10px;
+        margin: auto;
+        background-color: #e3e3e3;
+        opacity: 0.9;
+        position: relative;
+        z-index: 4;
+        border-radius: 10px;
+        overflow: scroll;
+        /* display: flex;
+        flex-direction: column;
+        align-items: center; */
+    `;
+
+    const SearchPosition = styled.div`
+        position: relative;
+        margin: auto;
+        
+    `;
+
     
     const searchData = (searchTerm) => {
         setKeyword(searchTerm);
     }
 
+    // function searchHasResults = (Results) => {
+    //     if()
+    // }
+
     return(
         <HomeContainer>
-            
-            <Categories/>
             <Gallery/>
-            <Search onSubmit={searchData} />
+            <SearchPosition>
+                <Search onSubmit={searchData} />
+            </SearchPosition>
             <Results keyword={keyword}/>
+
         </HomeContainer>
     )
 }

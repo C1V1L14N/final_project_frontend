@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import { Link } from "react-router-dom";
 import axios from 'axios';
+import styled from 'styled-components';
 
 const Results = ({keyword}) => {
 
@@ -9,6 +10,24 @@ const Results = ({keyword}) => {
     const [services, setServices] = useState([]);
     const [allResults, setAllResults] = useState([]);
     const [results, setResults] = useState([]);
+
+    const ResultContainer = styled.div`
+        height: 200px;
+        width: 80vw;
+        top: 10px;
+        margin: auto;
+        background-color: #e3e3e3;
+        opacity: 0.9;
+        position: relative;
+        z-index: 4;
+        border-radius: 10px;
+        overflow: scroll;
+        /* display: flex;
+        flex-direction: column;
+        align-items: center; */
+    `;
+
+    
 
     const getResults = () => {
         const getShops = axios.get(`http://localhost:8080/shops/`)
@@ -72,7 +91,7 @@ const Results = ({keyword}) => {
         return null;
     }
     return(
-        <div>
+        <ResultContainer>
             {results
             ? results.map((result, index) => {
                 return(
@@ -107,8 +126,9 @@ const Results = ({keyword}) => {
                 );
             })
             : "Loading..."}
-        </div>
+        </ResultContainer>
     )
 }
+
 
 export default Results;
