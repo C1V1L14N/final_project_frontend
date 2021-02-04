@@ -12,20 +12,20 @@ const Results = ({keyword}) => {
     const [results, setResults] = useState([]);
 
     const ResultContainer = styled.div`
-        height: 200px;
-        width: 80vw;
-        top: 10px;
-        margin: auto;
-        background-color: #e3e3e3;
-        opacity: 0.9;
-        position: relative;
-        z-index: 4;
-        border-radius: 10px;
-        overflow: scroll;
-        /* display: flex;
-        flex-direction: column;
-        align-items: center; */
-    `;
+    height: 200px;
+    width: 60vw;
+    top: 210px;
+    margin: auto;
+    background-color: #e3e3e3;
+    opacity: 0.9;
+    position: relative;
+    z-index: 4;
+    border-radius: 10px;
+    overflow: scroll;
+    /* display: flex;
+    flex-direction: column;
+    align-items: center; */
+`;
 
     
 
@@ -64,6 +64,17 @@ const Results = ({keyword}) => {
         });
     };
 
+    const ImgDiv = styled.div`
+        object-fit: cover;
+        height: 100px;
+        width: 170px;
+    `;
+
+    const ResultImage = styled.img`
+        height: 100%;
+        width: 100%;
+    `;
+
     // const linkToDetails = (result) => {
     //     if(result.price) {
     //         return `/service/${result.id}`
@@ -98,9 +109,9 @@ const Results = ({keyword}) => {
                     <div key={index}>
                         {result.address
                         ? <div className="result-box shop-result">
-                            <div className="shop-image">
-                                <img src={result.image} alt="no available"/>
-                            </div>
+                            <ImgDiv className="shop-image">
+                                <ResultImage src={result.image} alt="no available"/>
+                            </ImgDiv>
                             <div className="details">
                                 <h4>{result.name}</h4>
                                 <p>{result.address}</p>

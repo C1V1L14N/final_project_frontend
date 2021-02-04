@@ -29,11 +29,13 @@ code {
 }
 
 .details > h4{
+  font-family: Didot, sans-serif;
   color: #e3e3e3;
   font-size: 40px;
 }
 
 .details > p{
+  font-family: Didot, sans-serif;
   color: #e3e3e3;
 }
 
@@ -49,22 +51,27 @@ code {
   position: relative;
   margin-top: 100px;
   color: #E3E3E3;
+  font-family: Didot, sans-serif;
   font-size: 40px;
 }
 .additional-details > p{
+  font-family: Didot, sans-serif;
   color: #E3E3E3;
 }
 .additional-details > div > p{
+  font-family: Didot, sans-serif;
   color: #E3E3E3;
 }
 
 .service-text > h4{
+  font-family: Didot, sans-serif;
   color: #e3e3e3;
   font-size: 40px;
   padding-left: 15px;
 }
 
 .service-text > p {
+  font-family: Didot, sans-serif;
   color: #e3e3e3;
   padding-left: 15px;
 }
