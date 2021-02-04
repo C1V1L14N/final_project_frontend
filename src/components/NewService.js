@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import './NewService.css';
 
 function NewService() {
     const [formData, setFormData] = useState({
@@ -31,11 +32,11 @@ function NewService() {
     }
     
     return(
-        <div>
-            <h3>Create New Service</h3>
-            <form>
+        <div className="form-container">
+            <h2 className="h3" >Create New Service</h2>
+            <form className="form-container">
                 <div className="form_wrap">
-                    <label htmlFor="name">Name:</label>
+                    <label className="label" htmlFor="name">Name:</label>
                     <input 
                     onChange={handleChange}
                     type="text"
@@ -47,7 +48,7 @@ function NewService() {
                 </div>
 
                 <div className="form_wrap">
-                    <label htmlFor="description">Description:</label>
+                    <label className="label" htmlFor="description">Description:</label>
                     <input 
                     onChange={handleChange}
                     type="text"
@@ -59,7 +60,7 @@ function NewService() {
                 </div>
 
                 <div className="form_wrap">
-                    <label htmlFor="price">Price:</label>
+                    <label className="label" htmlFor="price">Price:</label>
                     <input 
                     onChange={handleChange}
                     type="number"
@@ -71,7 +72,7 @@ function NewService() {
                 </div>
 
                 <div className="form_wrap">
-                    <label htmlFor="duration">Duration:</label>
+                    <label className="label" htmlFor="duration">Duration:</label>
                     <input 
                     onChange={handleChange}
                     type="number"

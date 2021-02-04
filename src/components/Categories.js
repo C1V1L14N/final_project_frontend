@@ -35,7 +35,7 @@ function Categories() {
 
     return(
         <div className="categories-container">
-            {/* <Link to="/new-category"><button className="btn">Add Category</button></Link> */}
+            <Link id="new-categories-link" to="/new-category"><h2>Add A New Category</h2></Link>
 
 
             {categoryList

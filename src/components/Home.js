@@ -53,11 +53,6 @@ function Home() {
 
     return(
         <HomeContainer>
-<<<<<<< HEAD
-            
-            
-=======
->>>>>>> develop
             <Gallery/>
             <SearchPosition>
                 <Search onSubmit={searchData} />

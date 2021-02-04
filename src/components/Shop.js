@@ -25,7 +25,7 @@ const Shop = () => {
   return(
 
     <div className="shops-container">
-       <Link to="/new-shop"><button className="btn">Create a Business Profile</button></Link>
+       <Link id="new-shop-link" to="/new-shop"><h2>Create a Business Profile</h2></Link>
           {shopList
             ? shopList.map((shop, index) => {
               return(
