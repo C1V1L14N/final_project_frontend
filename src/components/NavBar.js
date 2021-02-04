@@ -1,10 +1,11 @@
-import '../app.css';
+import styled from 'styled-components';
 import React from "react";
 import { Link } from "react-router-dom";
-import styled from 'styled-components';
-import basket from "../assets/shopping-basket.png"
-import logo from "../assets/Logo.png"
-import Categories from '../components/Categories'
+
+import basket from "../assets/shopping-basket.png";
+import logo from "../assets/Logo.png";
+
+
 
 
 
@@ -78,25 +79,25 @@ function NavBar() {
 
             <Filters>
                 <Li>
-                    <Link to="/service"><Text>All Services</Text></Link>
+                    <Link className="text-decoration" to="/service"><Text>All Services</Text></Link>
                 </Li>
                 <Li>
-                    <Link to="/category"><Text>All Categories</Text></Link>
+                    <Link className="text-decoration" to="/category"><Text>All Categories</Text></Link>
                 </Li>
                 <Li>
-                    <Link to="/shop"><Text>All Shops</Text></Link>
+                    <Link className="text-decoration" to="/shop"><Text>All Shops</Text></Link>
                 </Li>
             </Filters>
 
             <Ul>
                 <Li>
-                    <Link to="/about"><Text>About</Text></Link>
+                    <Link className="text-decoration" to="/about"><Text>About</Text></Link>
                 </Li>
                 <Li>
-                    <Link to="/shop"><Text>Shop</Text></Link>
+                    <Link className="text-decoration" to="/shop"><Text>Shop</Text></Link>
                 </Li>
                 <Li>
-                    <Link to="/basket"><Img src={basket} alt="basket"></Img></Link>
+                    <Link className="text-decoration" to="/basket"><Img src={basket} alt="basket"></Img></Link>
                 </Li>
             </Ul>
         </Header>

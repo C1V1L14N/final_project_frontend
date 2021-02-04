@@ -31,12 +31,10 @@ function Gallery() {
         grid-template-columns: repeat(8, 250px);
         grid-template-rows: repeat(2, 250px);
         grid-gap: 0px;
-        position: absolute;
+        position: relative;
         margin: 0;
         padding: 0;
         border: 0;
-        top: -5px;
-        left: -200px;
         /* perspective: 2000; */
 
     `;
@@ -66,7 +64,6 @@ function Gallery() {
     `;
 
     const Image2 = styled.img`
-    object-fit: cover;
     height: 100%;
     width: 100%;
     object-fit: cover;
@@ -446,17 +443,17 @@ transform: rotateY(0deg);
                     <Image4 src={shoes} alt="shoes"/>
                     <Image5 src={laundrette} alt="laundrette"/>
                     <Image6 src={barber} alt="barber"/>
-                    <Image src={pole} alt="barber-pole"/>
-                    <Image src={clean} alt="cleaner"/>
+                    <Image7 src={pole} alt="barber-pole"/>
+                    <Image8 src={clean} alt="cleaner"/>
                     
-                    <Image src={street} alt="street"/>
-                    <Image src={local} alt="theatre-sign"/>
-                    <Image src={barber2} alt="barber"/>
-                    <Image src={library} alt="library"/>
-                    <Image src={groomer} alt="dog-groomer"/>
-                    <Image src={nails} alt="nail-salon"/>
-                    <Image src={dogWalker} alt="dog-walker"/>
-                    <Image src={massage} alt="massage"/>
+                    <Image9 src={street} alt="street"/>
+                    <Image10 src={local} alt="theatre-sign"/>
+                    <Image11 src={barber2} alt="barber"/>
+                    <Image12 src={library} alt="library"/>
+                    <Image13 src={groomer} alt="dog-groomer"/>
+                    <Image14 src={nails} alt="nail-salon"/>
+                    <Image15 src={dogWalker} alt="dog-walker"/>
+                    <Image16 src={massage} alt="massage"/>
                     
 
                 </Gallery>

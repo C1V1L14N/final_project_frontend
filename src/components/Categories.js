@@ -35,14 +35,14 @@ function Categories() {
 
     return(
         <div className="categories-container">
-            {/* <Link to="/new-category"><button className="btn">Add Category</button></Link> */}
+            <Link id="new-categories-link" to="/new-category"><h2>Add A New Category</h2></Link>
 
 
             {categoryList
                 ? categoryList.map((category, index) => {
                 return(
                     <div key={index}>
-                    <Link id ="image-link" to={`/category/${category.id}`}><img className="ind-image" src={category.image}/>{category.name}</Link>
+                    <Link id ="image-link" to={`/category/${category.id}`}><img className="ind-image" src={category.image}/><h3>{category.name}</h3></Link>
                     </div>
                 );
                 })
@@ -52,19 +52,3 @@ function Categories() {
 }
 
 export default Categories;
-
-// {/* <div className="shops-container">
-       
-//        {shopList
-//          ? shopList.map((shop, index) => {
-//            return(
-//              <div key={index}>
-//                <Link id ="image-link"to={`/shop/${shop.id}`}><img className = "ind-image" src={shop.image} alt="no available"/>{shop.name}</Link>
-//              </div>
-//            );
-//          })
-//          : "Loading..."}
-
-         
-     
-//  </div> */}

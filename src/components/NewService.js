@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import './NewService.css';
 
 function NewService() {
     const [formData, setFormData] = useState({
@@ -31,12 +32,12 @@ function NewService() {
     }
     
     return(
-        <div>
-            <h3>Create New Service</h3>
-            <form>
+        <div className="form-container">
+            <h2 className="h3" >Create New Service</h2>
+            <form className="form-container">
                 <div className="form_wrap">
-                    <label htmlFor="name">Name:</label>
-                    <input 
+                    <label className="label" htmlFor="name">Name:</label>
+                    <input className="input"
                     onChange={handleChange}
                     type="text"
                     name="name"
@@ -47,8 +48,8 @@ function NewService() {
                 </div>
 
                 <div className="form_wrap">
-                    <label htmlFor="description">Description:</label>
-                    <input 
+                    <label className="label" htmlFor="description">Description:</label>
+                    <input className="input"
                     onChange={handleChange}
                     type="text"
                     name="description"
@@ -59,8 +60,8 @@ function NewService() {
                 </div>
 
                 <div className="form_wrap">
-                    <label htmlFor="price">Price:</label>
-                    <input 
+                    <label className="label" htmlFor="price">Price:</label>
+                    <input className="input"
                     onChange={handleChange}
                     type="number"
                     name="price"
@@ -71,8 +72,8 @@ function NewService() {
                 </div>
 
                 <div className="form_wrap">
-                    <label htmlFor="duration">Duration:</label>
-                    <input 
+                    <label className="label" htmlFor="duration">Duration:</label>
+                    <input className="input"
                     onChange={handleChange}
                     type="number"
                     name="duration"
@@ -82,7 +83,7 @@ function NewService() {
                     required/>
                 </div>
 
-                <input onClick={handleSubmit} type="submit" value="submit" />
+                <input className="input" onClick={handleSubmit} type="submit" value="submit" />
             </form>
         </div>
     )

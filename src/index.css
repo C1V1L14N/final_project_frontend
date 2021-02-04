@@ -28,6 +28,49 @@ code {
   margin: 10px;
 }
 
+.details > h4{
+  color: #e3e3e3;
+  font-size: 40px;
+}
+
+.details > p{
+  color: #e3e3e3;
+}
+
 .shop-image{
   margin: 10px;
+}
+
+.shop-image > img {
+  padding-top: 60px;
+  height: same-as-width;
+  width: 350px;
+}
+
+.additional-details {
+  position: relative;
+  margin-top: 145px;
+}
+.additional-details > h4{
+  position: relative;
+  margin-top: 100px;
+  color: #E3E3E3;
+  font-size: 40px;
+}
+.additional-details > p{
+  color: #E3E3E3;
+}
+.additional-details > div > p{
+  color: #E3E3E3;
+}
+
+.service-text > h4{
+  color: #e3e3e3;
+  font-size: 40px;
+  padding-left: 15px;
+}
+
+.service-text > p {
+  color: #e3e3e3;
+  padding-left: 15px;
 }
