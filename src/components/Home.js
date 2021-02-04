@@ -4,8 +4,11 @@ import Search from "./Search";
 import Categories from "./Categories";
 import styled from 'styled-components';
 import Gallery from "./Gallery";
+import Results from "./Results";
 
 function Home() {
+
+    // const []
 
     const HomeContainer = styled.div`
         display: flex;
@@ -18,13 +21,16 @@ function Home() {
     `;
 
     
-
+    const searchData = (searchTerm) => {
+        console.log(searchTerm);
+    }
 
     return(
         <HomeContainer>
             
             <Gallery/>
-            <Search/>
+            <Search onSubmit={searchData} />
+            <Results/>
         </HomeContainer>
     )
 }
