@@ -22,15 +22,14 @@ function Home() {
 
     
     const searchData = (searchTerm) => {
-        // console.log(searchTerm);
         setKeyword(searchTerm);
     }
 
     return(
         <HomeContainer>
             
-            {/* <Categories/> */}
-            {/* <Gallery/> */}
+            <Categories/>
+            <Gallery/>
             <Search onSubmit={searchData} />
             <Results keyword={keyword}/>
         </HomeContainer>

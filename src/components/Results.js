@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import axios from 'axios';
 
 const Results = ({keyword}) => {
@@ -83,6 +83,7 @@ const Results = ({keyword}) => {
                             <p>{result.address}</p>
                             <p>{result.telephoneNumber}</p>
                             <p>Opens:{prettyDate2(result.openingHour)} Closes:{prettyDate2(result.closingHour)} </p>
+                            <Link to= {`/shop/${result.id}`}><button>Click for more Details</button></Link>
                         </div>
                         : null}
 
@@ -90,12 +91,14 @@ const Results = ({keyword}) => {
                         ? <div className="result-box service-result">
                             <h4>{result.name}(service)</h4>
                             <p>in {result.shops.name}</p>
+                            <Link to= {`/service/${result.id}`}><button>Click for more Details</button></Link>
                         </div>
                         : null}
 
                         {!result.address && !result.price
                         ? <div className="result-box category-result">
                             <h5>{result.name}(category)</h5>
+                            <Link to= {`/category/${result.id}`}><button>Click for more Details</button></Link>
                         </div>
                         : null}
                         {/* <h4>{result.name}</h4>
