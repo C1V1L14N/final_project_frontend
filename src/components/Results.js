@@ -2,49 +2,58 @@ import React, {useState, useEffect} from 'react';
 // import { Link } from "react-router-dom";
 import axios from 'axios';
 
-const Results = () => {
+const Results = ({keyword}) => {
 
-    const [results, setResults] = useState([]);
     const [shops, setShops] = useState([]);
     const [categories, setCategories] = useState([]);
     const [services, setServices] = useState([]);
+    const [allResults, setAllResults] = useState([]);
+    const [results, setResults] = useState([]);
 
     const getResults = () => {
         const getShops = axios.get(`http://localhost:8080/shops/`)
         .then(res => {
-        console.log(res);
+        // console.log(res);
         setShops(res.data);
         return res.data;
         });
         const getCategories = axios.get(`http://localhost:8080/categories/`)
         .then(res => {
-        console.log(res);
+        // console.log(res);
         setCategories(res.data);
         return res.data;
         });
         const getServices = axios.get(`http://localhost:8080/services/`)
         .then(res => {
-        console.log(res);
+        // console.log(res);
         setServices(res.data);
         return res.data;
         });
 
         Promise.all([getShops, getCategories, getServices])
-        .then((allResults) => {
-            setResults(allResults.flat());
-        })
-
+        .then((data) => {
+            setAllResults(data.flat()); 
+            const newResults = data.flat().filter((result) => {
+                if(keyword) {
+                    return (result.name).toLowerCase().includes(keyword.toLowerCase());
+                        // console.log()
+                
+                }
+            })
+            console.log(newResults)
+            setResults(newResults);
+        });
     };
 
-    const linkToDetails = (result) => {
-        if(result.price) {
-            return `/service/${result.id}`
-        } else if(result.address) {
-            return `/shop/${result.id}`
-        } else {
-            return `/category/${result.id}`
-        }
-    }  
+    // const linkToDetails = (result) => {
+    //     if(result.price) {
+    //         return `/service/${result.id}`
+    //     } else if(result.address) {
+    //         return `/shop/${result.id}`
+    //     } else {
+    //         return `/category/${result.id}`
+    //     }
+    // }  
 
     useEffect(() => {
         getResults();
@@ -59,7 +68,9 @@ const Results = () => {
         });
     }
 
-
+    if(!keyword) {
+        return null;
+    }
     return(
         <div>
             {results

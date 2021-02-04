@@ -40,7 +40,7 @@ function Search({onSubmit}) {
         }
     `;
 
-
+    
     return(
         <div>
             <form>

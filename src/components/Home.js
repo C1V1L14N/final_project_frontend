@@ -1,5 +1,5 @@
 
-import React from "react";
+import React, { useState } from 'react';
 import Search from "./Search";
 import Categories from "./Categories";
 import styled from 'styled-components';
@@ -8,7 +8,7 @@ import Results from "./Results";
 
 function Home() {
 
-    // const []
+    const [keyword, setKeyword] = useState();
 
     const HomeContainer = styled.div`
         display: flex;
@@ -22,16 +22,17 @@ function Home() {
 
     
     const searchData = (searchTerm) => {
-        console.log(searchTerm);
+        // console.log(searchTerm);
+        setKeyword(searchTerm);
     }
 
     return(
         <HomeContainer>
             
-            <Categories/>
-            <Gallery/>
+            {/* <Categories/> */}
+            {/* <Gallery/> */}
             <Search onSubmit={searchData} />
-            <Results/>
+            <Results keyword={keyword}/>
         </HomeContainer>
     )
 }
