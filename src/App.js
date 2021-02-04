@@ -26,6 +26,7 @@ import NewSlot from "./components/NewSlot";
 import Basket from "./components/Basket";
 import Footer from "./components/Footer";
 import styled from 'styled-components';
+import Results from "./components/Results";
 
 
 
@@ -78,9 +79,14 @@ function App() {
               <Route path="/basket" component={Basket}/>
               
               
-            </Switch>
-          </SwitchContainer>
+            
+          
 
+          
+              <Route path="/results" component={Results}/>
+            
+          </Switch>
+</SwitchContainer>
         <Footer/> 
       </Router>
     </AppStyle>
