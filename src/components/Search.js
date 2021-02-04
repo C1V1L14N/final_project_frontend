@@ -17,12 +17,10 @@ function Search({onSubmit}) {
     
 
     const SearchInput = styled.input`
-        align-self: center;
         border: 3px;
-        padding-left: 30px;
-        margin-left: auto;
-        margin-right: auto;
-        margin-top: 130px;
+        border: 0;
+        padding: 0;
+        margin: 0;
         border-radius: 90px;
         height: 100px;
         width: 65rem;
