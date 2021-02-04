@@ -42,7 +42,6 @@ function Search({onSubmit}) {
 
 
     return(
-<<<<<<< HEAD
         <div>
             <form>
                 <SearchInput 
@@ -56,12 +55,6 @@ function Search({onSubmit}) {
                 <input onClick={handleSubmit} type="submit" value="submit" />
             </form>
         </div>
-=======
-        <>
-        <SearchInput  type="text" id="search" placeholder="Look for a service"></SearchInput>
-        
-        </>
->>>>>>> da3d0a670b47918972a6b749769aff0e3e589f62
     )
 }
 
