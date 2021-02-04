@@ -98,10 +98,10 @@ const Results = ({keyword}) => {
                     <div key={index}>
                         {result.address
                         ? <div className="result-box shop-result">
-                            <div className="shop-image">
+                            <div className="image">
                                 <img src={result.image} alt="no available"/>
                             </div>
-                            <div className="details">
+                            <div className="result-details">
                                 <h4>{result.name}</h4>
                                 <p>{result.address}</p>
                                 <p>{result.telephoneNumber}</p>
@@ -112,7 +112,7 @@ const Results = ({keyword}) => {
                         : null}
 
                         {result.price
-                        ? <div className="result-box service-result">
+                        ? <div className="result-details result-box service-result">
                             <h4>{result.name}(service)</h4>
                             <p>in {result.shops.name}</p>
                             <Link to= {`/service/${result.id}`}><button>Click for more Details</button></Link>
@@ -120,13 +120,11 @@ const Results = ({keyword}) => {
                         : null}
 
                         {!result.address && !result.price
-                        ? <div className="result-box category-result">
-                            <h5>{result.name}(category)</h5>
+                        ? <div className="result-details result-box category-result">
+                            <h4>{result.name}(category)</h4>
                             <Link to= {`/category/${result.id}`}><button>Click for more Details</button></Link>
                         </div>
                         : null}
-                        {/* <h4>{result.name}</h4>
-                        <Link to= {linkToDetails(result)}><button>Click for more Details</button></Link> */}
                     </div>
                 );
             })

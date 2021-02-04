@@ -17,6 +17,7 @@ code {
   border-width: 2px;
   margin: 2px;
   width: 50%;
+  display: flex;
 }
 
 .shop-details-container{
@@ -37,12 +38,33 @@ code {
   color: #e3e3e3;
 }
 
+.result-details > h4 {
+  color: black;
+}
+
+.result-details > p {
+  color: black;
+}
+
+.result-box {
+  display: flex;
+}
+
+.result-box > a {
+  display: flex;
+}
+
 .shop-image{
   margin: 10px;
 }
 
-.shop-image > img {
+.shop-image > img{
   padding-top: 60px;
+  height: same-as-width;
+  width: 350px;
+}
+
+.image > img{
   height: same-as-width;
   width: 350px;
 }
