@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import { Link } from "react-router-dom";
 import axios from 'axios';
+import styled from 'styled-components';
 
 const Results = () => {
 
@@ -8,6 +9,25 @@ const Results = () => {
     const [shops, setShops] = useState([]);
     const [categories, setCategories] = useState([]);
     const [services, setServices] = useState([]);
+    const [searchResults, setSearchResults] = useState(false)
+
+    const ResultContainer = styled.div`
+        height: 200px;
+        width: 80vw;
+        top: 10px;
+        margin: auto;
+        background-color: #e3e3e3;
+        opacity: 0.9;
+        position: relative;
+        z-index: 4;
+        border-radius: 10px;
+        overflow: scroll;
+        /* display: flex;
+        flex-direction: column;
+        align-items: center; */
+    `;
+
+    
 
     const getResults = () => {
         const getShops = axios.get(`http://localhost:8080/shops/`)
@@ -32,6 +52,7 @@ const Results = () => {
         Promise.all([getShops, getCategories, getServices])
         .then((allResults) => {
             setResults(allResults.flat());
+            setSearchResults(true)
         })
 
     };
@@ -59,9 +80,10 @@ const Results = () => {
         });
     }
 
+    if(searchResults == true){
 
     return(
-        <div>
+        <ResultContainer>
             {results
             ? results.map((result, index) => {
                 return(
@@ -93,8 +115,12 @@ const Results = () => {
                 );
             })
             : "Loading..."}
-        </div>
-    )
+        </ResultContainer>
+    )}
+    else{
+        return null;
+    }
 }
+
 
 export default Results;
