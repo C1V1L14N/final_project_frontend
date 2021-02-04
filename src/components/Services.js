@@ -22,12 +22,12 @@ function Services() {
 
     return(
         <div className="services-container">
-            <Link to="/new-service"><button className="btn">Add Service</button></Link>
+          <Link id="new-service-link" to="/new-service"><h2>Create a New Service</h2></Link>
             {serviceList
                 ? serviceList.map((service, index) => {
                 return(
                     <div key={index}>
-                      <Link to={`/service/${service.id}`}><button>{service.name}</button></Link>
+                      <Link id="image-link" to={`/service/${service.id}`}><h2>{service.name}</h2></Link>
                     </div>
                 );
                 })
@@ -37,3 +37,4 @@ function Services() {
 }
 
 export default Services;
+

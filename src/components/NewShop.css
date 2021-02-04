@@ -1,0 +1,85 @@
+input[type=text] {
+    padding:10px;
+    border:0;
+    box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+    padding:10px;
+    border-radius:10px;
+    padding:10px;
+    margin:10px 25px; 
+    display: inline-block;
+    float: left;
+}
+  
+
+  input[type=number] {
+    padding:10px;
+    border:0;
+    box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+    padding:10px;
+    border-radius:10px;
+    padding:10px;
+    margin:10px 25px; 
+    display: inline-block;
+    float: left;
+  }
+  
+  input[type=submit] {
+    padding:10px;
+    border:0;
+    box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+    padding:10px;
+    border-radius:10px;
+    padding:10px;
+    margin:10px 0; 
+    display: inline-block;
+    float: left;
+  }
+
+  input[type=time] {
+    padding:10px;
+    border:0;
+    box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+    padding:10px;
+    border-radius:10px;
+    padding:10px;
+    margin:10px 25px; 
+    display: inline-block;
+    float: left;
+}
+
+input[type=email] {
+    padding:10px;
+    border:0;
+    box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+    padding:10px;
+    border-radius:10px;
+    padding:10px;
+    margin:10px 25px; 
+    display: inline-block;
+    float: left;
+}
+
+  .form-container{
+    text-align: center;
+    display: block;
+    width:600px; 
+    color: #e3e3e3;
+    font-family: Didot, sans-serif;
+    padding-top: 15px;
+
+    
+  }
+
+  .h2{
+    color: #e3e3e3;
+    font-family: Didot, sans-serif;
+   
+  }
+
+  .label{
+    display: inline-block;
+    float: left;
+    clear: left;
+    width: 250px;
+    text-align: right;
+}

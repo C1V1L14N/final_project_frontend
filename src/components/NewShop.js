@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import './NewShop.css';
 
 
 function NewShop() {
@@ -39,11 +40,11 @@ function NewShop() {
     }
 
     return(
-        <div>
-            <h3>Create New Profile</h3>
-            <form>
+        <div className="form-container">
+            <h2 className="h3">Create New Profile</h2>
+            <form classname="form-container">
                 <div className="form_wrap">
-                    <label htmlFor="name">Name:</label>
+                    <label className="label" htmlFor="name">Name:</label>
                     <input
                     onChange={handleChange}
                     type="text"
@@ -55,7 +56,7 @@ function NewShop() {
                 </div>
 
                 <div className="form_wrap">
-                    <label htmlFor="address">Address:</label>
+                    <label className="label" htmlFor="address">Address:</label>
                     <input
                     onChange={handleChange}
                     type="text"
@@ -67,7 +68,7 @@ function NewShop() {
                 </div>
 
                 <div className="form_wrap">
-                    <label htmlFor="postcode">Postcode:</label>
+                    <label className="label" htmlFor="postcode">Postcode:</label>
                     <input
                     onChange={handleChange}
                     type="text"
@@ -79,7 +80,7 @@ function NewShop() {
                 </div>
 
                 <div className="form_wrap">
-                    <label htmlFor="town">Town:</label>
+                    <label className="label" htmlFor="town">Town:</label>
                     <input
                     onChange={handleChange}
                     type="text"
@@ -91,7 +92,7 @@ function NewShop() {
                 </div>
 
                 <div className="form_wrap">
-                    <label htmlFor="openingHour">Opening Hour:</label>
+                    <label className="label" htmlFor="openingHour">Opening Hour:</label>
                     <input
                     onChange={handleChange}
                     type="time"
@@ -102,7 +103,7 @@ function NewShop() {
                 </div>
 
                 <div className="form_wrap">
-                    <label htmlFor="closingHour">Closing Hour:</label>
+                    <label className="label" htmlFor="closingHour">Closing Hour:</label>
                     <input
                     onChange={handleChange}
                     type="time"
@@ -113,7 +114,7 @@ function NewShop() {
                 </div>
 
                 <div className="form_wrap">
-                    <label htmlFor="telephoneNumber">Telephone Number:</label>
+                    <label className="label" htmlFor="telephoneNumber">Telephone Number:</label>
                     <input
                     onChange={handleChange}
                     type="text"
@@ -125,7 +126,7 @@ function NewShop() {
                 </div>
 
                 <div className="form_wrap">
-                    <label htmlFor="email">Email address:</label>
+                    <label className="label" htmlFor="email">Email address:</label>
                     <input
                     onChange={handleChange}
                     type="email"
@@ -137,7 +138,7 @@ function NewShop() {
                 </div>
 
                 <div className="form_wrap">
-                    <label htmlFor="image">Image Link:</label>
+                    <label className="label" htmlFor="image">Image Link:</label>
                     <input
                     onChange={handleChange}
                     type="text"
