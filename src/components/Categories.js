@@ -3,6 +3,7 @@ import React, {useState, useEffect} from 'react';
 import { Link } from "react-router-dom";
 import axios from 'axios';
 import './categories.css';
+import Shop from './Shop';
 
 function Categories() {
 
@@ -33,13 +34,15 @@ function Categories() {
 
 
     return(
-        <div>
+        <div className="categories-container">
             {/* <Link to="/new-category"><button className="btn">Add Category</button></Link> */}
+
+
             {categoryList
                 ? categoryList.map((category, index) => {
                 return(
                     <div key={index}>
-                    <Link to={`/category/${category.id}`}><button>{category.name}</button></Link>
+                    <Link id ="image-link" to={`/category/${category.id}`}><img className="ind-image" src={category.image}/>{category.name}</Link>
                     </div>
                 );
                 })
@@ -49,3 +52,19 @@ function Categories() {
 }
 
 export default Categories;
+
+// {/* <div className="shops-container">
+       
+//        {shopList
+//          ? shopList.map((shop, index) => {
+//            return(
+//              <div key={index}>
+//                <Link id ="image-link"to={`/shop/${shop.id}`}><img className = "ind-image" src={shop.image} alt="no available"/>{shop.name}</Link>
+//              </div>
+//            );
+//          })
+//          : "Loading..."}
+
+         
+     
+//  </div> */}
