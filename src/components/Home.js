@@ -8,6 +8,8 @@ import Results from "./Results";
 
 function Home() {
 
+    // const []
+
     const HomeContainer = styled.div`
         display: flex;
         flex-direction: column;
@@ -19,7 +21,7 @@ function Home() {
     `;
 
     
-    const filter = (searchTerm) => {
+    const searchData = (searchTerm) => {
         console.log(searchTerm);
     }
 
@@ -28,7 +30,7 @@ function Home() {
             
             <Categories/>
             <Gallery/>
-            <Search handleChange={filter} />
+            <Search onSubmit={searchData} />
             <Results/>
         </HomeContainer>
     )

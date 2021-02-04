@@ -1,23 +1,18 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState} from 'react';
 import styled from 'styled-components';
 
-// function Search() {
-function Search({handleChange}) {
+
+function Search({onSubmit}) {
 
     const [formData, setFormData] = useState("");
 
     const handleForm = (evt) => {
-        // const newState = {...formData};
-        // newState[evt.target.name] = evt.target.value;
         setFormData(evt.target.value);
     }
-    // useEffect(() => {
-    //     handleChange(formData);
-    // }, {});
 
     const handleSubmit = (evt) => {
         evt.preventDefault();
-        handleChange(formData);
+        onSubmit(formData);
     }
     
 
@@ -45,25 +40,19 @@ function Search({handleChange}) {
 
 
     return(
-        <>
-        <form>
-            <SearchInput 
-            onChange={handleForm}
-            type="text" 
-            name="search" 
-            placeholder="Look for a service" 
-            value={formData}
-            autoFocus 
-            required/>
-            <input onClick={handleSubmit} type="submit" value="submit" />
-        </form>
-                {/* onSubmit={handleSubmit}
-
-                onChange={changeSearchTerm}
-
-                name="searchTerm" */}
-
-        </>
+        <div>
+            <form>
+                <SearchInput 
+                onChange={handleForm}
+                type="text" 
+                name="search" 
+                placeholder="Look for a service" 
+                value={formData}
+                autoFocus 
+                required/>
+                <input onClick={handleSubmit} type="submit" value="submit" />
+            </form>
+        </div>
     )
 }
 
