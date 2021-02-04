@@ -98,10 +98,15 @@ const Results = ({keyword}) => {
                     <div key={index}>
                         {result.address
                         ? <div className="result-box shop-result">
-                            <h4>{result.name}</h4>
-                            <p>{result.address}</p>
-                            <p>{result.telephoneNumber}</p>
-                            <p>Opens:{prettyDate2(result.openingHour)} Closes:{prettyDate2(result.closingHour)} </p>
+                            <div className="shop-image">
+                                <img src={result.image} alt="no available"/>
+                            </div>
+                            <div className="details">
+                                <h4>{result.name}</h4>
+                                <p>{result.address}</p>
+                                <p>{result.telephoneNumber}</p>
+                                <p>Opens:{prettyDate2(result.openingHour)} Closes:{prettyDate2(result.closingHour)} </p>
+                            </div>
                             <Link to= {`/shop/${result.id}`}><button>Click for more Details</button></Link>
                         </div>
                         : null}

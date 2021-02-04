@@ -18,3 +18,16 @@ code {
   margin: 2px;
   width: 50%;
 }
+
+.shop-details-container{
+  display: flex;
+  padding-left:20px;
+  padding-top: 20px;
+}
+.details{
+  margin: 10px;
+}
+
+.shop-image{
+  margin: 10px;
+}

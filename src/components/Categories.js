@@ -34,8 +34,7 @@ function Categories() {
 
     return(
         <div>
-
-            <Link to="/new-category"><button className="btn">Add Category</button></Link>
+            {/* <Link to="/new-category"><button className="btn">Add Category</button></Link> */}
             {categoryList
                 ? categoryList.map((category, index) => {
                 return(
