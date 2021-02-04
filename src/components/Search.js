@@ -40,6 +40,23 @@ function Search({onSubmit}) {
         }
     `;
 
+    const SubmitButton = styled.button`
+    position: absolute;
+    top: 215px;
+    right: 25px;
+        border-radius: 30px;
+        height: 60px;
+        width: 60px;
+        background-color: #2C66A8;
+        transition: 0.3s;
+        color: #E3E3E3;
+        font-family: Didot, sans-serif;
+        font-size: 14px;
+        :hover {
+            width: 120px;
+        }
+    `;
+    
     
     return(
         <div>
@@ -52,7 +69,7 @@ function Search({onSubmit}) {
                 value={formData}
                 autoFocus 
                 required/>
-                <input onClick={handleSubmit} type="submit" value="submit" />
+                <SubmitButton onClick={handleSubmit} type="submit" value="submit" >Submit</SubmitButton>
             </form>
         </div>
     )
