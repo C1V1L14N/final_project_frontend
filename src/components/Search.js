@@ -10,7 +10,7 @@ function Search() {
         border: 3px;
         margin-left: auto;
         margin-right: auto;
-        margin-top: 185px;
+        margin-top: 130px;
         border-radius: 90px;
         height: 100px;
         width: 65rem;
@@ -33,6 +33,7 @@ function Search() {
     return(
         <>
         <SearchInput  type="text" id="search" placeholder="Look for a service"></SearchInput>
+        
         </>
     )
 }

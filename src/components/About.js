@@ -28,21 +28,12 @@ function About() {
         z-index: 2;
     `;
 
-    const Border = styled.div`
-    position: absolute;
-        height: 600px;
-        width: 100vw;
-        background-color: #333333;
-        left: -5px;
-        z-index: 1;
-        top: 150px;
-    `;
 
     const StreetImg = styled.img`
         position: relative;
-        top: -75px;
+        top: -90px;
         margin: auto;
-        height: 300px;
+        height: 250px;
         width: auto;
         z-index: 2;
     `;
@@ -61,7 +52,7 @@ function About() {
 
             <StreetImg src={street} alt="high-street"></StreetImg>
 
-            <Border/>
+
         </AboutBox>
     )
 }

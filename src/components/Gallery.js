@@ -35,39 +35,40 @@ function Gallery() {
         margin: 0;
         padding: 0;
         border: 0;
-        top: 50px;
+        top: -5px;
         left: -200px;
-        
+        /* perspective: 2000; */
     `;
 
-    // const GalleyImage = styled.div`
-    //     background-image: url('averie-woodard-axTG1hSQ6W4-unsplash.jpg');
-    //     height: 100%;
-    //     width: 100%;
-    // `;
-
-    // const GalleyImage2 = styled.div`
-    // background-color: green;
-    // height: 100%;
-    // width: 100%;
-    // `;
-
-    const Border = styled.div`
-    position: absolute;
-        height: 600px;
-        width: 100vw;
-        background-color: #333333;
-        left: -5px;
-    `;
 
     const Image = styled.img`
         object-fit: cover;
         height: 100%;
         width: 100%;
         object-fit: cover;
-        perspective: 10px;
         perspective-origin: top;
+        transition: 1s;
+        perspective: 500;  
+        transform: rotateY(60deg);
+        transform-origin: left;
+        animation: picMove 10s ease forwards;
+
+        :hover {
+            transform: rotateY(0deg);
+        }
+
+        @keyframes picMove {
+            0% {transform: rotateY(100deg);
+
+            }
+            100% {transform: rotateY(0deg);
+
+            }
+            
+    }
     `;
+
+    
 
     
 
@@ -78,7 +79,7 @@ function Gallery() {
 
     return(
         <GalleryContainer>
-            <Border/>
+
                 <Gallery>
                     <Image src={rural} alt="rural-village"/>
                     <Image src={glasses} alt="glasses"/>

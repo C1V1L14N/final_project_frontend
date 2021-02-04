@@ -5,15 +5,7 @@ import styled from 'styled-components';
 
 const Shop = () => {
 
-  const Border = styled.div`
-    position: absolute;
-    height: 600px;
-    width: 100vw;
-    background-color: #333333;
-    left: -5px;
-    z-index: 0;
-    top: 150px;
-  `;
+
 
   const ShopForm = styled.div`
       position: relative;
@@ -61,7 +53,7 @@ const Shop = () => {
             
         </ShopForm>
     
-      <Border/>
+
     </div>
   );
 }
