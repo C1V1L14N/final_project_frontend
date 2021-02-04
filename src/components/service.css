@@ -1,0 +1,21 @@
+.service-container{
+
+    display: grid;
+    height: 65vh;
+    width: 100vw;
+    grid-template-columns: repeat(auto-fit, 250px);
+    grid-gap: 50px; 
+    overflow: scroll;
+    padding-top: 36px;
+    padding-left: 50px;
+    
+
+}
+
+.ind-image{
+    object-fit: cover;
+    height: 250px;
+    width: 250px;
+    object-fit: cover;
+    order: 1;
+}

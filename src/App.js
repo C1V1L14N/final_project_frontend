@@ -46,6 +46,7 @@ function App() {
     top: 40px;
     height: 65vh;
     width: 100vw;
+    padding: 0;
   `;
 
   return (

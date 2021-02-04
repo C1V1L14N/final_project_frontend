@@ -11,6 +11,7 @@ function Footer() {
     flex-grow: 1;
     position: absolute;
     bottom: 0;
+    padding-top: 0;
     `;
 
     const FooterList1 = styled.a`

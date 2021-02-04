@@ -1,0 +1,62 @@
+/* const ShopsContainer = styled.div`
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        flex-grow: 1;
+        margin: 5px;
+        position: relative;
+        top: 40px;
+    `;
+
+    const ShopsGallery = styled.div`
+        height: 100px;
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(8, 250px);
+        grid-template-rows: repeat(2, 250px);
+        grid-gap: 0px;
+        position: absolute;
+        margin: 0;
+        padding: 0;
+        border: 0;
+        top: -5px;
+        left: -200px;
+        perspective: 2000;
+        perspective-origin: left;
+
+    `; */
+
+    /* // const IndImg = styled.img`
+    //     object-fit: cover;
+    //     height: 100%;
+    //     width: 100%;
+    //     object-fit: cover;
+    //     `; */
+
+
+.shops-container{
+
+    display: grid;
+    height: 65vh;
+    width: 100vw;
+    grid-template-columns: repeat(auto-fit, 250px);
+    grid-gap: 50px; 
+    overflow: scroll;
+    padding-top: 36px;
+    padding-left: 50px;
+
+}
+
+.ind-image{
+    object-fit: cover;
+    height: 250px;
+    width: 250px;
+    
+}
+
+#image-link{
+    text-decoration: none;
+    color: #e3e3e3;
+    font-family: Didot, sans-serif;
+    
+}
