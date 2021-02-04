@@ -78,13 +78,13 @@ function NavBar() {
 
             <Filters>
                 <Li>
-                    <Link><Text>All Services</Text></Link>
+                    <Link to="/service"><Text>All Services</Text></Link>
                 </Li>
                 <Li>
-                    <Link><Text>All Categories</Text></Link>
+                    <Link to="/category"><Text>All Categories</Text></Link>
                 </Li>
                 <Li>
-                    <Link><Text>All Shops</Text></Link>
+                    <Link to="/shop"><Text>All Shops</Text></Link>
                 </Li>
             </Filters>
 

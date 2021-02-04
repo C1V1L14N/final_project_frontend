@@ -1,24 +1,9 @@
 import React, {useState, useEffect} from 'react';
 import { Link } from "react-router-dom";
 import axios from 'axios';
-import styled from 'styled-components';
+import './shop.css';
 
 const Shop = () => {
-
-
-
-  const ShopForm = styled.div`
-      position: relative;
-      z-index: 1;
-      top: 100px;
-      margin: 30px;
-  `;
-
-  const FormButton = styled.button`
-    width: 150px;
-    padding: 2px;
-    margin: 1px;
-  `;
 
   const [shopList, setShopList] = useState([]);
 
@@ -31,29 +16,28 @@ const Shop = () => {
     });
   };
 
+
+
   useEffect(() => {
     getShopList();
   }, []);
 
   return(
 
-    <div>
-        <ShopForm>
-          <Link to="/new-shop"><FormButton className="btn">Create New Profile</FormButton></Link>
+    <div className="shops-container">
+       
           {shopList
             ? shopList.map((shop, index) => {
               return(
                 <div key={index}>
-                  <Link to={`/shop/${shop.id}`}><FormButton>{shop.name}</FormButton></Link>
+                  <Link id ="image-link"to={`/shop/${shop.id}`}><img className = "ind-image" src={shop.image} alt="no available"/>{shop.name}</Link>
                 </div>
               );
             })
             : "Loading..."}
 
             
-        </ShopForm>
-    
-
+        
     </div>
   );
 }
