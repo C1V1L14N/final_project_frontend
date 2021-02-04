@@ -8,19 +8,19 @@ function NewSlot() {
 
     const getServiceList = () => {
         axios.get(`http://localhost:8080/services/`)
-            .then(res => {
-            // console.log(res);
-            setServiceList(res.data)
-            });
-        };
+        .then(res => {
+        // console.log(res);
+        setServiceList(res.data)
+        });
+    };
 
-        const serviceOptions = serviceList.map((service, index) => {
-            return <option key={index} value={index}>{service.name}</option>
-        })
+    const serviceOptions = serviceList.map((service, index) => {
+        return <option key={index} value={index}>{service.name}</option>
+    })
 
-        useEffect(() => {
-            getServiceList();
-        }, []);
+    useEffect(() => {
+        getServiceList();
+    }, []);
     
 
     const [formData, setFormData] = useState({

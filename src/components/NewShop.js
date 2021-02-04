@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-
+// import axios from 'axios';
 
 function NewShop() {
     const [formData, setFormData] = useState({
@@ -37,6 +37,57 @@ function NewShop() {
         })
         .then(() => window.location = "/shop")
     }
+
+
+
+
+    // // Add Service
+    // const [serviceList, setServiceList] = useState([]);
+
+    // const getServiceList = () => {
+    //     axios.get(`http://localhost:8080/services/`)
+    //     .then(res => {
+    //     //   console.log(res);
+    //     setServiceList(res.data)
+    //     });
+    // };
+
+    // const serviceOptions = serviceList.map((service, index) => {
+    //     return <option key={index} value={index}>{service.name}</option>
+    // })
+
+    // const handleService = function(event){
+    //     const index = parseInt(event.target.value)
+    //     const selectedService = serviceList[index]
+    //     let copiedService = {...formData};
+    //     copiedService['service'] = selectedService
+    //     setFormData(copiedService)
+    // }
+
+
+    // // Add Category
+    // const [categoryList, setCategoryList] = useState([]);
+
+    // const getCategoryList = () => {
+    //     axios.get(`http://localhost:8080/categories/`)
+    //     .then(res => {
+    //     //   console.log(res);
+    //     setCategoryList(res.data)
+    //     });
+    // };
+
+    // const categoryOptions = categoryList.map((category, index) => {
+    //     return <option key={index} value={index}>{category.name}</option>
+    // })
+
+
+
+    // useEffect(() => {
+    //     getServiceList();
+    //     getCategoryList();
+    //   }, []);
+
+
 
     return(
         <div>
@@ -148,29 +199,24 @@ function NewShop() {
                     required/>
                 </div>
 
-                {/* <div className="form_wrap">
-                    <label htmlFor="category">Category:</label>
-                    <input
-                    onChange={handleChange}
-                    type="text"
-                    name="category"
-                    id="category"
-                    placeholder="Category:"
-                    value={formData.category}
-                    required/>
-                </div>
+            
+            {/* <form onSubmit={handleSubmit}>
+                <select name="service" onChange={handleService} defaultValue="select-service"> */}
+                {/* <select name="service" defaultValue="select-service"> */}
+                    {/* <option disabled value="select-service">Select a service</option> */}
+                    {/* {serviceOptions} */}
+                {/* </select>
+            </form> */}
+    
+            {/* <button className="add-service-btn">Add service</button> */}
 
-                <div className="form_wrap">
-                    <label htmlFor="services">Services:</label>
-                    <input
-                    onChange={handleChange}
-                    type="text"
-                    name="services"
-                    id="services"
-                    placeholder="Services"
-                    value={formData.services}
-                    required/>
-                </div> */}
+
+                {/* <select name="category" onChange={handleCategory} defaultValue="select-category"> */}
+            {/* <select name="category" defaultValue="select-category">
+                <option disabled value="select-category">Select a category</option>
+                {categoryOptions}
+            </select>
+            <button className="add-category-btn">Add category</button> */}
 
                 <input onClick={handleSubmit} type="submit" value="submit" />
             </form>
