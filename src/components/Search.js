@@ -16,20 +16,14 @@ function Search({onSubmit}) {
     }
     
 
-    const SearchInput = styled.input`
-        border: 3px;
-
-        padding-left: 30px;
-        border-radius: 100px;
+    const Sinput = styled.input`
+        border-radius: 90px;
         height: 100px;
         width: 65rem;
         z-index: 1;
-        opacity: 0.9;
         font-size: 40px;
         
-        :focus {outline:none;};
-
-        
+        :focus {outline:none;};       
 
         ::placeholder {
             position: relative;
@@ -41,14 +35,15 @@ function Search({onSubmit}) {
 
     const SubmitButton = styled.button`
     position: absolute;
-    top: 215px;
+    top: 25px;
     right: 25px;
         border-radius: 30px;
         height: 60px;
         width: 60px;
         background-color: #2c66a8;
         transition: 0.3s;
-        color: #e3e3e3;
+        color: white
+        ;
         font-family: Didot, sans-serif;
         font-size: 14px;
         
@@ -62,7 +57,7 @@ function Search({onSubmit}) {
     return(
         <div>
             <form>
-                <SearchInput 
+                <Sinput 
                 onChange={handleForm}
                 type="text" 
                 name="search" 
@@ -70,7 +65,7 @@ function Search({onSubmit}) {
                 value={formData}
                 autoFocus 
                 required/>
-                <SubmitButton onClick={handleSubmit} type="submit" value="submit">Submit</SubmitButton>
+                <SubmitButton onClick={handleSubmit} type="submit" value="submit">Search</SubmitButton>
             </form>
         </div>
     )

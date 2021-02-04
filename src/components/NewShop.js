@@ -45,7 +45,7 @@ function NewShop() {
             <form classname="form-container">
                 <div className="form_wrap">
                     <label className="label" htmlFor="name">Name:</label>
-                    <input
+                    <input className="input"
                     onChange={handleChange}
                     type="text"
                     name="name"
@@ -57,7 +57,7 @@ function NewShop() {
 
                 <div className="form_wrap">
                     <label className="label" htmlFor="address">Address:</label>
-                    <input
+                    <input className="input"
                     onChange={handleChange}
                     type="text"
                     name="address"
@@ -69,7 +69,7 @@ function NewShop() {
 
                 <div className="form_wrap">
                     <label className="label" htmlFor="postcode">Postcode:</label>
-                    <input
+                    <input className="input"
                     onChange={handleChange}
                     type="text"
                     name="postcode"
@@ -81,7 +81,7 @@ function NewShop() {
 
                 <div className="form_wrap">
                     <label className="label" htmlFor="town">Town:</label>
-                    <input
+                    <input className="input"
                     onChange={handleChange}
                     type="text"
                     name="town"
@@ -93,7 +93,7 @@ function NewShop() {
 
                 <div className="form_wrap">
                     <label className="label" htmlFor="openingHour">Opening Hour:</label>
-                    <input
+                    <input className="input"
                     onChange={handleChange}
                     type="time"
                     name="openingHour"
@@ -104,7 +104,7 @@ function NewShop() {
 
                 <div className="form_wrap">
                     <label className="label" htmlFor="closingHour">Closing Hour:</label>
-                    <input
+                    <input className="input"
                     onChange={handleChange}
                     type="time"
                     name="closingHour"
@@ -115,7 +115,7 @@ function NewShop() {
 
                 <div className="form_wrap">
                     <label className="label" htmlFor="telephoneNumber">Telephone Number:</label>
-                    <input
+                    <input className="input"
                     onChange={handleChange}
                     type="text"
                     name="telephoneNumber"
@@ -127,7 +127,7 @@ function NewShop() {
 
                 <div className="form_wrap">
                     <label className="label" htmlFor="email">Email address:</label>
-                    <input
+                    <input className="input"
                     onChange={handleChange}
                     type="email"
                     name="email"
@@ -139,7 +139,7 @@ function NewShop() {
 
                 <div className="form_wrap">
                     <label className="label" htmlFor="image">Image Link:</label>
-                    <input
+                    <input className="input"
                     onChange={handleChange}
                     type="text"
                     name="image"
@@ -173,7 +173,7 @@ function NewShop() {
                     required/>
                 </div> */}
 
-                <input onClick={handleSubmit} type="submit" value="submit" />
+                <input className="input" onClick={handleSubmit} type="submit" value="submit" />
             </form>
         </div>
     );

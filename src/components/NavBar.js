@@ -1,10 +1,10 @@
-import '../app.css';
+import styled from 'styled-components';
 import React from "react";
 import { Link } from "react-router-dom";
-import styled from 'styled-components';
+
 import basket from "../assets/shopping-basket.png";
 import logo from "../assets/Logo.png";
-import '../index.css';
+
 
 
 

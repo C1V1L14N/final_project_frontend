@@ -31,12 +31,10 @@ function Gallery() {
         grid-template-columns: repeat(8, 250px);
         grid-template-rows: repeat(2, 250px);
         grid-gap: 0px;
-        position: absolute;
+        position: relative;
         margin: 0;
         padding: 0;
         border: 0;
-        top: -5px;
-        left: -200px;
         /* perspective: 2000; */
 
     `;

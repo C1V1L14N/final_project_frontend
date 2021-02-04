@@ -35,7 +35,7 @@ function NewCategory() {
             <form>
                 <div className="form_wrap">
                     <label className="label" htmlFor="name">Name:</label>
-                    <input 
+                    <input className="input"
                     onChange={handleChange}
                     type="text"
                     name="name"
@@ -47,7 +47,7 @@ function NewCategory() {
 
                 <div className="form_wrap">
                     <label className="label" htmlFor="description">Description:</label>
-                    <input 
+                    <input className="input"
                     onChange={handleChange}
                     type="text"
                     name="description"
@@ -59,7 +59,7 @@ function NewCategory() {
 
                 <div className="form_wrap">
                     <label className="label" htmlFor="image">Image:</label>
-                    <input 
+                    <input className="input"
                     onChange={handleChange}
                     type="text"
                     name="image"
@@ -69,7 +69,7 @@ function NewCategory() {
                     required/>
                 </div>
 
-                <input onClick={handleSubmit} type="submit" value="submit" />
+                <input className="input" onClick={handleSubmit} type="submit" value="submit" />
             </form>
         </div>
     )

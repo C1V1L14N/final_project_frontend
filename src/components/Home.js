@@ -14,6 +14,7 @@ function Home() {
     const HomeContainer = styled.div`
         display: flex;
         flex-direction: column;
+        align-items: center;
         width: 100%;
         flex-grow: 1;
         margin: 5px;
@@ -39,8 +40,7 @@ function Home() {
 
     const SearchPosition = styled.div`
         position: relative;
-        margin: auto;
-        
+        top: 200px;
     `;
 
     

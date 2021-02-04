@@ -37,7 +37,7 @@ function NewService() {
             <form className="form-container">
                 <div className="form_wrap">
                     <label className="label" htmlFor="name">Name:</label>
-                    <input 
+                    <input className="input"
                     onChange={handleChange}
                     type="text"
                     name="name"
@@ -49,7 +49,7 @@ function NewService() {
 
                 <div className="form_wrap">
                     <label className="label" htmlFor="description">Description:</label>
-                    <input 
+                    <input className="input"
                     onChange={handleChange}
                     type="text"
                     name="description"
@@ -61,7 +61,7 @@ function NewService() {
 
                 <div className="form_wrap">
                     <label className="label" htmlFor="price">Price:</label>
-                    <input 
+                    <input className="input"
                     onChange={handleChange}
                     type="number"
                     name="price"
@@ -73,7 +73,7 @@ function NewService() {
 
                 <div className="form_wrap">
                     <label className="label" htmlFor="duration">Duration:</label>
-                    <input 
+                    <input className="input"
                     onChange={handleChange}
                     type="number"
                     name="duration"
@@ -83,7 +83,7 @@ function NewService() {
                     required/>
                 </div>
 
-                <input onClick={handleSubmit} type="submit" value="submit" />
+                <input className="input" onClick={handleSubmit} type="submit" value="submit" />
             </form>
         </div>
     )
