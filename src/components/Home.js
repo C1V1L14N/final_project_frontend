@@ -4,6 +4,7 @@ import Search from "./Search";
 import Categories from "./Categories";
 import styled from 'styled-components';
 import Gallery from "./Gallery";
+import Results from "./Results";
 
 function Home() {
 
@@ -18,14 +19,17 @@ function Home() {
     `;
 
     
-
+    const filter = (searchTerm) => {
+        console.log(searchTerm);
+    }
 
     return(
         <HomeContainer>
             
             <Categories/>
             <Gallery/>
-            <Search/>
+            <Search handleChange={filter} />
+            <Results/>
         </HomeContainer>
     )
 }
