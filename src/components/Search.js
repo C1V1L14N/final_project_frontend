@@ -22,13 +22,15 @@ function Search({onSubmit}) {
         padding-left: 30px;
         margin-left: auto;
         margin-right: auto;
-        margin-top: 185px;
+        margin-top: 130px;
         border-radius: 90px;
         height: 100px;
-        width: 60rem;
+        width: 65rem;
         z-index: 1;
         opacity: 0.9;
         font-size: 40px;
+
+        
 
         ::placeholder {
             position: relative;
@@ -40,6 +42,7 @@ function Search({onSubmit}) {
 
 
     return(
+<<<<<<< HEAD
         <div>
             <form>
                 <SearchInput 
@@ -53,6 +56,12 @@ function Search({onSubmit}) {
                 <input onClick={handleSubmit} type="submit" value="submit" />
             </form>
         </div>
+=======
+        <>
+        <SearchInput  type="text" id="search" placeholder="Look for a service"></SearchInput>
+        
+        </>
+>>>>>>> da3d0a670b47918972a6b749769aff0e3e589f62
     )
 }
 

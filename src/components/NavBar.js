@@ -22,7 +22,7 @@ function NavBar() {
         text-decoration: none;
 
         :hover {
-            color: blue;
+            color: #2c66a8;
         }
     `;
 
@@ -42,6 +42,10 @@ function NavBar() {
         height: 30px;
         width: auto;
         margin-right: 50px;
+
+        :hover {
+            color: #2c66a8;
+        }
     `;
 
     const Logo = styled.img`
@@ -58,10 +62,31 @@ function NavBar() {
         margin-left: auto;
     `;
 
+    const Filters = styled.ul`
+    position: absolute;
+    top: 70px;
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    left: -45px;
+    `;
+
 
     return(
         <Header>
             <Link style={{Text}} to="/"><Logo src={logo} alt="logo"></Logo></Link>
+
+            <Filters>
+                <Li>
+                    <Link><Text>All Services</Text></Link>
+                </Li>
+                <Li>
+                    <Link><Text>All Categories</Text></Link>
+                </Li>
+                <Li>
+                    <Link><Text>All Shops</Text></Link>
+                </Li>
+            </Filters>
 
             <Ul>
                 <Li>
