@@ -35,6 +35,29 @@ const ShopDetails = () => {
                 <p>{shop.telephoneNumber}</p>
                 <p>{shop.email}</p>  
             </div>
+            <div className="additional-details">
+            <p>Services:</p>
+            {shop.services
+                ? shop.services.map((service, index) => {
+                    return(
+                        <div key={index}>
+                            <p>{service.name}</p>
+                        </div>
+                    );
+                })
+            : ""}
+            <br/>
+            <p>Category:</p>
+            {shop.categories
+                ? shop.categories.map((category, index) => {
+                    return(
+                        <div key={index}>
+                            <p>{category.name}</p>
+                        </div>
+                    );
+                })
+            : ""}
+            </div>
             
             
             {/* <p>{shop.services[0].name}</p>
