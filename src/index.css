@@ -44,3 +44,23 @@ code {
 .text-decoration {
   text-decoration: none;
 }
+
+.additional-details {
+  position: relative;
+  margin-top: 145px;
+}
+
+.additional-details > h4{
+  position: relative;
+  margin-top: 100px;
+  color: #e3e3e3;
+  font-size: 40px;
+}
+
+.additional-details > p{
+  color: #e3e3e3;
+}
+
+.additional-details > div > p{
+  color: #e3e3e3;
+}
