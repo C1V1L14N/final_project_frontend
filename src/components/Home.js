@@ -1,11 +1,14 @@
 
-import React from "react";
+import React, { useState } from 'react';
 import Search from "./Search";
 import Categories from "./Categories";
 import styled from 'styled-components';
 import Gallery from "./Gallery";
+import Results from "./Results";
 
 function Home() {
+
+    const [keyword, setKeyword] = useState();
 
     const HomeContainer = styled.div`
         display: flex;
@@ -18,14 +21,17 @@ function Home() {
     `;
 
     
-
+    const searchData = (searchTerm) => {
+        setKeyword(searchTerm);
+    }
 
     return(
         <HomeContainer>
             
             <Categories/>
             <Gallery/>
-            <Search/>
+            <Search onSubmit={searchData} />
+            <Results keyword={keyword}/>
         </HomeContainer>
     )
 }
