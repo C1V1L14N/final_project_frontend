@@ -27,6 +27,21 @@ const Results = ({keyword}) => {
     align-items: center; */
 `;
 
+    //     height: 200px;
+    //     width: 60vw;
+    //     top: 10px;
+    //     margin: auto;
+    //     background-color: #e3e3e3;
+    //     opacity: 0.9;
+    //     position: relative;
+    //     z-index: 4;
+    //     border-radius: 10px;
+    //     overflow: scroll;
+    //     /* display: flex;
+    //     flex-direction: column;
+    //     align-items: center; */
+    // `;
+
     
 
     const getResults = () => {
@@ -109,35 +124,36 @@ const Results = ({keyword}) => {
                     <div key={index}>
                         {result.address
                         ? <div className="result-box shop-result">
-                            <ImgDiv className="shop-image">
-                                <ResultImage src={result.image} alt="no available"/>
-                            </ImgDiv>
-                            <div className="details">
+                            <div className="image">
+                                <img src={result.image} alt="no available"/>
+                            </div>
+                            <div className="result-details">
                                 <h4>{result.name}</h4>
                                 <p>{result.address}</p>
                                 <p>{result.telephoneNumber}</p>
                                 <p>Opens:{prettyDate2(result.openingHour)} Closes:{prettyDate2(result.closingHour)} </p>
                             </div>
-                            <Link to= {`/shop/${result.id}`}><button>Click for more Details</button></Link>
+                            <Link to= {`/shop/${result.id}`}><button className="details-btn">Click for more Details</button></Link>
                         </div>
                         : null}
 
                         {result.price
-                        ? <div className="result-box service-result">
+                        ? <div className="result-details result-box service-result">
                             <h4>{result.name}(service)</h4>
                             <p>in {result.shops.name}</p>
-                            <Link to= {`/service/${result.id}`}><button>Click for more Details</button></Link>
+                            <Link to= {`/service/${result.id}`}><button className="details-btn">Click for more Details</button></Link>
                         </div>
                         : null}
 
                         {!result.address && !result.price
-                        ? <div className="result-box category-result">
-                            <h5>{result.name}(category)</h5>
-                            <Link to= {`/category/${result.id}`}><button>Click for more Details</button></Link>
+                        ? <div className="result-details result-box category-result">
+                            <div className="image">
+                                <img src={result.image} alt="no available"/>
+                            </div>
+                            <h4>{result.name}(category)</h4>
+                            <Link to= {`/category/${result.id}`}><button className="details-btn">Click for more Details</button></Link>
                         </div>
                         : null}
-                        {/* <h4>{result.name}</h4>
-                        <Link to= {linkToDetails(result)}><button>Click for more Details</button></Link> */}
                     </div>
                 );
             })

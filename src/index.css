@@ -11,12 +11,16 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+/* .result-container{
+  margin-top: 0px;
+} */
 
 .result-box {
-  border-style: solid;
-  border-width: 2px;
+  /* border-style: solid;
+  border-width: 2px; */
   margin: 2px;
-  width: 50%;
+  width: 99%;
+  display: flex;
 }
 
 .shop-details-container{
@@ -30,6 +34,7 @@ code {
 
 .details > h4{
   font-family: Didot, sans-serif;
+  font-weight: bold;
   color: #e3e3e3;
   font-size: 40px;
 }
@@ -39,8 +44,47 @@ code {
   color: #e3e3e3;
 }
 
+.result-details > h4 {
+  font-family: Didot, sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  color: black;
+}
+
+.result-details > p {
+  font-family: Didot, sans-serif;
+  font-size: 20px;
+  color: black;
+}
+
+.result-box {
+  display: flex;
+  justify-content: space-between;
+}
+
+.result-box > a {
+  display: flex;
+  align-items: center;
+}
+
+.details-btn {
+  width: 150px;
+  height: 50px;
+}
+
 .shop-image{
   margin: 10px;
+}
+
+.shop-image > img{
+  padding-top: 60px;
+  height: same-as-width;
+  width: 350px;
+}
+
+.image > img{
+  height: same-as-width;
+  width: 350px;
 }
 
 .additional-details {

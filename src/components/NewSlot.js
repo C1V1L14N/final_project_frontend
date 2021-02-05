@@ -4,25 +4,6 @@ import axios from 'axios';
 
 function NewSlot() {
 
-    const [serviceList, setServiceList] = useState([]);
-
-    const getServiceList = () => {
-        axios.get(`http://localhost:8080/services/`)
-            .then(res => {
-            // console.log(res);
-            setServiceList(res.data)
-            });
-        };
-
-        const serviceOptions = serviceList.map((service, index) => {
-            return <option key={index} value={index}>{service.name}</option>
-        })
-
-        useEffect(() => {
-            getServiceList();
-        }, []);
-    
-
     const [formData, setFormData] = useState({
         startTime: '',
         endTime: '',
@@ -35,6 +16,20 @@ function NewSlot() {
         setFormData(newState);
     }
 
+    const [serviceList, setServiceList] = useState([]);
+
+    const getServiceList = () => {
+        axios.get(`http://localhost:8080/services/`)
+        .then(res => {
+        // console.log(res);
+        setServiceList(res.data)
+        });
+    };
+
+    const serviceOptions = serviceList.map((service, index) => {
+        return <option key={index} value={index}>{service.name}</option>
+    })
+
     const handleService = function(event){
         const index = parseInt(event.target.value)
         const selectedService = serviceList[index]
@@ -43,9 +38,14 @@ function NewSlot() {
         setFormData(copiedService)
     }
 
+
+    useEffect(() => {
+        getServiceList();
+    }, []);
+
     const handleSubmit = (evt) => {
         evt.preventDefault();
-        console.log(evt);
+        // console.log(evt);
         onFormSubmit(formData);
     }
 
@@ -54,11 +54,13 @@ function NewSlot() {
             method: 'POST',
             body: JSON.stringify(formData),
             headers: {
-              'Content-Type': 'application/json'
+                'Content-Type': 'application/json'
             }
         })
         .then(() => window.location = "/slot")
     }
+
+    
     
     return(
         <div>

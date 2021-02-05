@@ -22,10 +22,13 @@ function Search({onSubmit}) {
         width: 65rem;
         z-index: 1;
         font-size: 40px;
+        padding-left: 25px;
+        
         
         :focus {outline:none;};       
 
         ::placeholder {
+            padding-left: 5px;
             position: relative;
             color: #333333;
             font-size: 50px;

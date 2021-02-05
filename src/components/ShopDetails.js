@@ -2,12 +2,12 @@ import React, { useEffect, useState } from "react";
 import {Route, useParams, BrowserRouter as Router} from 'react-router-dom';
 
 
+
 const ShopDetails = () => {
 
     const shopId = useParams().shopId;
 
     const [shop, setShop]= useState(null);
-    // const [serviceList, setServiceList] = useState([])
 
     useEffect(() => {
         fetch(`http://localhost:8080/shops/${shopId}`)
@@ -15,7 +15,6 @@ const ShopDetails = () => {
         .then(data => setShop(data))
     }, [])
     
-
 
     if (!shop){
         return <p>Loading...</p>
@@ -46,6 +45,8 @@ const ShopDetails = () => {
                     );
                 })
             : ""}
+            
+
             <br/>
             <p>Category:</p>
             {shop.categories
@@ -57,6 +58,7 @@ const ShopDetails = () => {
                     );
                 })
             : ""}
+            
             </div>
             
             

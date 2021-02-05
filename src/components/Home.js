@@ -23,7 +23,6 @@ function Home() {
     `;
 
 
-
     const SearchPosition = styled.div`
         position: relative;
         top: 200px;
@@ -34,9 +33,6 @@ function Home() {
         setKeyword(searchTerm);
     }
 
-    // function searchHasResults = (Results) => {
-    //     if()
-    // }
 
     return(
         <HomeContainer>
@@ -44,9 +40,10 @@ function Home() {
             <SearchPosition>
                 <Search onSubmit={searchData} />
             </SearchPosition>
-
-
+            <div className="result-container">
                 <Results keyword={keyword}/>
+            </div>
+            
 
         </HomeContainer>
     )

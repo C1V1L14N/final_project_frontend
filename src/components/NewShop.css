@@ -66,8 +66,12 @@ input[type=email] {
     color: #e3e3e3;
     font-family: Didot, sans-serif;
     padding-top: 15px;
-
     
+  }
+
+  .form-input {
+    overflow: scroll;
+    height: 65vh;
   }
 
   .h2{
