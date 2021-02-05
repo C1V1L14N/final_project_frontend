@@ -47,13 +47,8 @@ function Gallery() {
         object-fit: cover;
         transition: 1s;
         perspective: 500;  
-        /* transform: rotateY(60deg); */
         transform-origin: left;
         animation: picMove 10s ease forwards;
-
-        /* :hover {
-            transform: rotateY(0deg);
-        } */
 
         @keyframes picMove {
             0% {transform: rotateY(90deg);
