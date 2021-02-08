@@ -73,7 +73,6 @@ function NewBooking() {
         const newService = [];
         newService.push(selectedService);
         newState['services'] = newService;
-        // console.log(newState)
         setFormData(newState)
     }
 

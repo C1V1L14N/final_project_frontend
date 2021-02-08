@@ -38,13 +38,7 @@ function NewShop() {
         return <option key={index} value={index}>{service.name}</option>
     })
 
-    const handleService = function(event){
-        const index = parseInt(event.target.value)
-        const selectedService = serviceList[index]
-        let copiedService = {...formData};
-        copiedService['services'] = selectedService
-        setFormData(copiedService)
-    }
+    
 
 
     // Add Category
@@ -62,15 +56,6 @@ function NewShop() {
         return <option key={index} value={index}>{category.name}</option>
     })
 
-    const handleCategory = function(event){
-        const index = parseInt(event.target.value)
-        const selectedCategory = categoryList[index]
-        let copiedCategory = {...formData};
-        copiedCategory['categories'] = selectedCategory
-        setFormData(copiedCategory)
-    }
-
-
 
     useEffect(() => {
         getServiceList();
@@ -78,9 +63,30 @@ function NewShop() {
       }, []);
 
 
+    // Handlers
+    const handleService = function(event) {
+        const index = parseInt(event.target.value)
+        const selectedService = serviceList[index]
+        let newState = {...formData};
+        const newService = [];
+        newService.push(selectedService);
+        newState['services'] = newService;
+        setFormData(newState)
+    }
+
+    const handleCategory = function(event){
+        const index = parseInt(event.target.value)
+        const selectedCategory = categoryList[index]
+        let newState = {...formData};
+        const newCategory = [];
+        newCategory.push(selectedCategory);
+        newState['categories'] = newCategory
+        setFormData(newState)
+    }
+
     const handleSubmit = (evt) => {
         evt.preventDefault();
-        console.log(evt);
+        console.log(formData);
         onFormSubmit(formData);
     }
 
@@ -92,7 +98,7 @@ function NewShop() {
                 'Content-Type': 'application/json'
             }
         })
-        .then(() => window.location = "/shop")
+        // .then(() => window.location = "/shop")
     }
 
     return(
@@ -204,18 +210,22 @@ function NewShop() {
                     value={formData.image}
                     required/>
                 </div>
-
-            
-
-                {/* <select name="services" onChange={handleService} defaultValue="select-service">
-                    <option disabled value="select-service">Select a service</option>
-                    {serviceOptions}
-                </select>
-            
-                <select name="categories" onChange={handleCategory} defaultValue="select-category">
-                    <option disabled value="select-category">Select a category</option>
-                    {categoryOptions}
-                </select> */}
+                {/* Service */}
+                <div className="form_wrap">
+                    <label htmlFor="services">Select service: </label>
+                    <select name="services" onChange={handleService} defaultValue="select-service">
+                        <option disabled value="select-service">Select service</option>
+                        {serviceOptions}
+                    </select>
+                </div>
+                {/* Category */}
+                <div className="form_wrap">
+                    <label htmlFor="categories">Select category: </label>
+                    <select name="categories" onChange={handleCategory} defaultValue="select-category">
+                        <option disabled value="select-category">Select category</option>
+                        {categoryOptions}
+                    </select>
+                </div>
 
                 <input className="input" onClick={handleSubmit} type="submit" value="submit" />
             </form>
