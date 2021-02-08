@@ -30,7 +30,9 @@ const Shop = () => {
             ? shopList.map((shop, index) => {
               return(
                 <div key={index}>
-                  <Link id ="image-link"to={`/shop/${shop.id}`}><img className = "ind-image" src={shop.image} alt="no available"/><h3>{shop.name}</h3></Link>
+                  <Link id ="image-link"to={`/shop/${shop.id}`}>
+                    <img className = "ind-image" src={shop.image} alt="no available"/><h3>{shop.name}</h3>
+                  </Link>
                 </div>
               );
             })

@@ -13,8 +13,8 @@ function NewShop() {
         telephoneNumber: '',
         email: '',
         image: '',
-        category: null,
-        services: null
+        categories: [],
+        services: []
     });
 
     const handleChange = (evt) => {
@@ -42,7 +42,7 @@ function NewShop() {
         const index = parseInt(event.target.value)
         const selectedService = serviceList[index]
         let copiedService = {...formData};
-        copiedService['service'] = selectedService
+        copiedService['services'] = selectedService
         setFormData(copiedService)
     }
 
@@ -66,7 +66,7 @@ function NewShop() {
         const index = parseInt(event.target.value)
         const selectedCategory = categoryList[index]
         let copiedCategory = {...formData};
-        copiedCategory['category'] = selectedCategory
+        copiedCategory['categories'] = selectedCategory
         setFormData(copiedCategory)
     }
 
@@ -207,17 +207,15 @@ function NewShop() {
 
             
 
-                <select name="service" onChange={handleService} defaultValue="select-service">
-                {/* <select name="service" defaultValue="select-service"> */}
+                {/* <select name="services" onChange={handleService} defaultValue="select-service">
                     <option disabled value="select-service">Select a service</option>
                     {serviceOptions}
                 </select>
             
-                <select name="category" onChange={handleCategory} defaultValue="select-category">
-                {/* <select name="category" defaultValue="select-category"> */}
+                <select name="categories" onChange={handleCategory} defaultValue="select-category">
                     <option disabled value="select-category">Select a category</option>
                     {categoryOptions}
-                </select>
+                </select> */}
 
                 <input className="input" onClick={handleSubmit} type="submit" value="submit" />
             </form>

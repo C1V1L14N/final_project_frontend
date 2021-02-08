@@ -52,8 +52,7 @@ function App() {
   return (
     <AppStyle>
       <Router>
-          
-            <NavBar/>
+          <NavBar/>
           <SwitchContainer>
             <Switch>
               <Route path="/" component={Home} exact />
@@ -78,16 +77,9 @@ function App() {
               <Route path="/new-booking" component={NewBooking}/>
               <Route path="/new-slot" component={NewSlot}/>
               <Route path="/basket" component={Basket}/>
-              
-              
-            
-          
-
-          
               <Route path="/results" component={Results}/>
-            
-          </Switch>
-</SwitchContainer>
+            </Switch>
+          </SwitchContainer>
         <Footer/> 
       </Router>
     </AppStyle>

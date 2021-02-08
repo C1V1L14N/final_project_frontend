@@ -60,10 +60,7 @@ const ShopDetails = () => {
             : ""}
             
             </div>
-            
-            
-            {/* <p>{shop.services[0].name}</p>
-            <p>{shop.categories[0].name}</p> */}
+
         </div>
     )
 

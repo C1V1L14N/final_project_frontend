@@ -3,29 +3,11 @@ import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 
 function NewBooking() {
-
-    const [userList, setUserList] = useState([]);
-
-    const getUserList = () => {
-        axios.get(`http://localhost:8080/users/`)
-        .then(res => {
-        //   console.log(res);
-          setUserList(res.data)
-        });
-      };
-
-      const userOptions = userList.map((user, index) => {
-          return <option key={index} value={index}>{user.firstName}</option>
-      })
-    
-      useEffect(() => {
-        getUserList();
-      }, []);
     
       const [formData, setFormData] = useState({
         comments: '',
         user: null,
-        // services: [],
+        services: [],
         date_booking_made: '',
         date_of_booking: '',
         arrival_time: '',
@@ -39,12 +21,60 @@ function NewBooking() {
         setFormData(newState);
     }
 
-    const handleUser = function(event){
+    // Set User
+    const [userList, setUserList] = useState([]);
+
+    const getUserList = () => {
+        axios.get(`http://localhost:8080/users/`)
+        .then(res => {
+        //   console.log(res);
+            setUserList(res.data)
+        });
+      };
+
+      const userOptions = userList.map((user, index) => {
+          return <option key={index} value={index}>{user.firstName} {user.lastName}</option>
+      })
+
+    //   Add Service
+    const [serviceList, setServiceList] = useState([]);
+
+    const getServiceList = () => {
+        axios.get(`http://localhost:8080/services/`)
+        .then(res => {
+        //   console.log(res);
+            setServiceList(res.data)
+        });
+      };
+
+      const serviceOptions = serviceList.map((service, index) => {
+          return <option key={index} value={index}>{service.name}</option>
+      })
+
+    
+      useEffect(() => {
+        getUserList();
+        getServiceList();
+      }, []);
+
+    // Handlers
+    const handleUser = function(event) {
         const index = parseInt(event.target.value)
         const selectedUser = userList[index]
         let copiedBooking = {...formData};
         copiedBooking['user'] = selectedUser
         setFormData(copiedBooking)
+    }
+
+    const handleService = function(event) {
+        const index = parseInt(event.target.value)
+        const selectedService = serviceList[index]
+        let newState = {...formData};
+        const newService = [];
+        newService.push(selectedService);
+        newState['services'] = newService;
+        // console.log(newState)
+        setFormData(newState)
     }
 
     const handleSubmit = (evt) => {
@@ -67,28 +97,25 @@ function NewBooking() {
     return(
         <div>
             <h3>Create new booking</h3>
-            <p>Select user</p>
+            {/* <p>Select user</p> */}
             <form onSubmit={handleSubmit}>
-                
+                {/* User */}
                 <div className="form_wrap">
-                    <label htmlFor="comments">Comments:</label>
-                    <input 
-                    onChange={handleChange}
-                    type="text"
-                    name="comments"
-                    id="name"
-                    placeholder="Comments"
-                    value={formData.comments}
-                    required/>  
+                    <label htmlFor="user">Name: </label>
+                    <select name="user" onChange={handleUser} defaultValue="select-user">
+                        <option disabled value="select-user">Select name</option>
+                        {userOptions}
+                    </select>
                 </div>
-
-                <select name="user" onChange={handleUser} defaultValue="select-user">
-                    <option disabled value="select-user">Select a user</option>
-                    {userOptions}
-                </select>
-
-                {/* SERVICES */}
-
+                {/* Service */}
+                <div className="form_wrap">
+                    <label htmlFor="services">Select service: </label>
+                    <select name="services" onChange={handleService} defaultValue="select-service">
+                        <option disabled value="select-service">Select service</option>
+                        {serviceOptions}
+                    </select>
+                </div>
+                {/* Date of issuing the booking */}
                 <div className="form_wrap">
                     <label htmlFor="date_booking_made">Booking issued on:</label>
                     <input 
@@ -99,7 +126,7 @@ function NewBooking() {
                     value={formData.date_booking_made}
                     required/>
                 </div>
-
+                {/* Date of booking */}
                 <div className="form_wrap">
                     <label htmlFor="date_of_booking">Booking date for:</label>
                     <input 
@@ -110,7 +137,7 @@ function NewBooking() {
                     value={formData.date_of_booking}
                     required/>
                 </div>
-
+                {/* Arrival time */}
                 <div className="form_wrap">
                     <label htmlFor="arrival_time">Arrival Time:</label>
                     <input 
@@ -121,7 +148,7 @@ function NewBooking() {
                     value={formData.arrival_time}
                     required/>
                 </div>
-
+                {/* Departure time */}
                 <div className="form_wrap">
                     <label htmlFor="departure_time">Departure Time:</label>
                     <input 
@@ -131,6 +158,18 @@ function NewBooking() {
                     id="departure_time"
                     value={formData.departure_time}
                     required/>
+                </div>
+                {/* Comments */}
+                <div className="form_wrap">
+                    <label htmlFor="comments">Comments:</label>
+                    <input 
+                    onChange={handleChange}
+                    type="text"
+                    name="comments"
+                    id="name"
+                    placeholder="Comments"
+                    value={formData.comments}
+                    required/>  
                 </div>
             
                 <button type="submit">Submit</button>
