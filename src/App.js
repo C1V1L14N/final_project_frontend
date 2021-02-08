@@ -1,10 +1,12 @@
 import './app.css';
-import React from 'react';
+import React, { useState } from 'react';
 import {Route, Switch, BrowserRouter as Router} from 'react-router-dom';
 import NavBar from "./components/NavBar";
 import Search from "./components/Search";
 import About from "./components/About";
 import Home from "./components/Home";
+import Business from './components/Business';
+// import BusinessProfile from './components/BusinessProfile';
 import User from "./components/User";
 import UserDetails from "./components/UserDetails";
 import Shop from "./components/Shop";
@@ -30,7 +32,12 @@ import Results from "./components/Results";
 
 
 
+
+
+
 function App() {
+
+  
 
   
   const AppStyle = styled.div`
@@ -59,6 +66,8 @@ function App() {
               <Route path="/" component={Home} exact />
               <Route path="/search" component={Search}/>
               <Route path="/about" component={About}/>
+              <Route path="/business" component={Business}/>
+              {/* <Route path="/business-profile" component={BusinessProfile}/> */}
               <Route path="/user" component={User} exact/>
               <Route path="/user/:userId" component={UserDetails}/>
               <Route path="/shop" component={Shop} exact/>
