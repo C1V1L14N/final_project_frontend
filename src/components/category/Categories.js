@@ -3,7 +3,7 @@ import React, {useState, useEffect} from 'react';
 import { Link } from "react-router-dom";
 import axios from 'axios';
 import './categories.css';
-import Shop from './Shop';
+import Shop from '../shop/Shop';
 
 function Categories() {
 

@@ -28,8 +28,8 @@ function Gallery() {
         height: 100px;
         width: 100%;
         display: grid;
-        grid-template-columns: repeat(8, 250px);
-        grid-template-rows: repeat(2, 250px);
+        grid-template-columns: repeat(8, calc(100% / 8));
+        grid-template-rows: repeat(2, same-as-width );
         grid-gap: 0px;
         position: relative;
         margin: 0;
@@ -42,7 +42,7 @@ function Gallery() {
 
     const Image = styled.img`
         object-fit: cover;
-        height: 100%;
+        height: same-as-width;
         width: 100%;
         object-fit: cover;
         transition: 1s;
@@ -64,7 +64,7 @@ function Gallery() {
     `;
 
     const Image2 = styled.img`
-    height: 100%;
+    height: same-as-width;
     width: 100%;
     object-fit: cover;
     transition: 1s;
@@ -88,7 +88,7 @@ function Gallery() {
 
     const Image3 = styled.img`
     object-fit: cover;
-    height: 100%;
+    height: same-as-width;
     width: 100%;
     object-fit: cover;
     transition: 1s;
@@ -112,7 +112,7 @@ function Gallery() {
 
 const Image4 = styled.img`
 object-fit: cover;
-height: 100%;
+height: same-as-width;
 width: 100%;
 object-fit: cover;
 transition: 1s;
@@ -135,7 +135,7 @@ animation: picMove 10s ease forwards;
 
 const Image5 = styled.img`
 object-fit: cover;
-height: 100%;
+height: same-as-width;
 width: 100%;
 object-fit: cover;
 transition: 1s;
@@ -159,7 +159,7 @@ transform: rotateY(0deg);
 
 const Image6 = styled.img`
 object-fit: cover;
-height: 100%;
+height: same-as-width;
 width: 100%;
 object-fit: cover;
 transition: 1s;
@@ -183,7 +183,7 @@ transform: rotateY(0deg);
 
 const Image7 = styled.img`
 object-fit: cover;
-height: 100%;
+height: same-as-width;
 width: 100%;
 object-fit: cover;
 transition: 1s;
@@ -207,7 +207,7 @@ transform: rotateY(0deg);
 
 const Image8 = styled.img`
 object-fit: cover;
-height: 100%;
+height: same-as-width;
 width: 100%;
 object-fit: cover;
 transition: 1s;
@@ -232,7 +232,7 @@ transform: rotateY(0deg);
 
 const Image9 = styled.img`
 object-fit: cover;
-height: 100%;
+height: same-as-width;
 width: 100%;
 object-fit: cover;
 transition: 1s;
@@ -255,7 +255,7 @@ animation: picMove 10s ease forwards;
 
 const Image10 = styled.img`
 object-fit: cover;
-height: 100%;
+height: same-as-width;
 width: 100%;
 object-fit: cover;
 transition: 1s;
@@ -279,7 +279,7 @@ transform: rotateY(0deg);
 
 const Image11 = styled.img`
 object-fit: cover;
-height: 100%;
+height: same-as-width;
 width: 100%;
 object-fit: cover;
 transition: 1s;
@@ -303,7 +303,7 @@ transform: rotateY(0deg);
 
 const Image12 = styled.img`
 object-fit: cover;
-height: 100%;
+height: same-as-width;
 width: 100%;
 object-fit: cover;
 transition: 1s;
@@ -326,7 +326,7 @@ transform: rotateY(0deg);
 
 const Image13 = styled.img`
 object-fit: cover;
-height: 100%;
+height: same-as-width;
 width: 100%;
 object-fit: cover;
 transition: 1s;
@@ -350,7 +350,7 @@ transform: rotateY(0deg);
 
 const Image14 = styled.img`
 object-fit: cover;
-height: 100%;
+height: same-as-width;
 width: 100%;
 object-fit: cover;
 transition: 1s;
@@ -374,7 +374,7 @@ transform: rotateY(0deg);
 
 const Image15 = styled.img`
 object-fit: cover;
-height: 100%;
+height: same-as-width;
 width: 100%;
 object-fit: cover;
 transition: 1s;
@@ -398,7 +398,7 @@ transform: rotateY(0deg);
 
 const Image16 = styled.img`
 object-fit: cover;
-height: 100%;
+height: same-as-width;
 width: 100%;
 object-fit: cover;
 transition: 1s;

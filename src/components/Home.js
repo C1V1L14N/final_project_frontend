@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 import Search from "./Search";
-import Categories from "./Categories";
+import Categories from "./category/Categories";
 import styled from 'styled-components';
 import Gallery from "./Gallery";
 import Results from "./Results";
