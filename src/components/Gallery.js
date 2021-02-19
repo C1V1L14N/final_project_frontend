@@ -19,10 +19,10 @@ import rural from '../assets/annie-spratt-VOq2QltYffI-unsplash.jpg'
 
 function Gallery() {
 
-    const GalleryContainer = styled.div`
-        position: absolute;
-        top: 0;
-    `;
+    // const GalleryContainer = styled.div`
+        
+    //     top: 0;
+    // `;
 
     const Gallery = styled.div`
         height: 100px;
@@ -434,7 +434,7 @@ transform: rotateY(0deg);
 
 
     return(
-        <GalleryContainer>
+
 
                 <Gallery>
                     <Image src={rural} alt="rural-village"/>
@@ -457,7 +457,7 @@ transform: rotateY(0deg);
                     
 
                 </Gallery>
-        </GalleryContainer>
+
 
 
     )

@@ -18,8 +18,10 @@ function Search({onSubmit}) {
 
     const Sinput = styled.input`
         border-radius: 90px;
-        height: 100px;
-        width: 65rem;
+        height: 5vw;
+        min-height: 40px;
+        width: 48vw;
+        min-width: 300px;
         z-index: 1;
         font-size: 40px;
         padding-left: 25px;

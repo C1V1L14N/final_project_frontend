@@ -43,8 +43,7 @@ function App() {
   const SwitchContainer = styled.div`
     background-color: #333333;
     position: relative;
-    top: 40px;
-    height: 65vh;
+    height: 30vw;
     width: 100vw;
     padding: 0;
   `;
@@ -52,49 +51,37 @@ function App() {
   return (
     <AppStyle>
       <Router>
-          
-            <NavBar/>
-          <SwitchContainer>
-            <Switch>
-              <Route path="/" component={Home} exact />
-              <Route path="/search" component={Search}/>
-              <Route path="/about" component={About}/>
-              <Route path="/user" component={User} exact/>
-              <Route path="/user/:userId" component={UserDetails}/>
-              <Route path="/shop" component={Shop} exact/>
-              <Route path="/shop/:shopId" component={ShopDetails}/>
-              <Route path="/category" component={Categories} exact/>
-              <Route path="/category/:categoryId" component={CategoryDetails}/>
-              <Route path="/service" component={Services} exact/>
-              <Route path="/service/:serviceId" component={ServiceDetails}/>
-              <Route path="/booking/" component={Bookings} exact/>
-              <Route path="/booking/:bookingId" component={BookingDetails}/>
-              <Route path="/slot" component={Slots} exact/>
-              <Route path="/slot/:slotId" component={SlotDetails}/>
-              <Route path="/new-user" component={NewUser}/>
-              <Route path="/new-shop" component={NewShop}/>
-              <Route path="/new-category" component={NewCategory}/>
-              <Route path="/new-service" component={NewService}/>
-              <Route path="/new-booking" component={NewBooking}/>
-              <Route path="/new-slot" component={NewSlot}/>
-              <Route path="/basket" component={Basket}/>
-              
-              
-            
-          
-
-          
-              <Route path="/results" component={Results}/>
-            
+        <NavBar/>
+        <SwitchContainer>
+          <Switch>
+            <Route path="/" component={Home} exact />
+            <Route path="/search" component={Search}/>
+            <Route path="/about" component={About}/>
+            <Route path="/user" component={User} exact/>
+            <Route path="/user/:userId" component={UserDetails}/>
+            <Route path="/shop" component={Shop} exact/>
+            <Route path="/shop/:shopId" component={ShopDetails}/>
+            <Route path="/category" component={Categories} exact/>
+            <Route path="/category/:categoryId" component={CategoryDetails}/>
+            <Route path="/service" component={Services} exact/>
+            <Route path="/service/:serviceId" component={ServiceDetails}/>
+            <Route path="/booking/" component={Bookings} exact/>
+            <Route path="/booking/:bookingId" component={BookingDetails}/>
+            <Route path="/slot" component={Slots} exact/>
+            <Route path="/slot/:slotId" component={SlotDetails}/>
+            <Route path="/new-user" component={NewUser}/>
+            <Route path="/new-shop" component={NewShop}/>
+            <Route path="/new-category" component={NewCategory}/>
+            <Route path="/new-service" component={NewService}/>
+            <Route path="/new-booking" component={NewBooking}/>
+            <Route path="/new-slot" component={NewSlot}/>
+            <Route path="/basket" component={Basket}/>
+            <Route path="/results" component={Results}/>
           </Switch>
-</SwitchContainer>
+        </SwitchContainer>
         <Footer/> 
       </Router>
     </AppStyle>
-
-
-
-
   );
 }
 
