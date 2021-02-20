@@ -1,5 +1,5 @@
 .results {
-    height: 200px;
+    max-height: 600px;
     width: 60vw;
     margin: auto;
     background-color: #e3e3e3;
@@ -21,6 +21,15 @@
     display: flex;
     justify-content: space-between;
 }
+.image {
+    display: flex;
+    align-items: center;
+}
+
+.image > img {
+    height: same-as-width;
+    width: calc(100px + 12vw);
+  }
 
 .result-box > a {
     display: flex;
@@ -29,18 +38,19 @@
 
 .result-details > h4 {
     font-family: Didot, sans-serif;
-    font-size: 20px;
+    font-size: calc(15px + 0.8vw);
     font-weight: bold;
     color: black;
 }
   
 .result-details > p {
     font-family: Didot, sans-serif;
-    font-size: 20px;
+    font-size: calc(9px + 0.8vw);
     color: black;
 }
 
 .details-btn {
-    width: 150px;
+    width: calc(45px + 2vw);
     height: 50px;
+    font-size: calc(9px + 0.8vw);
 }

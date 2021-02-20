@@ -27,7 +27,8 @@ function Home() {
 
 
     return(
-        <HomeContainer>
+        <div>
+            <HomeContainer>
             <Gallery/>
             <div className="search-bar">
                 <Search onSubmit={searchData} />
@@ -36,6 +37,8 @@ function Home() {
                 <Results keyword={keyword}/>
             </div>
         </HomeContainer>
+        </div>
+        
     )
 }
 

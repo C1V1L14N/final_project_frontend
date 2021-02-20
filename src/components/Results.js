@@ -77,11 +77,9 @@ const Results = ({keyword}) => {
                             </div>
                             <div className="result-details">
                                 <h4>{result.name}</h4>
-                                <p>{result.address}</p>
-                                <p>{result.telephoneNumber}</p>
-                                <p>Opens:{prettyDate2(result.openingHour)} Closes:{prettyDate2(result.closingHour)} </p>
+                                <p>{result.address}<br/>{result.telephoneNumber}<br/>Opens:{prettyDate2(result.openingHour)} Closes:{prettyDate2(result.closingHour)} </p>
                             </div>
-                            <Link to= {`/shop/${result.id}`}><button className="details-btn">Click for more Details</button></Link>
+                            <Link to= {`/shop/${result.id}`}><button className="details-btn">Details</button></Link>
                         </div>
                         : null}
 
@@ -89,7 +87,7 @@ const Results = ({keyword}) => {
                         ? <div className="result-details result-box service-result">
                             <h4>{result.name}(service)</h4>
                             <p>in {result.shops.name}</p>
-                            <Link to= {`/service/${result.id}`}><button className="details-btn">Click for more Details</button></Link>
+                            <Link to= {`/service/${result.id}`}><button className="details-btn">Details</button></Link>
                         </div>
                         : null}
 
@@ -99,7 +97,7 @@ const Results = ({keyword}) => {
                                 <img src={result.image} alt="no available"/>
                             </div>
                             <h4>{result.name}(category)</h4>
-                            <Link to= {`/category/${result.id}`}><button className="details-btn">Click for more Details</button></Link>
+                            <Link to= {`/category/${result.id}`}><button className="details-btn">Details</button></Link>
                         </div>
                         : null}
                     </div>
