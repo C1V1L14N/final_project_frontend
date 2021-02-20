@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import { Link } from "react-router-dom";
 import axios from 'axios';
+import './results.css';
 import styled from 'styled-components';
 
 const Results = ({keyword}) => {
@@ -11,21 +12,21 @@ const Results = ({keyword}) => {
     const [allResults, setAllResults] = useState([]);
     const [results, setResults] = useState([]);
 
-    const ResultContainer = styled.div`
-    height: 200px;
-    width: 60vw;
-    top: 210px;
-    margin: auto;
-    background-color: #e3e3e3;
-    opacity: 0.9;
-    position: relative;
-    z-index: 4;
-    border-radius: 10px;
-    overflow: scroll;
-    /* display: flex;
-    flex-direction: column;
-    align-items: center; */
-`;
+//     const ResultContainer = styled.div`
+//     height: 200px;
+//     width: 60vw;
+
+//     margin: auto;
+//     background-color: #e3e3e3;
+//     opacity: 0.9;
+//     position: relative;
+//     z-index: 4;
+//     border-radius: 10px;
+//     overflow: scroll;
+//     /* display: flex;
+//     flex-direction: column;
+//     align-items: center; */
+// `;
 
     //     height: 200px;
     //     width: 60vw;
@@ -70,8 +71,7 @@ const Results = ({keyword}) => {
             const newResults = data.flat().filter((result) => {
                 if(keyword) {
                     return (result.name).toLowerCase().includes(keyword.toLowerCase());
-                        // console.log()
-                
+                        // console.log()    
                 }
             })
             console.log(newResults)
@@ -117,7 +117,7 @@ const Results = ({keyword}) => {
         return null;
     }
     return(
-        <ResultContainer>
+        <div className="result-container">
             {results
             ? results.map((result, index) => {
                 return(
@@ -158,7 +158,7 @@ const Results = ({keyword}) => {
                 );
             })
             : "Loading..."}
-        </ResultContainer>
+        </div>
     )
 }
 

@@ -12,6 +12,22 @@ code {
     monospace;
 }
 
+.app {
+  font-family: Didot, sans-serif;
+  font-size: 50px;
+  color: #e3e3e3;
+  height: 400px;
+  width: 600px;
+}
+
+.switch-container {
+  background-color: #333333;
+  position: relative;
+  height: 30vw;
+  width: 100vw;
+  padding: 0;
+}
+
 .result-box {
   /* border-style: solid;
   border-width: 2px; */
@@ -115,4 +131,12 @@ code {
   font-family: Didot, sans-serif;
   color: #e3e3e3;
   padding-left: 15px;
+}
+
+.basket-title {
+  font-family: Didot, sans-serif;
+  font-size: 50px;
+  color: #e3e3e3;
+  height: 400px;
+  width: 600px;
 }

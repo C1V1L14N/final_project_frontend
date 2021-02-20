@@ -40,3 +40,30 @@
     border-radius: 10%;
     max-height: 250px;
 }
+.cat-title {
+    color: #e3e3e3;
+    font-family: Didot, sans-serif;
+    font-size: 40px;
+    padding: 0px;
+    margin: 0px;
+}
+.cat-p {
+    color: #e3e3e3;
+    font-family: Didot, sans-serif;
+    font-size: 25px;
+    padding: 0px;
+    margin: 0px;
+}
+.cat-img-container {
+    height: 300px;
+    width: 400px;
+}
+.cat-img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+.cat-details {
+    margin-left: 15px;
+    position: relative;
+}

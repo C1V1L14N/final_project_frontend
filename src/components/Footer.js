@@ -1,59 +1,16 @@
 import React from "react";
-import styled from 'styled-components';
+import './footer.css';
 
 function Footer() {
 
-    const Footer = styled.footer`
-    height: 100px;
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    flex-grow: 1;
-    position: absolute;
-    bottom: 0;
-    padding-top: 0;
-    `;
-
-    const FooterList1 = styled.a`
-        position: relative;
-        margin-left: auto;
-        padding: 20px;
-        right: 0;
-        color: #333333;
-        font-family: Didot, sans-serif;
-        font-size: 25px;
-    `;
-
-    const FooterList2 = styled.a`
-    position: relative;
-    padding: 20px;
-    right: 0;
-    color: #333333;
-    font-family: Didot, sans-serif;
-    font-size: 25px;
-    `;
-
-    const Slogan = styled.p`
-    position: relative;
-    padding: 0;
-    justify-content: right;
-    color: #333333;
-    font-family: Didot, sans-serif;
-    font-size: 25px;
-    top: -40px;
-    left: 10px;
-    `;
-
-
     return(
-        <Footer>
-            <Slogan>Shop Quality. Shop Friendly. Shop Local.</Slogan>
+        <div className="footer">
+            <p className="footer-p">Shop Quality. Shop Friendly. Shop Local.</p>
 
-            <FooterList1 href="/">Contact</FooterList1>
+            <a className="footer-a1" href="/">Contact</a>
             
-            <FooterList2 href="/">Project Brief</FooterList2>
-
-        </Footer>
+            <a className="footer-a2" href="/">Project Brief</a>
+        </div>
     )
 }
 

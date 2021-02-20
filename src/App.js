@@ -25,34 +25,18 @@ import NewBooking from "./components/booking/NewBooking";
 import NewSlot from "./components/slot/NewSlot";
 import Basket from "./components/Basket";
 import Footer from "./components/Footer";
-import styled from 'styled-components';
 import Results from "./components/Results";
 
 
 
 function App() {
 
-  
-  const AppStyle = styled.div`
-    position: relative;
-    height: 100vh;
-    width: 100vw;
-    background-color: #e3e3e3;
-  `;
-
-  const SwitchContainer = styled.div`
-    background-color: #333333;
-    position: relative;
-    height: 30vw;
-    width: 100vw;
-    padding: 0;
-  `;
 
   return (
-    <AppStyle>
+    <div className="app">
       <Router>
         <NavBar/>
-        <SwitchContainer>
+        <div className="switch-container">
           <Switch>
             <Route path="/" component={Home} exact />
             <Route path="/search" component={Search}/>
@@ -78,10 +62,10 @@ function App() {
             <Route path="/basket" component={Basket}/>
             <Route path="/results" component={Results}/>
           </Switch>
-        </SwitchContainer>
+        </div>
         <Footer/> 
       </Router>
-    </AppStyle>
+    </div>
   );
 }
 

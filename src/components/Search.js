@@ -1,6 +1,5 @@
 import React, { useState} from 'react';
 import './search.css';
-import styled from 'styled-components';
 
 
 function Search({onSubmit}) {
