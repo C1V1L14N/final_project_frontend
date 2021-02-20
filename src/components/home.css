@@ -10,8 +10,9 @@
     top: 2.5vw;
 } */
 .search-bar {
-    position: relative;
-    top: 2vw;
+    position: absolute;
+    top: 9.2vw;
+    /* top: 2vw; */
 }
 .result-container {
     /* height: 200px;
