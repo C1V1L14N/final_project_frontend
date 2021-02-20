@@ -1,7 +1,6 @@
-.result-container {
+.results {
     height: 200px;
     width: 60vw;
-
     margin: auto;
     background-color: #e3e3e3;
     opacity: 0.9;

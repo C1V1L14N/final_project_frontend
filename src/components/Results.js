@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import { Link } from "react-router-dom";
 import axios from 'axios';
 import './results.css';
-import styled from 'styled-components';
+// import styled from 'styled-components';
 
 const Results = ({keyword}) => {
 
@@ -15,7 +15,6 @@ const Results = ({keyword}) => {
 //     const ResultContainer = styled.div`
 //     height: 200px;
 //     width: 60vw;
-
 //     margin: auto;
 //     background-color: #e3e3e3;
 //     opacity: 0.9;
@@ -26,24 +25,7 @@ const Results = ({keyword}) => {
 //     /* display: flex;
 //     flex-direction: column;
 //     align-items: center; */
-// `;
-
-    //     height: 200px;
-    //     width: 60vw;
-    //     top: 10px;
-    //     margin: auto;
-    //     background-color: #e3e3e3;
-    //     opacity: 0.9;
-    //     position: relative;
-    //     z-index: 4;
-    //     border-radius: 10px;
-    //     overflow: scroll;
-    //     /* display: flex;
-    //     flex-direction: column;
-    //     align-items: center; */
-    // `;
-
-    
+// `;  
 
     const getResults = () => {
         const getShops = axios.get(`http://localhost:8080/shops/`)
@@ -71,7 +53,7 @@ const Results = ({keyword}) => {
             const newResults = data.flat().filter((result) => {
                 if(keyword) {
                     return (result.name).toLowerCase().includes(keyword.toLowerCase());
-                        // console.log()    
+                        // console.log()
                 }
             })
             console.log(newResults)
@@ -79,26 +61,16 @@ const Results = ({keyword}) => {
         });
     };
 
-    const ImgDiv = styled.div`
-        object-fit: cover;
-        height: 100px;
-        width: 170px;
-    `;
+    // const ImgDiv = styled.div`
+    //     object-fit: cover;
+    //     height: 100px;
+    //     width: 170px;
+    // `;
 
-    const ResultImage = styled.img`
-        height: 100%;
-        width: 100%;
-    `;
-
-    // const linkToDetails = (result) => {
-    //     if(result.price) {
-    //         return `/service/${result.id}`
-    //     } else if(result.address) {
-    //         return `/shop/${result.id}`
-    //     } else {
-    //         return `/category/${result.id}`
-    //     }
-    // }  
+    // const ResultImage = styled.img`
+    //     height: 100%;
+    //     width: 100%;
+    // `;
 
     useEffect(() => {
         getResults();
@@ -117,7 +89,7 @@ const Results = ({keyword}) => {
         return null;
     }
     return(
-        <div className="result-container">
+        <div className="results">
             {results
             ? results.map((result, index) => {
                 return(
