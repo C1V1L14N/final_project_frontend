@@ -1,4 +1,5 @@
 import React from "react";
+import './gallery.css'
 import styled, { keyframes } from 'styled-components';
 import laundrette from '../assets/averie-woodard-axTG1hSQ6W4-unsplash.jpg'
 import pole from '../assets/tim-mossholder-q49oU8NeOHQ-unsplash.jpg'
@@ -19,28 +20,8 @@ import rural from '../assets/annie-spratt-VOq2QltYffI-unsplash.jpg'
 
 function Gallery() {
 
-    // const GalleryContainer = styled.div`
-        
-    //     top: 0;
-    // `;
 
-    const Gallery = styled.div`
-        height: 100px;
-        width: 100%;
-        display: grid;
-        grid-template-columns: repeat(8, calc(100% / 8));
-        grid-template-rows: repeat(2, same-as-width );
-        grid-gap: 0px;
-        position: relative;
-        margin: 0;
-        padding: 0;
-        border: 0;
-        /* perspective: 2000; */
-
-    `;
-
-
-    const Image = styled.img`
+    const Image1 = styled.img`
         object-fit: cover;
         height: same-as-width;
         width: 100%;
@@ -420,24 +401,9 @@ transform: rotateY(0deg);
 }
 `;
 
-
-
-
-
-    
-
-    
-
-
-    
-
-
-
     return(
-
-
-                <Gallery>
-                    <Image src={rural} alt="rural-village"/>
+                <div className="gallery">
+                    <Image1 src={rural} alt="rural-village"/>
                     <Image2 src={glasses} alt="glasses"/>
                     <Image3 src={therapy} alt="therapy"/>
                     <Image4 src={shoes} alt="shoes"/>
@@ -454,12 +420,7 @@ transform: rotateY(0deg);
                     <Image14 src={nails} alt="nail-salon"/>
                     <Image15 src={dogWalker} alt="dog-walker"/>
                     <Image16 src={massage} alt="massage"/>
-                    
-
-                </Gallery>
-
-
-
+                </div>
     )
 }
 

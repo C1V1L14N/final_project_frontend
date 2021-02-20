@@ -7,8 +7,6 @@ import './navBar.css';
 
 
 
-
-
 function NavBar() {
 
     return(
@@ -28,7 +26,6 @@ function NavBar() {
                         <Link className="text-decoration" to="/shop">All Shops</Link>
                     </li>
                 </div>
-
 
                 <div className="nav-right-container">
                     <li>

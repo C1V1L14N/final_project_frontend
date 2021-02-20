@@ -1,0 +1,13 @@
+.gallery {
+    height: 100px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(8, calc(100% / 8));
+    grid-template-rows: repeat(2, same-as-width );
+    grid-gap: 0px;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    /* perspective: 2000; */
+}

@@ -5,27 +5,12 @@ import Categories from "./category/Categories";
 import styled from 'styled-components';
 import Gallery from "./Gallery";
 import Results from "./Results";
+import './home.css';
 
 
 function Home() {
 
     const [keyword, setKeyword] = useState();
-
-    const HomeContainer = styled.div`
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-        flex-grow: 1;
-        position: relative;
-        top: 2.5vw;
-    `;
-
-
-    const SearchPosition = styled.div`
-        position: relative;
-        top: 9vw;
-    `;
 
     
     const searchData = (searchTerm) => {
@@ -34,17 +19,15 @@ function Home() {
 
 
     return(
-        <HomeContainer>
+        <div className="home-container">
             <Gallery/>
-            <SearchPosition>
+            <div className="search-position">
                 <Search onSubmit={searchData} />
-            </SearchPosition>
+            </div>
             <div className="result-container">
                 <Results keyword={keyword}/>
             </div>
-            
-
-        </HomeContainer>
+        </div>
     )
 }
 

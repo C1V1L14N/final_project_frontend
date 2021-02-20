@@ -12,31 +12,6 @@ code {
     monospace;
 }
 
-/* NavBar */
-/* .header {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  height: 10vw;
-}
-.nav-left {
-  display: flex;
-  flex-direction: column;
-
-}
-.logo-container {
-  height: 6vw;
-  margin-top: 1vw;
-  margin-left: 1vw;
-} */
-
-
-
-/* .result-container{
-  margin-top: 0px;
-} */
-
 .result-box {
   /* border-style: solid;
   border-width: 2px; */
