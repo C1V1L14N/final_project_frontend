@@ -17,9 +17,8 @@ function Home() {
         align-items: center;
         width: 100%;
         flex-grow: 1;
-        margin: 5px;
         position: relative;
-        top: 40px;
+        top: 2.5vw;
     `;
     
     const searchData = (searchTerm) => {

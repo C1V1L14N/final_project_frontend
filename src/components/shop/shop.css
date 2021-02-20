@@ -1,47 +1,13 @@
-/* const ShopsContainer = styled.div`
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        flex-grow: 1;
-        margin: 5px;
-        position: relative;
-        top: 40px;
-    `;
+.shop-image{
+    margin: 10px;
+}
 
-    const ShopsGallery = styled.div`
-        height: 100px;
-        width: 100%;
-        display: grid;
-        grid-template-columns: repeat(8, 250px);
-        grid-template-rows: repeat(2, 250px);
-        grid-gap: 0px;
-        position: absolute;
-        margin: 0;
-        padding: 0;
-        border: 0;
-        top: -5px;
-        left: -200px;
-        perspective: 2000;
-        perspective-origin: left;
-
-    `; */
-
-    /* // const IndImg = styled.img`
-    //     object-fit: cover;
-    //     height: 100%;
-    //     width: 100%;
-    //     object-fit: cover;
-    //     `; */
-    /* const SwitchContainer = styled.div`
-    background-color: #333333;
-    position: relative;
-    top: 40px;
-    height: 65vh;
-    width: 100vw;
-    padding: 0;
-  `; */
-
-
+.shop-image > img{
+    padding-top: 60px;
+    height: same-as-width;
+    width: 350px;
+}
+  
 .shops-container{
     background-color: #333333;
 

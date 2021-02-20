@@ -12,3 +12,35 @@
     flex-direction: column;
     align-items: center; */
 }
+
+.result-box {
+    /* border-style: solid;
+    border-width: 2px; */
+    margin: 2px;
+    width: 99%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.result-box > a {
+    display: flex;
+    align-items: center;
+}
+
+.result-details > h4 {
+    font-family: Didot, sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    color: black;
+}
+  
+.result-details > p {
+    font-family: Didot, sans-serif;
+    font-size: 20px;
+    color: black;
+}
+
+.details-btn {
+    width: 150px;
+    height: 50px;
+}

@@ -12,20 +12,6 @@ const Results = ({keyword}) => {
     const [allResults, setAllResults] = useState([]);
     const [results, setResults] = useState([]);
 
-//     const ResultContainer = styled.div`
-//     height: 200px;
-//     width: 60vw;
-//     margin: auto;
-//     background-color: #e3e3e3;
-//     opacity: 0.9;
-//     position: relative;
-//     z-index: 4;
-//     border-radius: 10px;
-//     overflow: scroll;
-//     /* display: flex;
-//     flex-direction: column;
-//     align-items: center; */
-// `;  
 
     const getResults = () => {
         const getShops = axios.get(`http://localhost:8080/shops/`)
@@ -55,22 +41,12 @@ const Results = ({keyword}) => {
                     return (result.name).toLowerCase().includes(keyword.toLowerCase());
                         // console.log()
                 }
+                return null;
             })
             console.log(newResults)
             setResults(newResults);
         });
     };
-
-    // const ImgDiv = styled.div`
-    //     object-fit: cover;
-    //     height: 100px;
-    //     width: 170px;
-    // `;
-
-    // const ResultImage = styled.img`
-    //     height: 100%;
-    //     width: 100%;
-    // `;
 
     useEffect(() => {
         getResults();
