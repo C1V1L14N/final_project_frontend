@@ -32,8 +32,8 @@ const ShopDetails = () => {
     }
     return (
         <div className="main-container">
-            <div className="shop-image">
-                <img src={shop.image} alt="no available"/>
+            <div className="details-image">
+                <img src={shop.image} alt="not available"/>
             </div>
             <div className="details">
                 <h4>{shop.name}</h4>
@@ -61,7 +61,7 @@ const ShopDetails = () => {
                 ? shop.services.map((service, index) => {
                     return(
                         <div key={index}>
-                            <Link id="image-link" to={`/service/${service.id}`}><p>{service.name}</p></Link>
+                            <Link className="link-box" id="text-link" to={`/service/${service.id}`}>{service.name}</Link>
                         </div>
                     );
                 })

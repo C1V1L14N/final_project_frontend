@@ -21,12 +21,15 @@ const CategoryDetails = () => {
         return <p>Loading...</p>
     }
     return (
-        <div className="cat-details">
-            <h4 className="cat-title">{category.name}</h4>
-            <p className="cat-p">{category.description}</p>
-            <div className="cat-img-container">
+        <div className="main-container">
+            <div className="details-image">
                 <img className="cat-img" src={category.image} alt="no available"/>
             </div>
+            <div className="details">
+                <h4 className="cat-title">{category.name}</h4>
+                <p className="cat-p">{category.description}</p>
+            </div>
+            
         </div>
     )
 

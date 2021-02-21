@@ -40,7 +40,7 @@ function Categories() {
                 ? categoryList.map((category, index) => {
                 return(
                     <div key={index}>
-                    <Link id="image-link" to={`/category/${category.id}`}><img className="ind-image" src={category.image}/><h3 className="ind-title">{category.name}</h3></Link>
+                    <Link id="text-link" to={`/category/${category.id}`}><img className="ind-image" src={category.image}/><h3 className="ind-title">{category.name}</h3></Link>
                     </div>
                 );
                 })
