@@ -26,7 +26,7 @@ function Bookings() {
             ? bookingList.map((booking, index) => {
             return(
                 <div key={index}>
-                <Link id="image-link" to={`/booking/${booking.id}`}><div className="ind-image"><h3>{booking.comments}</h3></div></Link>
+                <Link id="text-link" to={`/booking/${booking.id}`}><div className="ind-image"><h3>{booking.comments}</h3></div></Link>
                 </div>
             );
             })

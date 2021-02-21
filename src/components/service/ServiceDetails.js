@@ -20,7 +20,7 @@ const ServiceDetails = () => {
     }
     return (
         <div className="main-container">
-            <div className="service-text">
+            <div className="details">
                 <h4>{service.name}</h4>
                 <p>{service.description}</p>
                 <p>£{service.price}</p>

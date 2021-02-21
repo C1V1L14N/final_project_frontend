@@ -26,7 +26,7 @@ const User = () => {
         ? userList.map((user, index) => {
           return(
             <div key={index}>
-              <Link id="image-link" to={`/user/${user.id}`}><div className="ind-image"><h2>{user.firstName} {user.lastName}</h2></div></Link>
+              <Link id="text-link" to={`/user/${user.id}`}><div className="ind-image"><h2>{user.firstName} {user.lastName}</h2></div></Link>
             </div>
           );
         })

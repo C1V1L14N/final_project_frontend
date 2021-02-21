@@ -67,7 +67,6 @@ code {
   object-fit: cover;
   height: 250px;
   width: 250px;
-  object-fit: cover;
   border-style: solid;
   border-width: 4px;
   border-color:gold;
@@ -75,36 +74,23 @@ code {
   margin: 20px;
   /* order: 1; */
 }
+.ind-image:hover {
+  border-width: 5px;
+  margin: 19px;
+}
 
 .ind-title{
   text-align: center;
 }
 
-#image-link{
+#text-link{
   text-decoration: none;
   color: #e3e3e3;
   font-family: Didot, sans-serif;
 }
 
-.form-container{
-  text-align: center;
-  display: block;
-  /* width:460px;  */
-  color: #e3e3e3;
-  font-family: Didot, sans-serif;
-}
-
-.h2{
-  color: #e3e3e3;
-  font-family: Didot, sans-serif;
-}
-
-.label{
-  display: inline-block;
-  float: left;
-  clear: left;
-  width: 100px;
-  text-align: right;
+#text-link:hover {
+  color: green;
 }
 
 .shop-details-container{
@@ -114,6 +100,17 @@ code {
 }
 .details{
   margin: 10px;
+}
+
+.details-image {
+  margin: 10px;
+}
+
+.details-image > img{
+  padding-top: 60px;
+  /* height: same-as-width; */
+  height: auto;
+  width: 350px;
 }
 
 .details > h4{
@@ -126,6 +123,26 @@ code {
 .details > p{
   font-family: Didot, sans-serif;
   color: #e3e3e3;
+}
+
+.link-box {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  object-fit: cover;
+  height: auto;
+  width: 100px;
+  border-style: solid;
+  border-width: 2px;
+  border-color: green;
+  border-radius: 6px;
+  margin: 10px 0;
+  padding: 1px;
+}
+.link-box:hover {
+  border-width: 3px;
+  padding: 0;
 }
 
 .additional-details {
@@ -159,6 +176,39 @@ code {
   font-family: Didot, sans-serif;
   color: #e3e3e3;
   padding-left: 15px;
+}
+
+.form-container{
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  /* width:460px;  */
+  color: #e3e3e3;
+  font-family: Didot, sans-serif;
+}
+
+.h2{
+  color: #e3e3e3;
+  font-family: Didot, sans-serif;
+}
+
+.label{
+  /* display: inline-block; */
+  float: left;
+  clear: left;
+  width: 100px;
+  text-align: right;
+}
+.form_wrap {
+  position: relative;
+}
+
+.form_wrap select {
+  float: left;
+  margin: 10px 25px;
+}
+#submit-btn {
+  float: right;
 }
 
 .basket-title {

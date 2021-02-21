@@ -13,8 +13,8 @@ function NewShop() {
         telephoneNumber: '',
         email: '',
         image: '',
-        category: null,
-        services: null
+        categories: [],
+        services: []
     });
 
     const handleChange = (evt) => {
@@ -38,15 +38,6 @@ function NewShop() {
         return <option key={index} value={index}>{service.name}</option>
     })
 
-    const handleService = function(event){
-        const index = parseInt(event.target.value)
-        const selectedService = serviceList[index]
-        let copiedService = {...formData};
-        copiedService['service'] = selectedService
-        setFormData(copiedService)
-    }
-
-
     // Add Category
     const [categoryList, setCategoryList] = useState([]);
 
@@ -62,15 +53,6 @@ function NewShop() {
         return <option key={index} value={index}>{category.name}</option>
     })
 
-    const handleCategory = function(event){
-        const index = parseInt(event.target.value)
-        const selectedCategory = categoryList[index]
-        let copiedCategory = {...formData};
-        copiedCategory['category'] = selectedCategory
-        setFormData(copiedCategory)
-    }
-
-
 
     useEffect(() => {
         getServiceList();
@@ -78,9 +60,30 @@ function NewShop() {
       }, []);
 
 
+    // Handlers
+    const handleService = function(event) {
+        const index = parseInt(event.target.value)
+        const selectedService = serviceList[index]
+        let newState = {...formData};
+        const newService = [];
+        newService.push(selectedService);
+        newState['services'] = newService;
+        setFormData(newState)
+    }
+
+    const handleCategory = function(event){
+        const index = parseInt(event.target.value)
+        const selectedCategory = categoryList[index]
+        let newState = {...formData};
+        const newCategory = [];
+        newCategory.push(selectedCategory);
+        newState['categories'] = newCategory
+        setFormData(newState)
+    }
+
     const handleSubmit = (evt) => {
         evt.preventDefault();
-        console.log(evt);
+        console.log(formData);
         onFormSubmit(formData);
     }
 
@@ -99,7 +102,7 @@ function NewShop() {
         <div className="main-container">
             <h2 className="form-header">Create New Profile</h2>
             <form className="form-container">
-
+            {/* name */}
                 <div className="form_wrap">
                     <label className="label" htmlFor="name">Name:</label>
                     <input className="input"
@@ -111,7 +114,7 @@ function NewShop() {
                     value={formData.name}
                     required/>
                 </div>
-
+            {/* address */}
                 <div className="form_wrap">
                     <label className="label" htmlFor="address">Address:</label>
                     <input className="input"
@@ -123,7 +126,7 @@ function NewShop() {
                     value={formData.address}
                     required/>
                 </div>
-
+            {/* postcode */}
                 <div className="form_wrap">
                     <label className="label" htmlFor="postcode">Postcode:</label>
                     <input className="input"
@@ -135,7 +138,7 @@ function NewShop() {
                     value={formData.postcode}
                     required/>
                 </div>
-
+            {/* town */}
                 <div className="form_wrap">
                     <label className="label" htmlFor="town">Town:</label>
                     <input className="input"
@@ -147,7 +150,7 @@ function NewShop() {
                     value={formData.town}
                     required/>
                 </div>
-
+            {/* opening hour */}
                 <div className="form_wrap">
                     <label className="label" htmlFor="openingHour">Opening Hour:</label>
                     <input className="input"
@@ -158,7 +161,7 @@ function NewShop() {
                     value={formData.openingHour}
                     required/>
                 </div>
-
+            {/* closing hour */}
                 <div className="form_wrap">
                     <label className="label" htmlFor="closingHour">Closing Hour:</label>
                     <input className="input"
@@ -169,7 +172,7 @@ function NewShop() {
                     value={formData.closingHour}
                     required/>
                 </div>
-
+            {/* telephone number */}
                 <div className="form_wrap">
                     <label className="label" htmlFor="telephoneNumber">Telephone Number:</label>
                     <input className="input"
@@ -181,7 +184,7 @@ function NewShop() {
                     value={formData.telephoneNumber}
                     required/>
                 </div>
-
+            {/* email */}
                 <div className="form_wrap">
                     <label className="label" htmlFor="email">Email address:</label>
                     <input className="input"
@@ -193,7 +196,7 @@ function NewShop() {
                     value={formData.email}
                     required/>
                 </div>
-
+            {/* image */}
                 <div className="form_wrap">
                     <label className="label" htmlFor="image">Image Link:</label>
                     <input className="input"
@@ -205,22 +208,25 @@ function NewShop() {
                     value={formData.image}
                     required/>
                 </div>
+                {/* services */}
                 <div className="form_wrap">
-                <select name="service" onChange={handleService} defaultValue="select-service">
-                {/* <select name="service" defaultValue="select-service"> */}
-                    <option disabled value="select-service">Select a service</option>
-                    {serviceOptions}
-                </select>
+                    <label className="label" htmlFor="services">Select service: </label>
+                    <select className="input" name="services" onChange={handleService} defaultValue="select-service">
+                        <option disabled value="select-service">Select service</option>
+                        {serviceOptions}
+                    </select>
                 </div>
+                {/* categories */}
                 <div className="form_wrap">
-                <select name="category" onChange={handleCategory} defaultValue="select-category">
-                {/* <select name="category" defaultValue="select-category"> */}
-                    <option disabled value="select-category">Select a category</option>
-                    {categoryOptions}
-                </select>
+                    <label className="label" htmlFor="categories">Select category: </label>
+                    <select className="input" name="categories" onChange={handleCategory} defaultValue="select-category">
+                        <option disabled value="select-category">Select category</option>
+                        {categoryOptions}
+                    </select>
                 </div>
+                {/* submit */}
                 <div className="form_wrap">
-                    <input className="input" onClick={handleSubmit} type="submit" value="submit" />
+                    <input className="input" id="submit-btn" onClick={handleSubmit} type="submit" value="submit" />
                 </div>
                 
             </form>
