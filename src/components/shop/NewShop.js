@@ -80,7 +80,7 @@ function NewShop() {
 
     const handleSubmit = (evt) => {
         evt.preventDefault();
-        console.log(evt);
+        console.log(formData);
         onFormSubmit(formData);
     }
 
@@ -92,7 +92,7 @@ function NewShop() {
                 'Content-Type': 'application/json'
             }
         })
-        .then(() => window.location = "/shop")
+        // .then(() => window.location = "/shop")
     }
 
     return(

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import {Route, useParams, BrowserRouter as Router} from 'react-router-dom';
 
 
@@ -13,7 +14,17 @@ const ShopDetails = () => {
         fetch(`http://localhost:8080/shops/${shopId}`)
         .then(res => res.json())
         .then(data => setShop(data))
-    }, [])
+    }, []);
+
+    
+    // Removes seconds from the time format
+    const prettyDate2 = (time) => {
+        var date = new Date(parseInt(time));
+        return date.toLocaleTimeString(navigator.language, {
+          hour: '2-digit',
+          minute:'2-digit'
+        });
+    }
     
 
     if (!shop){
@@ -32,7 +43,17 @@ const ShopDetails = () => {
                 <p>{shop.openingHour}</p>
                 <p>{shop.closingHour}</p>
                 <p>{shop.telephoneNumber}</p>
-                <p>{shop.email}</p>  
+                <p>{shop.email}</p>
+                Category:
+                {shop.categories
+                    ? shop.categories.map((category, index) => {
+                        return(
+                            <div key={index}>
+                                {category.name}
+                            </div>
+                        );
+                    })
+                : ""}
             </div>
             <div className="additional-details">
             <p>Services:</p>
@@ -40,7 +61,7 @@ const ShopDetails = () => {
                 ? shop.services.map((service, index) => {
                     return(
                         <div key={index}>
-                            <p>{service.name}</p>
+                            <Link id="image-link" to={`/service/${service.id}`}><p>{service.name}</p></Link>
                         </div>
                     );
                 })
@@ -48,16 +69,7 @@ const ShopDetails = () => {
             
 
             <br/>
-            <p>Category:</p>
-            {shop.categories
-                ? shop.categories.map((category, index) => {
-                    return(
-                        <div key={index}>
-                            <p>{category.name}</p>
-                        </div>
-                    );
-                })
-            : ""}
+            
             
             </div>
             
