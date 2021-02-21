@@ -20,19 +20,18 @@ function Bookings() {
 
 
     return(
-        <div>
-            <h3>Booking Component</h3>
-            <Link to="/new-booking"><button className="btn">Create booking</button></Link>
-            {bookingList
-                ? bookingList.map((booking, index) => {
-                return(
-                    <div key={index}>
-                    <Link to={`/booking/${booking.id}`}><button>{booking.comments}</button></Link>
-                    </div>
-                );
-                })
-                : "Loading..."}
-        </div>
+      <div className="main-container">
+        <Link id="new-form-link" to="/new-booking"><h2>Create booking</h2></Link>
+        {bookingList
+            ? bookingList.map((booking, index) => {
+            return(
+                <div key={index}>
+                <Link id="image-link" to={`/booking/${booking.id}`}><div className="ind-image"><h3>{booking.comments}</h3></div></Link>
+                </div>
+            );
+            })
+            : "Loading..."}
+      </div>
     )
 }
 

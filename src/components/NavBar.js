@@ -17,25 +17,25 @@ function NavBar() {
                 </div>
                 <div className="nav-left-container">
                     <li>
-                        <Link className="text-decoration" to="/service">All Services</Link>
+                        <Link className="nav-link" to="/service">All Services</Link>
                     </li>
                     <li>
-                        <Link className="text-decoration" to="/category">All Categories</Link>
+                        <Link className="nav-link" to="/category">All Categories</Link>
                     </li>
                     <li>
-                        <Link className="text-decoration" to="/shop">All Shops</Link>
+                        <Link className="nav-link" to="/shop">All Shops</Link>
                     </li>
                 </div>
 
                 <div className="nav-right-container">
                     <li>
-                        <Link className="text-decoration" to="/about">About</Link>
+                        <Link className="nav-link" to="/about">About</Link>
                     </li>
                     <li>
-                        <Link className="text-decoration" to="/shop">Shop</Link>
+                        <Link className="nav-link" to="/shop">Shop</Link>
                     </li>
                     <li>
-                        <Link className="text-decoration" to="/basket"><img id="basket" src={basket} alt="basket"/></Link>
+                        <Link className="nav-link" to="/basket"><img id="basket" src={basket} alt="basket"/></Link>
                     </li>
                 </div>
 

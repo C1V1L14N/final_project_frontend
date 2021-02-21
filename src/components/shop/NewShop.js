@@ -96,9 +96,10 @@ function NewShop() {
     }
 
     return(
-        <div className="form-container">
-            <h2 className="h2">Create New Profile</h2>
-            <form className="form-input">
+        <div className="main-container">
+            <h2 className="form-header">Create New Profile</h2>
+            <form className="form-container">
+
                 <div className="form_wrap">
                     <label className="label" htmlFor="name">Name:</label>
                     <input className="input"
@@ -204,22 +205,24 @@ function NewShop() {
                     value={formData.image}
                     required/>
                 </div>
-
-            
-
+                <div className="form_wrap">
                 <select name="service" onChange={handleService} defaultValue="select-service">
                 {/* <select name="service" defaultValue="select-service"> */}
                     <option disabled value="select-service">Select a service</option>
                     {serviceOptions}
                 </select>
-            
+                </div>
+                <div className="form_wrap">
                 <select name="category" onChange={handleCategory} defaultValue="select-category">
                 {/* <select name="category" defaultValue="select-category"> */}
                     <option disabled value="select-category">Select a category</option>
                     {categoryOptions}
                 </select>
-
-                <input className="input" onClick={handleSubmit} type="submit" value="submit" />
+                </div>
+                <div className="form_wrap">
+                    <input className="input" onClick={handleSubmit} type="submit" value="submit" />
+                </div>
+                
             </form>
         </div>
     );

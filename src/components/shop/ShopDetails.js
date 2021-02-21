@@ -20,7 +20,7 @@ const ShopDetails = () => {
         return <p>Loading...</p>
     }
     return (
-        <div className="shop-details-container">
+        <div className="main-container">
             <div className="shop-image">
                 <img src={shop.image} alt="no available"/>
             </div>

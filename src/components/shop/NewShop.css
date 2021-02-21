@@ -59,31 +59,7 @@ input[type=email] {
     float: left;
 } */
 
-  .form-container{
-    text-align: center;
-    display: block;
-    width:600px; 
-    color: #e3e3e3;
-    font-family: Didot, sans-serif;
-    padding-top: 15px;
-    
-  }
-
-  .form-input {
-    overflow: scroll;
-    height: 65vh;
-  }
-
-  .h2{
-    color: #e3e3e3;
-    font-family: Didot, sans-serif;
-   
-  }
-
-  .label{
-    display: inline-block;
-    float: left;
-    clear: left;
-    width: 250px;
-    text-align: right;
+.form-input {
+  overflow: scroll;
+  height: 65vh;
 }

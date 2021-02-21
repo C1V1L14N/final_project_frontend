@@ -9,30 +9,3 @@
   display: inline-block;
   float: left;
 }
-
-  .form-container{
-    text-align: center;
-    display: block;
-    width:600px; 
-    color: #e3e3e3;
-    font-family: Didot, sans-serif;
-    padding-top: 25px;
-  }
-
-  .h2{
-    color: #e3e3e3;
-    font-family: Didot, sans-serif;
-   
-  }
-
-  /* .label{
-    margin-right: 15px;
-  } */
-
-  .label{
-    display: inline-block;
-    float: left;
-    clear: left;
-    width: 250px;
-    text-align: right;
-}

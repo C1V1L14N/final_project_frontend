@@ -20,14 +20,13 @@ const User = () => {
   }, []);
 
   return(
-      <div>
-          <h3>User Component</h3>
-      <Link to="/new-user"><button className="btn">Create New Profile</button></Link>
+    <div className="main-container">
+      <Link id="new-form-link" to="/new-user"><h2>Create New Profile</h2></Link>
       {userList
         ? userList.map((user, index) => {
           return(
             <div key={index}>
-              <Link to={`/user/${user.id}`}><button>{user.firstName} {user.lastName}</button></Link>
+              <Link id="image-link" to={`/user/${user.id}`}><div className="ind-image"><h2>{user.firstName} {user.lastName}</h2></div></Link>
             </div>
           );
         })

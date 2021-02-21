@@ -21,13 +21,13 @@ function Services() {
 
 
     return(
-        <div className="services-container">
-          <Link id="new-service-link" to="/new-service"><h2>Create a New Service</h2></Link>
+        <div className="main-container">
+          <Link id="new-form-link" to="/new-service"><h2>Create a New Service</h2></Link>
             {serviceList
                 ? serviceList.map((service, index) => {
                 return(
                     <div key={index}>
-                      <Link id="image-link" to={`/service/${service.id}`}><h2>{service.name}</h2></Link>
+                      <Link id="image-link" to={`/service/${service.id}`}><div className="ind-image"><h2>{service.name}</h2></div></Link>
                     </div>
                 );
                 })

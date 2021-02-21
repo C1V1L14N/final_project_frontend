@@ -32,8 +32,8 @@ function Categories() {
 
 
     return(
-        <div className="categories-container">
-            <Link id="new-categories-link" to="/new-category"><h2>Add New Category</h2></Link>
+        <div className="main-container">
+            <Link id="new-form-link" to="/new-category"><h2>Add New Category</h2></Link>
 
 
             {categoryList

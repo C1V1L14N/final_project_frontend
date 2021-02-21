@@ -24,13 +24,13 @@ const Shop = () => {
 
   return(
 
-    <div className="shops-container">
-       <Link id="new-shop-link" to="/new-shop"><h2>Create a Business Profile</h2></Link>
+    <div className="main-container">
+       <Link id="new-form-link" to="/new-shop"><h2>Create a Business Profile</h2></Link>
           {shopList
             ? shopList.map((shop, index) => {
               return(
                 <div key={index}>
-                  <Link id ="image-link"to={`/shop/${shop.id}`}><img className = "ind-image" src={shop.image} alt="no available"/><h3>{shop.name}</h3></Link>
+                  <Link id="image-link" to={`/shop/${shop.id}`}><img className="ind-image" src={shop.image} alt="no available"/><h3>{shop.name}</h3></Link>
                 </div>
               );
             })

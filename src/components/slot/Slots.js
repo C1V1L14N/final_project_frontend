@@ -20,19 +20,18 @@ function Slots() {
 
 
     return(
-        <div>
-            <h3>Slot Component</h3>
-            <Link to="/new-slot"><button className="btn">Add Slot</button></Link>
-            {slotList
-                ? slotList.map((slot, index) => {
-                return(
-                    <div key={index}>
-                    <Link to={`/slot/${slot.id}`}><button>{slot.startTime} - {slot.endTime}: {slot.service.name}</button></Link>
-                    </div>
-                );
-                })
-                : "Loading..."}
-        </div>
+      <div className="main-container">
+        <Link id="new-form-link" to="/new-slot"><h2 className="btn">Create New Slot</h2></Link>
+        {slotList
+            ? slotList.map((slot, index) => {
+            return(
+                <div key={index}>
+                <Link id="image-link" to={`/slot/${slot.id}`}><div className="ind-image"><h2>{slot.startTime} - {slot.endTime}: {slot.service.name}</h2></div></Link>
+                </div>
+            );
+            })
+            : "Loading..."}
+      </div>
     )
 }
 

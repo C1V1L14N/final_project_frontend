@@ -30,9 +30,10 @@ function NewCategory() {
     }
     
     return(
-        <div className="form-container">
-            <h2 className="h3">Create New Category</h2>
-            <form>
+        <div className="main-container">
+            <h2 className="form-header">Create New Category</h2>
+            <form className="form-container">
+                
                 <div className="form_wrap">
                     <label className="label" htmlFor="name">Name:</label>
                     <input className="input"

@@ -5,7 +5,7 @@
     width: 48vw;
     min-width: 300px;
     z-index: 1;
-    font-size: 40px;
+    font-size: calc(22px + 1vw);
     padding-left: 25px;
 }
 #search-input:focus {outline:none;};       

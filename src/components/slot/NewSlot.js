@@ -63,13 +63,13 @@ function NewSlot() {
     
     
     return(
-        <div>
-            <h3>Create New Time Slot</h3>
-            <form onSubmit={handleSubmit}>
+        <div className="main-container">
+            <h2 className="form-header">Create New Time Slot</h2>
+            <form className="form-container">
                 
                 <div className="form_wrap">
-                    <label htmlFor="startTime">Start Time:</label>
-                    <input 
+                    <label className="label" htmlFor="startTime">Start Time:</label>
+                    <input className="input"
                     onChange={handleChange}
                     type="time"
                     name="startTime"
@@ -79,8 +79,8 @@ function NewSlot() {
                 </div>
 
                 <div className="form_wrap">
-                    <label htmlFor="endTime">End Time:</label>
-                    <input 
+                    <label className="label" htmlFor="endTime">End Time:</label>
+                    <input className="input"
                     onChange={handleChange}
                     type="time"
                     name="endTime"
@@ -94,7 +94,7 @@ function NewSlot() {
                     {serviceOptions}
                 </select>
 
-                <button type="submit">Submit</button>
+                <input className="input" onClick={handleSubmit} type="submit" value="submit" />
             </form>
         </div>
     )

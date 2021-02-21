@@ -32,9 +32,10 @@ function NewService() {
     }
     
     return(
-        <div className="form-container">
-            <h2 className="h3" >Create New Service</h2>
+        <div className="main-container">
+            <h2 className="form-header" >Create New Service</h2>
             <form className="form-container">
+                
                 <div className="form_wrap">
                     <label className="label" htmlFor="name">Name:</label>
                     <input className="input"

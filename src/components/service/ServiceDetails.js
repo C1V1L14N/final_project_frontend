@@ -19,12 +19,15 @@ const ServiceDetails = () => {
         return <p>Loading...</p>
     }
     return (
-        <div className="service-text">
-            <h4>{service.name}</h4>
-            <p>{service.description}</p>
-            <p>£{service.price}</p>
-            <p>{service.duration} mins</p>
+        <div className="main-container">
+            <div className="service-text">
+                <h4>{service.name}</h4>
+                <p>{service.description}</p>
+                <p>£{service.price}</p>
+                <p>{service.duration} mins</p>
+            </div>
         </div>
+        
     )
 
 }

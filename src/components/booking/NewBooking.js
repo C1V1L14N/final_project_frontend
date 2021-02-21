@@ -65,14 +65,13 @@ function NewBooking() {
     }
 
     return(
-        <div>
-            <h3>Create new booking</h3>
-            <p>Select user</p>
-            <form onSubmit={handleSubmit}>
+        <div className="main-container">
+            <h2 className="form-header" >Create New Booking</h2>
+            <form className="form-container">
                 
                 <div className="form_wrap">
-                    <label htmlFor="comments">Comments:</label>
-                    <input 
+                    <label className="label" htmlFor="comments">Comments:</label>
+                    <input className="input"
                     onChange={handleChange}
                     type="text"
                     name="comments"
@@ -82,16 +81,18 @@ function NewBooking() {
                     required/>  
                 </div>
 
-                <select name="user" onChange={handleUser} defaultValue="select-user">
-                    <option disabled value="select-user">Select a user</option>
-                    {userOptions}
-                </select>
-
+                <div className="form_wrap">
+                    <select name="user" onChange={handleUser} defaultValue="select-user">
+                        <option disabled value="select-user">Select a user</option>
+                        {userOptions}
+                    </select>
+                </div>
+                
                 {/* SERVICES */}
 
                 <div className="form_wrap">
-                    <label htmlFor="date_booking_made">Booking issued on:</label>
-                    <input 
+                    <label className="label" htmlFor="date_booking_made">Booking issued on:</label>
+                    <input className="input"
                     onChange={handleChange}
                     type="date"
                     name="date_booking_made"
@@ -101,8 +102,8 @@ function NewBooking() {
                 </div>
 
                 <div className="form_wrap">
-                    <label htmlFor="date_of_booking">Booking date for:</label>
-                    <input 
+                    <label className="label" htmlFor="date_of_booking">Booking date for:</label>
+                    <input className="input"
                     onChange={handleChange}
                     type="date"
                     name="date_of_booking"
@@ -112,8 +113,8 @@ function NewBooking() {
                 </div>
 
                 <div className="form_wrap">
-                    <label htmlFor="arrival_time">Arrival Time:</label>
-                    <input 
+                    <label className="label" htmlFor="arrival_time">Arrival Time:</label>
+                    <input className="input"
                     onChange={handleChange}
                     type="time"
                     name="arrival_time"
@@ -123,8 +124,8 @@ function NewBooking() {
                 </div>
 
                 <div className="form_wrap">
-                    <label htmlFor="departure_time">Departure Time:</label>
-                    <input 
+                    <label className="label" htmlFor="departure_time">Departure Time:</label>
+                    <input className="input"
                     onChange={handleChange}
                     type="time"
                     name="departure_time"
@@ -133,7 +134,9 @@ function NewBooking() {
                     required/>
                 </div>
             
-                <button type="submit">Submit</button>
+                <div className="form_wrap">
+                    <input className="input" onClick={handleSubmit} type="submit" value="submit" />
+                </div>
             </form>
         </div>
     )

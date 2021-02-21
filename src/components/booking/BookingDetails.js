@@ -19,7 +19,7 @@ const BookingDetails = () => {
         return <p>Loading...</p>
     }
     return (
-        <div>
+        <div className="main-container">
             <h4>{booking.id}</h4>
             <p>{booking.comments}</p>
         </div>
