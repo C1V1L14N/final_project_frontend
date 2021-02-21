@@ -23,11 +23,11 @@ const CategoryDetails = () => {
     return (
         <div className="main-container">
             <div className="details-image">
-                <img className="cat-img" src={category.image} alt="no available"/>
+                <img src={category.image} alt="no available"/>
             </div>
             <div className="details">
-                <h4 className="cat-title">{category.name}</h4>
-                <p className="cat-p">{category.description}</p>
+                <h4>{category.name}</h4>
+                <p>{category.description}</p>
             </div>
             
         </div>

@@ -4,8 +4,11 @@ import './basket.css';
 function Basket() {
 
     return(
-        <div id="basket-container">
-            <h3 className="basket-title">In the next iteration of the application, this page will show a basket collection of all service bookings the user wishes to make.</h3>
+        <div className="main-container">
+            <div className="details">
+                <h4 className="basket-title">In the next iteration of the application, this page will show a basket collection of all service bookings the user wishes to make.</h4>
+            </div>
+            
         </div>
     )
 }

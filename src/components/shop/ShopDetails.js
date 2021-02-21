@@ -44,35 +44,35 @@ const ShopDetails = () => {
                 <p>{shop.closingHour}</p>
                 <p>{shop.telephoneNumber}</p>
                 <p>{shop.email}</p>
-                Category:
-                {shop.categories
-                    ? shop.categories.map((category, index) => {
-                        return(
-                            <div key={index}>
-                                {category.name}
-                            </div>
-                        );
-                    })
-                : ""}
+                <div className="additional-details">
+                    <p id="text-p">Category: </p>
+                    <div className="link-box-list">
+                        {shop.categories
+                            ? shop.categories.map((category, index) => {
+                                return(
+                                    <div key={index}>
+                                        <p id="text-p">{category.name}</p>
+                                    </div>
+                                );
+                            })
+                        : ""}
+                    </div>
+                </div>
             </div>
             <div className="additional-details">
-            <p>Services:</p>
-            {shop.services
-                ? shop.services.map((service, index) => {
-                    return(
-                        <div key={index}>
-                            <Link className="link-box" id="text-link" to={`/service/${service.id}`}>{service.name}</Link>
-                        </div>
-                    );
-                })
-            : ""}
-            
-
-            <br/>
-            
-            
+                <p id="text-p">Services: </p>
+                <div className="link-box-list">
+                    {shop.services
+                        ? shop.services.map((service, index) => {
+                            return(
+                                <div key={index}>
+                                    <Link className="link-box" id="text-link" to={`/service/${service.id}`}>{service.name}</Link>
+                                </div>
+                            );
+                        })
+                    : ""}
+                </div>
             </div>
-            
             
             {/* <p>{shop.services[0].name}</p>
             <p>{shop.categories[0].name}</p> */}

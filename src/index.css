@@ -38,11 +38,11 @@ code {
   grid-template-columns: repeat(auto-fit, 250px);
   /* grid-gap: 10px;  */
   overflow: scroll;
-  padding: 25px;
+  padding: 15px;
   padding-bottom: 0;
 }
 
-#new-form-link{
+#new-form-link {
   text-decoration: none;
   color: #e3e3e3;
   font-family: Didot, sans-serif;
@@ -58,19 +58,24 @@ code {
   width: 250px;
   margin: 20px;
 }
+#new-form-link:hover {
+  border-width: 5px;
+  margin: 19px;
+}
 
-.ind-image{
+.ind-image {
+  text-decoration: none;
   display: flex;
   text-align: center;
   align-items: center;
   justify-content: center;
   object-fit: cover;
-  height: 250px;
-  width: 250px;
   border-style: solid;
   border-width: 4px;
   border-color:gold;
   border-radius: 10%;
+  height: 250px;
+  width: 250px;
   margin: 20px;
   /* order: 1; */
 }
@@ -83,14 +88,22 @@ code {
   text-align: center;
 }
 
-#text-link{
+#text-p {
   text-decoration: none;
   color: #e3e3e3;
   font-family: Didot, sans-serif;
+  font-size: calc(9px + 0.7vw);
+}
+
+#text-link {
+  text-decoration: none;
+  color: #e3e3e3;
+  font-family: Didot, sans-serif;
+  font-size: calc(9px + 0.7vw);
 }
 
 #text-link:hover {
-  color: green;
+  color: lightgreen;
 }
 
 .shop-details-container{
@@ -100,30 +113,44 @@ code {
 }
 .details{
   margin: 10px;
+  max-width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .details-image {
   margin: 10px;
+  display: flex;
+  align-items: center;
 }
 
 .details-image > img{
-  padding-top: 60px;
+  /* padding-top: 60px; */
   /* height: same-as-width; */
   height: auto;
-  width: 350px;
+  width: 30vw;
+  min-width: 300px;
+  margin: 10px;
 }
 
 .details > h4{
   font-family: Didot, sans-serif;
   font-weight: bold;
   color: #e3e3e3;
-  font-size: 40px;
+  font-size: calc(18px + 1vw);
+  margin: 15px 0;
 }
 
 .details > p{
   font-family: Didot, sans-serif;
   color: #e3e3e3;
+  font-size: calc(10px + 0.8vw);
 }
+
+/* .link-box-list {
+
+} */
 
 .link-box {
   display: flex;
@@ -135,7 +162,7 @@ code {
   width: 100px;
   border-style: solid;
   border-width: 2px;
-  border-color: green;
+  border-color: lightgreen;
   border-radius: 6px;
   margin: 10px 0;
   padding: 1px;
@@ -147,7 +174,8 @@ code {
 
 .additional-details {
   position: relative;
-  margin-top: 145px;
+  display: flex;
+  align-items: center;
 }
 .additional-details > h4{
   position: relative;
@@ -207,8 +235,16 @@ code {
   float: left;
   margin: 10px 25px;
 }
+
+.input:hover{
+  background-color: lightskyblue;
+}
+
 #submit-btn {
   float: right;
+}
+#submit-btn:hover {
+  background-color: lightgreen;
 }
 
 .basket-title {
