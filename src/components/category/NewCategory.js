@@ -70,7 +70,9 @@ function NewCategory() {
                     required/>
                 </div>
 
-                <input className="input" onClick={handleSubmit} type="submit" value="submit" />
+                <div className="form_wrap">
+                    <input className="input" id="submit-btn" onClick={handleSubmit} type="submit" value="submit" />
+                </div>
             </form>
         </div>
     )

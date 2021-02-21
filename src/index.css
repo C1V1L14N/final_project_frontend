@@ -88,7 +88,8 @@ code {
 
 .form-container{
   text-align: center;
-  display: block;
+  display: flex;
+  flex-direction: column;
   /* width:460px;  */
   color: #e3e3e3;
   font-family: Didot, sans-serif;
@@ -100,11 +101,22 @@ code {
 }
 
 .label{
-  display: inline-block;
+  /* display: inline-block; */
   float: left;
   clear: left;
   width: 100px;
   text-align: right;
+}
+.form_wrap {
+  position: relative;
+}
+
+.form_wrap select {
+  float: left;
+  margin: 10px 25px;
+}
+#submit-btn {
+  float: right;
 }
 
 .shop-details-container{
