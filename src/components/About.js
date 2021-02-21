@@ -11,7 +11,7 @@ function About() {
             <h1 className="about-heading">About Shop Local</h1>
             <p className="about-paragraph">Shop Local is a site that was born in a time when gathering en mass has become , hopefully temporarily, a thing of the past.
                 As businesses reopen and as lockdown lifts, there will be a need to organise and track times that are available for consumers to be able to enter businesses.
-                bla bla bla...
+                Shop Local aims to provide a service to help transition the shopping experience back to normality.
             </p>
             <img id="street-img" src={street} alt="high-street"/>
         </div>

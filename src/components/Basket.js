@@ -1,9 +1,12 @@
 import React from "react";
+import './basket.css';
 
 function Basket() {
 
     return(
-        <h3 className="basket-title">The basket view will display all bookings/appointments that the user has made and will allow the user to confirm them.</h3>
+        <div id="basket-container">
+            <h3 className="basket-title">In the next iteration of the application, this page will show a basket collection of all service bookings the user wishes to make.</h3>
+        </div>
     )
 }
 
