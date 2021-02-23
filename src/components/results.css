@@ -16,7 +16,8 @@
 .result-box {
     /* border-style: solid;
     border-width: 2px; */
-    margin: 2px;
+    margin: 1px;
+    border-bottom: white solid 1px;
     width: 99%;
     display: flex;
     justify-content: space-between;

@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
+import NewService from "../service/NewService"
 import { Link } from "react-router-dom";
 import {Route, useParams, BrowserRouter as Router} from 'react-router-dom';
+import './business.css'
 
 
 
@@ -15,6 +17,20 @@ const BusinessDetails = () => {
         .then(res => res.json())
         .then(data => setShop(data))
     }, []);
+
+    
+    // Service Form Toggle
+    const useToggle = (initialValue = false) => {
+        const [value, setValue] = React.useState(initialValue);
+        const toggle = React.useCallback(() => {
+          setValue(v => !v);
+        }, []);
+        return [value, toggle];
+    }
+
+    const [isOn, toggleIsOn] = useToggle();
+
+
 
     
     // Removes seconds from the time format
@@ -32,11 +48,11 @@ const BusinessDetails = () => {
     }
     return (
         <div className="main-container">
-            <div className="details-image">
+            <div className="details-image" id="details-image-shop" >
+                <h4>{shop.name}</h4>
                 <img src={shop.image} alt="not available"/>
             </div>
             <div className="details">
-                <h4>{shop.name}</h4>
                 <p>{shop.address}</p>
                 <p>{shop.postcode}</p>
                 <p>{shop.town}</p>
@@ -62,13 +78,20 @@ const BusinessDetails = () => {
             <div className="additional-details">
                 <p id="text-p">Services: </p>
                 <div className="link-box-list">
-                    <div>
-                        <Link className="link-box" id="text-link" to="/new-service">+</Link>
+                    <div className="service-element">
+                            {isOn
+                            ? <a className="link-box" id="red" onClick={toggleIsOn}>Cancel</a>
+                            : <a className="link-box" id="green" onClick={toggleIsOn}>Add service</a>}
                     </div>
+                    {isOn
+                        ?  <div>
+                            <NewService/>
+                        </div>
+                    : null}
                     {shop.services
                         ? shop.services.map((service, index) => {
                             return(
-                                <div key={index}>
+                                <div className="service-element" key={index}>
                                     <Link className="link-box" id="text-link" to={`/service/${service.id}`}>{service.name}</Link>
                                 </div>
                             );

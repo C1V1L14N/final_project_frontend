@@ -5,6 +5,7 @@
     width: 48vw;
     height: calc(5vw + 6px);
     min-width: 300px;
+    min-height: 46px;
 }
 
 #search-input {
@@ -33,9 +34,10 @@
     margin: 2px;
     right: 0;
     border-radius: 40px;
-    /* height: calc(5vw - 2px); */
-    height: 5vw;
+    height: calc(5vw + 1px);
+    /* height: 5vw; */
     width: calc(4% + 60px);
+    min-height: 41px;
     background-color: #2c66a8;
     transition: 0.6s;
     color: white;
