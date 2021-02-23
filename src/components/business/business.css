@@ -1,9 +1,4 @@
-#toggle-service[type="checkbox"]  {
-    display: none;
+.service-element {
+    display: flex;
+    justify-content: flex-end;
 }
-#toggle-service + .form-service{
-    display: none;
-}
-#toggle-service:checked + .form-service{
-    display:block;
-  }

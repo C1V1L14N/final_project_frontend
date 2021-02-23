@@ -32,8 +32,8 @@ function NewService() {
     }
     
     return(
-        <div className="main-container">
-            <h2 className="form-header" >Create New Service</h2>
+        // <div className="main-container">
+            // <h2 className="form-header" >Create New Service</h2> 
             <form className="form-container">
                 
                 <div className="form_wrap">
@@ -90,7 +90,7 @@ function NewService() {
                     <input className="input" id="submit-btn" onClick={handleSubmit} type="submit" value="submit" />
                 </div>
             </form>
-        </div>
+        // </div>
     )
     
 }

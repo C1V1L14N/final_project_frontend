@@ -43,7 +43,7 @@ const Results = ({keyword}) => {
                 }
                 return null;
             })
-            console.log(newResults)
+            // console.log(newResults)
             setResults(newResults);
         });
     };
