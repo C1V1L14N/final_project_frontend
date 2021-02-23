@@ -20,7 +20,7 @@
     margin: auto;
     margin-bottom: 250px;
     background-color: #e3e3e3;
-    opacity: 0.9;
+    /* opacity: 0.9; */
     position: relative;
     z-index: 4;
     border-radius: 20px;

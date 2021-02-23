@@ -3,7 +3,7 @@
     width: 60vw;
     margin: auto;
     background-color: #e3e3e3;
-    opacity: 0.9;
+    /* opacity: 0.9; */
     position: relative;
     z-index: 4;
     border-radius: 10px;
@@ -24,6 +24,7 @@
 .image {
     display: flex;
     align-items: center;
+    width: calc(100px + 12vw);
 }
 
 .image > img {

@@ -10,13 +10,10 @@ const Shop = () => {
   const getShopList = () => {
     axios.get(`http://localhost:8080/shops/`)
     .then(res => {
-      console.log(res);
       setShopList(res.data)
     });
   };
-
-
-
+  
   useEffect(() => {
     getShopList();
   }, []);

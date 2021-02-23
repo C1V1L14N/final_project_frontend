@@ -86,7 +86,7 @@ function NewService() {
                     required/>
                 </div>
 
-                <div className="form_wrap">
+                <div className="form_wrap" id="submit-wrap">
                     <input className="input" id="submit-btn" onClick={handleSubmit} type="submit" value="submit" />
                 </div>
             </form>

@@ -1,0 +1,9 @@
+#toggle-service[type="checkbox"]  {
+    display: none;
+}
+#toggle-service + .form-service{
+    display: none;
+}
+#toggle-service:checked + .form-service{
+    display:block;
+  }
