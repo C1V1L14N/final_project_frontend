@@ -32,11 +32,11 @@ const BusinessDetails = () => {
     }
     return (
         <div className="main-container">
-            <div className="details-image">
+            <div className="details-image" id="details-image-shop" >
+                <h4>{shop.name}</h4>
                 <img src={shop.image} alt="not available"/>
             </div>
             <div className="details">
-                <h4>{shop.name}</h4>
                 <p>{shop.address}</p>
                 <p>{shop.postcode}</p>
                 <p>{shop.town}</p>
