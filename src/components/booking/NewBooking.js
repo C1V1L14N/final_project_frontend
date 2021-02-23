@@ -9,7 +9,6 @@ function NewBooking() {
     const getUserList = () => {
         axios.get(`http://localhost:8080/users/`)
         .then(res => {
-        //   console.log(res);
           setUserList(res.data)
         });
       };
@@ -82,7 +81,8 @@ function NewBooking() {
                 </div>
 
                 <div className="form_wrap">
-                    <select name="user" onChange={handleUser} defaultValue="select-user">
+                <label className="label" htmlFor="user">Select User: </label>
+                    <select className="input" name="user" onChange={handleUser} defaultValue="select-user">
                         <option disabled value="select-user">Select a user</option>
                         {userOptions}
                     </select>
@@ -134,7 +134,7 @@ function NewBooking() {
                     required/>
                 </div>
             
-                <div className="form_wrap">
+                <div className="form_wrap" id="submit-wrap">
                     <input className="input" onClick={handleSubmit} type="submit" value="submit" />
                 </div>
             </form>

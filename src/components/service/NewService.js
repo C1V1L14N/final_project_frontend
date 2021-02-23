@@ -43,7 +43,7 @@ function NewService() {
                     type="text"
                     name="name"
                     id="name"
-                    placeholder="Name"
+                    placeholder="service name"
                     value={formData.name}
                     required/>
                 </div>
@@ -55,7 +55,7 @@ function NewService() {
                     type="text"
                     name="description"
                     id="description"
-                    placeholder="Description"
+                    placeholder="description"
                     value={formData.description}
                     required/>
                 </div>
@@ -67,7 +67,8 @@ function NewService() {
                     type="number"
                     name="price"
                     id="price"
-                    placeholder="Price"
+                    min="0"
+                    placeholder="price in &pound;"
                     value={formData.price}
                     required/>
                 </div>
@@ -79,12 +80,13 @@ function NewService() {
                     type="number"
                     name="duration"
                     id="duration"
-                    placeholder="Duration"
+                    min="0"
+                    placeholder="duration in minutes"
                     value={formData.duration}
                     required/>
                 </div>
 
-                <div className="form_wrap">
+                <div className="form_wrap" id="submit-wrap">
                     <input className="input" id="submit-btn" onClick={handleSubmit} type="submit" value="submit" />
                 </div>
             </form>

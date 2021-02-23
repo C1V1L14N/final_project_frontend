@@ -32,7 +32,7 @@ function NavBar() {
                         <Link className="nav-link" to="/about">About</Link>
                     </li>
                     <li>
-                        <Link className="nav-link" to="/shop">Shop</Link>
+                        <Link className="nav-link" to="/business">My Shop</Link>
                     </li>
                     <li>
                         <Link className="nav-link" to="/basket"><img id="basket" src={basket} alt="basket"/></Link>

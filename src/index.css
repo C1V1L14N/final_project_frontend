@@ -231,6 +231,8 @@ code {
 }
 .form_wrap {
   position: relative;
+  display: flex;
+  align-items: center;
 }
 
 .form_wrap select {
@@ -242,6 +244,9 @@ code {
   background-color: lightskyblue;
 }
 
+#submit-wrap {
+  justify-content: flex-end;
+}
 #submit-btn {
   float: right;
 }

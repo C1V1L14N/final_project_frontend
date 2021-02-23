@@ -85,8 +85,11 @@ const Results = ({keyword}) => {
 
                         {result.price
                         ? <div className="result-details result-box service-result">
+                            <div className="image"></div>
                             <h4>{result.name}(service)</h4>
-                            <p>in {result.shops.name}</p>
+                            {result.shops.name
+                            ? <p>in {result.shops.name}</p>
+                            : null}
                             <Link to= {`/service/${result.id}`}><button className="details-btn">Details</button></Link>
                         </div>
                         : null}

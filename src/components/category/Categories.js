@@ -33,9 +33,7 @@ function Categories() {
 
     return(
         <div className="main-container">
-            <Link id="new-form-link" to="/new-category"><h2>Add New Category</h2></Link>
-
-
+            {/* <Link id="new-form-link" to="/new-category"><h2>Add New Category</h2></Link> */}
             {categoryList
                 ? categoryList.map((category, index) => {
                 return(

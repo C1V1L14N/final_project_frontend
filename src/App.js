@@ -7,6 +7,8 @@ import About from "./components/About";
 import Home from "./components/Home";
 import User from "./components/user/User";
 import UserDetails from "./components/user/UserDetails";
+import Business from "./components/business/Business";
+import BusinessDetails from "./components/business/BusinessDetails";
 import Shop from "./components/shop/Shop";
 import ShopDetails from "./components/shop/ShopDetails";
 import Categories from "./components/category/Categories";
@@ -43,6 +45,8 @@ function App() {
             <Route path="/about" component={About}/>
             <Route path="/user" component={User} exact/>
             <Route path="/user/:userId" component={UserDetails}/>
+            <Route path="/business" component={Business} exact/>
+            <Route path="/business/:businessId" component={BusinessDetails}/>
             <Route path="/shop" component={Shop} exact/>
             <Route path="/shop/:shopId" component={ShopDetails}/>
             <Route path="/category" component={Categories} exact/>
