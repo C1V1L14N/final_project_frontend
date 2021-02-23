@@ -1,4 +1,5 @@
 .gallery {
+    top: 2.5vw;
     height: 100px;
     width: 100%;
     display: grid;

@@ -18,7 +18,7 @@ function Search({onSubmit}) {
     
     return(
         <div>
-            <form>
+            <form className="search-form">
                 <input id="search-input"
                 onChange={handleForm}
                 type="text" 

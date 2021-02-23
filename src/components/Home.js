@@ -18,7 +18,7 @@ function Home() {
         width: 100%;
         flex-grow: 1;
         position: relative;
-        top: 2.5vw;
+
     `;
     
     const searchData = (searchTerm) => {

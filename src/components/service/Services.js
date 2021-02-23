@@ -22,7 +22,7 @@ function Services() {
 
     return(
         <div className="main-container">
-          <Link id="new-form-link" to="/new-service"><h2>Create a New Service</h2></Link>
+          {/* <Link id="new-form-link" to="/new-service"><h2>Create a New Service</h2></Link> */}
             {serviceList
                 ? serviceList.map((service, index) => {
                 return(
