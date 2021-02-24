@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import './NewService.css';
 
-function NewService() {
+function NewService({onSubmit}) {
     const [formData, setFormData] = useState({
         name: '',
         description: '',
@@ -18,6 +18,7 @@ function NewService() {
     const handleSubmit = (evt) => {
         evt.preventDefault();
         onFormSubmit(formData);
+        onSubmit(formData);
     }
 
     const onFormSubmit = function(){
@@ -28,7 +29,7 @@ function NewService() {
               'Content-Type': 'application/json'
             }
         })
-        .then(() => window.location = "/service")
+        // .then(() => window.location = "/service")
     }
     
     return(

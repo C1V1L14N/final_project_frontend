@@ -31,7 +31,17 @@ const BusinessDetails = () => {
     const [isOn, toggleIsOn] = useToggle();
 
 
-
+    // Add Service to Shop
+    const serviceData = (serviceDetails) => {
+        fetch(`http://localhost:8080/shops/${shopId}/services/`, {
+            method: 'POST',
+            body: JSON.stringify(serviceDetails),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+        .then(() => window.location = "/shop")
+    }
     
     // Removes seconds from the time format
     const prettyDate2 = (time) => {
@@ -85,7 +95,7 @@ const BusinessDetails = () => {
                     </div>
                     {isOn
                         ?  <div>
-                            <NewService/>
+                            <NewService onSubmit={serviceData}/>
                         </div>
                     : null}
                     {shop.services
