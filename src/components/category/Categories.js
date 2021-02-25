@@ -3,21 +3,21 @@ import { Link } from "react-router-dom";
 import axios from 'axios';
 import './categories.css';
 
-function Categories() {
+function Categories({categoryList}) {
 
-    const [categoryList, setCategoryList] = useState([]);
+    // const [categoryList, setCategoryList] = useState([]);
 
-    const getCategoryList = () => {
-        axios.get(`http://localhost:8080/categories/`)
-        .then(res => {
-        // console.log(res);
-        setCategoryList(res.data)
-        });
-    };
+    // const getCategoryList = () => {
+    //     axios.get(`http://localhost:8080/categories/`)
+    //     .then(res => {
+    //     // console.log(res);
+    //     setCategoryList(res.data)
+    //     });
+    // };
     
-    useEffect(() => {
-        getCategoryList();
-    }, []);
+    // useEffect(() => {
+    //     getCategoryList();
+    // }, []);
 
     
 

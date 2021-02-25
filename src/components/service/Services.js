@@ -3,21 +3,21 @@ import { Link } from "react-router-dom";
 import axios from 'axios';
 import './service.css';
 
-function Services() {
+function Services({serviceList}) {
 
-    const [serviceList, setServiceList] = useState([]);
+    // const [serviceList, setServiceList] = useState([]);
 
-    const getServiceList = () => {
-        axios.get(`http://localhost:8080/services/`)
-        .then(res => {
-          console.log(res);
-          setServiceList(res.data)
-        });
-      };
+    // const getServiceList = () => {
+    //     axios.get(`http://localhost:8080/services/`)
+    //     .then(res => {
+    //       console.log(res);
+    //       setServiceList(res.data)
+    //     });
+    //   };
     
-      useEffect(() => {
-        getServiceList();
-      }, []);
+    //   useEffect(() => {
+    //     getServiceList();
+    //   }, []);
 
 
     return(
