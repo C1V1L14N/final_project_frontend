@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from "react";
-import axios from 'axios';
+// import axios from 'axios';
 
-function NewShop() {
+function NewShop({categoryList, serviceList}) {
 
     const [formData, setFormData] = useState({
         name: '',
@@ -23,41 +23,41 @@ function NewShop() {
         setFormData(newState);
     }
 
-    // Add Service
-    const [serviceList, setServiceList] = useState([]);
+    // // Add Service
+    // const [serviceList, setServiceList] = useState([]);
 
-    const getServiceList = () => {
-        axios.get(`http://localhost:8080/services/`)
-        .then(res => {
-        // console.log(res);
-        setServiceList(res.data)
-        });
-    };
+    // const getServiceList = () => {
+    //     axios.get(`http://localhost:8080/services/`)
+    //     .then(res => {
+    //     // console.log(res);
+    //     setServiceList(res.data)
+    //     });
+    // };
 
     const serviceOptions = serviceList.map((service, index) => {
         return <option key={index} value={index}>{service.name}</option>
     })
 
-    // Add Category
-    const [categoryList, setCategoryList] = useState([]);
+    // // Add Category
+    // const [categoryList, setCategoryList] = useState([]);
 
-    const getCategoryList = () => {
-        axios.get(`http://localhost:8080/categories/`)
-        .then(res => {
-        //   console.log(res);
-        setCategoryList(res.data)
-        });
-    };
+    // const getCategoryList = () => {
+    //     axios.get(`http://localhost:8080/categories/`)
+    //     .then(res => {
+    //     //   console.log(res);
+    //     setCategoryList(res.data)
+    //     });
+    // };
 
     const categoryOptions = categoryList.map((category, index) => {
         return <option key={index} value={index}>{category.name}</option>
     })
 
 
-    useEffect(() => {
-        getServiceList();
-        getCategoryList();
-      }, []);
+    // useEffect(() => {
+    //     getServiceList();
+    //     getCategoryList();
+    //   }, []);
 
 
     // Handlers
@@ -95,8 +95,13 @@ function NewShop() {
                 'Content-Type': 'application/json'
             }
         })
-        .then(() => window.location = "/shop")
+        // .then(() => window.location = "/shop")
     }
+
+    //     useEffect(() => {
+    //     onFormSubmit();
+    //   }, []);
+
 
     return(
         <div className="main-container">

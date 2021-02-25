@@ -107,13 +107,13 @@ function App() {
             <Route path="/slot" component={Slots} exact/>
             <Route path="/slot/:slotId" component={SlotDetails}/>
             <Route path="/new-user" component={NewUser}/>
-            <Route path="/new-shop" component={NewShop}/>
+            <Route path="/new-shop" render={() => (<NewShop categoryList={categoryList} serviceList={serviceList} />)}/>
             <Route path="/new-category" component={NewCategory}/>
             <Route path="/new-service" component={NewService}/>
             <Route path="/new-booking" component={NewBooking}/>
             <Route path="/new-slot" component={NewSlot}/>
             <Route path="/basket" component={Basket}/>
-            <Route path="/results" component={Results}/>
+            <Route path="/results" render={() => (<Results shopList={shopList} categoryList={categoryList} serviceList={serviceList} />)}/>
           </Switch>
         </div>
         <Footer/> 
