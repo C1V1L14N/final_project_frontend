@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import { Link } from "react-router-dom";
-import axios from 'axios';
+// import axios from 'axios';
 import './categories.css';
 
 function Categories({categoryList}) {
@@ -19,16 +19,6 @@ function Categories({categoryList}) {
     //     getCategoryList();
     // }, []);
 
-    
-
-        // const CategoryLabel = styled.label`
-        //     font-family: sans-serif;
-        //     font-size: 24px;
-        //     margin: 10px;
-        //     padding: 0;
-        //     position: relative;
-        //     left: 0;
-        // `;
 
 
     return(

@@ -38,34 +38,38 @@ function App() {
   const [categoryList, setCategoryList] = useState([]);
   const [serviceList, setServiceList] = useState([]);
 
-  const requestAll = function(){
+  const requestAll = () => {
 
     const shopPromise = axios.get("http://localhost:8080/shops/")
     .then(res => {
-      console.log(res);
-      setShopList(res.data);
+      return res.data;
+      // console.log(res);
+      // setShopList(res.data);
     });
     const categoryPromise = axios.get("http://localhost:8080/categories/")
     .then(res => {
-      console.log(res);
-      setCategoryList(res.data);
+      return res.data;
+      // console.log(res);
+      // setCategoryList(res.data);
     });
     const servicePromise = axios.get("http://localhost:8080/services/")
     .then(res => {
-      console.log(res);
-      setServiceList(res.data);
+      return res.data;
+      // console.log(res);
+      // setServiceList(res.data);
     });
 
-    // Promise.all([shopPromise, categoryPromise, servicePromise])
-    // .then((data) => {
-    //   setShopList(data[0]);
-    //   setCategoryList(data[1]);
-    //   setServiceList(data[2]);
-    // })
+    Promise.all([shopPromise, categoryPromise, servicePromise])
+    .then((data) => {
+      setShopList(data[0]);
+      setCategoryList(data[1]);
+      setServiceList(data[2]);
+    })
+
   }
 
   useEffect(() => {
-    requestAll()
+    requestAll();
   }, [])
 
   const findShopById = (id) => {
