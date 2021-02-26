@@ -53,7 +53,7 @@ const Results = ({keyword}) => {
         });
     }
 
-    if(!keyword) {
+    if(!keyword || keyword === "") {
         return null;
     }
     return(
