@@ -1,29 +1,17 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import {Route, useParams, BrowserRouter as Router} from 'react-router-dom';
+// import {Route, useParams, BrowserRouter as Router} from 'react-router-dom';
 
 
 
 const ShopDetails = ({shop}) => {
 
-    const shopId = useParams().shopId;
-
-    // const [shop, setShop]= useState(null);
-
-    // useEffect(() => {
-    //     fetch(`http://localhost:8080/shops/${shopId}`)
-    //     .then(res => res.json())
-    //     .then(data => setShop(data))
-    // }, []);
+    // const shopId = useParams().shopId;
 
     
     // Removes seconds from the time format
-    const prettyDate2 = (time) => {
-        var date = new Date(parseInt(time));
-        return date.toLocaleTimeString(navigator.language, {
-          hour: '2-digit',
-          minute:'2-digit'
-        });
+    const removeSeconds = (time) => {
+        return time.replace(/:[^:]*$/,'');
     }
     
 
@@ -40,8 +28,8 @@ const ShopDetails = ({shop}) => {
                 <p>{shop.address}</p>
                 <p>{shop.postcode}</p>
                 <p>{shop.town}</p>
-                <p>{shop.openingHour}</p>
-                <p>{shop.closingHour}</p>
+                <p>Opens: {removeSeconds(shop.openingHour)}</p>
+                <p>Closes: {removeSeconds(shop.closingHour)}</p>
                 <p>{shop.telephoneNumber}</p>
                 <p>{shop.email}</p>
                 <div className="additional-details">

@@ -70,13 +70,26 @@ function App() {
 
   useEffect(() => {
     requestAll();
-  }, [])
+  }, []);
 
   const findShopById = (id) => {
     return shopList.find((shop) => {
       return shop.id === parseInt(id);
     })
-  }
+  };
+
+  const findServiceById = (id) => {
+    return serviceList.find((service) => {
+      return service.id === parseInt(id);
+    })
+  };
+
+  const findCategoryById = (id) => {
+    return categoryList.find((category) => {
+      return category.id === parseInt(id);
+    })
+  };
+
 
 
   return (
@@ -103,9 +116,17 @@ function App() {
               return <ShopDetails shop={shop}/>
               }} exact/>
             <Route path="/category" render={() => (<Categories categoryList={categoryList}/>)} exact/>
-            <Route path="/category/:categoryId" component={CategoryDetails}/>
+            <Route path="/category/:categoryId" render={(props) => {
+              const id = props.match.params.categoryId;
+              const category = findCategoryById(id);
+              return <CategoryDetails category={category}/>
+              }} exact/>
             <Route path="/service" render={() => (<Services serviceList={serviceList}/>)} exact/>
-            <Route path="/service/:serviceId" component={ServiceDetails}/>
+            <Route path="/service/:serviceId" render={(props) => {
+              const id = props.match.params.serviceId;
+              const service = findServiceById(id);
+              return <ServiceDetails service={service}/>
+              }} exact/>
             <Route path="/booking/" component={Bookings} exact/>
             <Route path="/booking/:bookingId" component={BookingDetails}/>
             <Route path="/slot" component={Slots} exact/>

@@ -21,7 +21,7 @@ const BusinessDetails = ({shop}) => {
     
     // Service Form Toggle
     const useToggle = (initialValue = false) => {
-        const [value, setValue] = React.useState(initialValue);
+        const [value, setValue] = useState(initialValue);
         const toggle = React.useCallback(() => {
           setValue(v => !v);
         }, []);
@@ -44,12 +44,8 @@ const BusinessDetails = ({shop}) => {
     }
     
     // Removes seconds from the time format
-    const prettyDate2 = (time) => {
-        var date = new Date(parseInt(time));
-        return date.toLocaleTimeString(navigator.language, {
-          hour: '2-digit',
-          minute:'2-digit'
-        });
+    const removeSeconds = (time) => {
+        return time.replace(/:[^:]*$/,'');
     }
     
 
@@ -66,8 +62,8 @@ const BusinessDetails = ({shop}) => {
                 <p>{shop.address}</p>
                 <p>{shop.postcode}</p>
                 <p>{shop.town}</p>
-                <p>{shop.openingHour}</p>
-                <p>{shop.closingHour}</p>
+                <p>Opens: {removeSeconds(shop.openingHour)}</p>
+                <p>Closes: {removeSeconds(shop.closingHour)}</p>
                 <p>{shop.telephoneNumber}</p>
                 <p>{shop.email}</p>
                 <div className="additional-details">

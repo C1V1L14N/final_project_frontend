@@ -44,15 +44,13 @@ const Results = ({keyword}) => {
         getResults();
     }, [keyword]);
 
-    // Removes seconds from the time format
-    const prettyDate2 = (time) => {
-        var date = new Date(parseInt(time));
-        return date.toLocaleTimeString(navigator.language, {
-          hour: '2-digit',
-          minute:'2-digit'
-        });
+
+    const removeSeconds = (time) => {
+        return time.replace(/:[^:]*$/,'');
     }
 
+
+    
     if(!keyword || keyword === "") {
         return null;
     }
@@ -69,7 +67,7 @@ const Results = ({keyword}) => {
                             </div>
                             <div className="result-details">
                                 <h4>{result.name}</h4>
-                                <p>{result.address}<br/>{result.telephoneNumber}<br/>Opens:{prettyDate2(result.openingHour)} Closes:{prettyDate2(result.closingHour)} </p>
+                                <p>{result.address}<br/>{result.telephoneNumber}<br/>Opens:{removeSeconds(result.openingHour)} Closes:{removeSeconds(result.closingHour)} </p>
                             </div>
                             <Link to= {`/shop/${result.id}`}><button className="details-btn">Details</button></Link>
                         </div>

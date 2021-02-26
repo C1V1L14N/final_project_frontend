@@ -1,18 +1,10 @@
 import React, { useEffect, useState } from "react";
-import {useParams, BrowserRouter as Router} from 'react-router-dom';
+// import {useParams, BrowserRouter as Router} from 'react-router-dom';
 
 
-const ServiceDetails = () => {
+const ServiceDetails = ({service}) => {
 
-    const serviceId = useParams().serviceId;
-
-    const [service, setService]= useState(null);
-    useEffect(() => {
-        fetch(`http://localhost:8080/services/${serviceId}`)
-        .then(res => res.json())
-        .then(data => setService(data))
-    }, [])
-    
+    // const serviceId = useParams().serviceId;
 
 
     if (!service){
