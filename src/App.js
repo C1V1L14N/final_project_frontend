@@ -1,6 +1,7 @@
 import './app.css';
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import {Route, Switch, BrowserRouter as Router} from 'react-router-dom';
+import axios from 'axios';
 import NavBar from "./components/NavBar";
 import Search from "./components/Search";
 import About from "./components/About";
@@ -33,6 +34,50 @@ import Results from "./components/Results";
 
 function App() {
 
+  const [shopList, setShopList] = useState([]);
+  const [categoryList, setCategoryList] = useState([]);
+  const [serviceList, setServiceList] = useState([]);
+
+  const requestAll = () => {
+
+    const shopPromise = axios.get("http://localhost:8080/shops/")
+    .then(res => {
+      return res.data;
+      // console.log(res);
+      // setShopList(res.data);
+    });
+    const categoryPromise = axios.get("http://localhost:8080/categories/")
+    .then(res => {
+      return res.data;
+      // console.log(res);
+      // setCategoryList(res.data);
+    });
+    const servicePromise = axios.get("http://localhost:8080/services/")
+    .then(res => {
+      return res.data;
+      // console.log(res);
+      // setServiceList(res.data);
+    });
+
+    Promise.all([shopPromise, categoryPromise, servicePromise])
+    .then((data) => {
+      setShopList(data[0]);
+      setCategoryList(data[1]);
+      setServiceList(data[2]);
+    })
+
+  }
+
+  useEffect(() => {
+    requestAll();
+  }, [])
+
+  const findShopById = (id) => {
+    return shopList.find((shop) => {
+      return shop.id === parseInt(id);
+    })
+  }
+
 
   return (
     <div className="app">
@@ -45,26 +90,34 @@ function App() {
             <Route path="/about" component={About}/>
             <Route path="/user" component={User} exact/>
             <Route path="/user/:userId" component={UserDetails}/>
-            <Route path="/business" component={Business} exact/>
-            <Route path="/business/:businessId" component={BusinessDetails}/>
-            <Route path="/shop" component={Shop} exact/>
-            <Route path="/shop/:shopId" component={ShopDetails}/>
-            <Route path="/category" component={Categories} exact/>
+            <Route path="/business" render={() => (<Business shopList={shopList}/>)} exact/>
+            <Route path="/business/:businessId" render={(props) => {
+              const id = props.match.params.businessId;
+              const shop = findShopById(id);
+              return <BusinessDetails shop={shop}/>
+              }} exact/>
+            <Route path="/shop" render={() => (<Shop shopList={shopList}/>)} exact/>
+            <Route path="/shop/:shopId" render={(props) => {
+              const id = props.match.params.shopId;
+              const shop = findShopById(id);
+              return <ShopDetails shop={shop}/>
+              }} exact/>
+            <Route path="/category" render={() => (<Categories categoryList={categoryList}/>)} exact/>
             <Route path="/category/:categoryId" component={CategoryDetails}/>
-            <Route path="/service" component={Services} exact/>
+            <Route path="/service" render={() => (<Services serviceList={serviceList}/>)} exact/>
             <Route path="/service/:serviceId" component={ServiceDetails}/>
             <Route path="/booking/" component={Bookings} exact/>
             <Route path="/booking/:bookingId" component={BookingDetails}/>
             <Route path="/slot" component={Slots} exact/>
             <Route path="/slot/:slotId" component={SlotDetails}/>
             <Route path="/new-user" component={NewUser}/>
-            <Route path="/new-shop" component={NewShop}/>
+            <Route path="/new-shop" render={() => (<NewShop categoryList={categoryList} serviceList={serviceList} />)}/>
             <Route path="/new-category" component={NewCategory}/>
             <Route path="/new-service" component={NewService}/>
             <Route path="/new-booking" component={NewBooking}/>
             <Route path="/new-slot" component={NewSlot}/>
             <Route path="/basket" component={Basket}/>
-            <Route path="/results" component={Results}/>
+            <Route path="/results" render={() => (<Results shopList={shopList} categoryList={categoryList} serviceList={serviceList} />)}/>
           </Switch>
         </div>
         <Footer/> 

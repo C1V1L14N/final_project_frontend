@@ -6,17 +6,17 @@ import './business.css'
 
 
 
-const BusinessDetails = () => {
+const BusinessDetails = ({shop}) => {
 
     const shopId = useParams().businessId;
+    // console.log(shop);
+    // const [shop, setShop]= useState(null);
 
-    const [shop, setShop]= useState(null);
-
-    useEffect(() => {
-        fetch(`http://localhost:8080/shops/${shopId}`)
-        .then(res => res.json())
-        .then(data => setShop(data))
-    }, []);
+    // useEffect(() => {
+    //     fetch(`http://localhost:8080/shops/${shopId}`)
+    //     .then(res => res.json())
+    //     .then(data => setShop(data))
+    // }, []);
 
     
     // Service Form Toggle
@@ -33,14 +33,14 @@ const BusinessDetails = () => {
 
     // Add Service to Shop
     const serviceData = (serviceDetails) => {
-        fetch(`http://localhost:8080/shops/${shopId}/services/`, {
+        fetch(`http://localhost:8080/shops/${shopId}/`, {
             method: 'POST',
             body: JSON.stringify(serviceDetails),
             headers: {
                 'Content-Type': 'application/json'
             }
         })
-        .then(() => window.location = "/shop")
+        // .then(() => window.location = "/shop")
     }
     
     // Removes seconds from the time format

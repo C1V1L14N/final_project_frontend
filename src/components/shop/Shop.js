@@ -1,22 +1,22 @@
 import React, {useState, useEffect} from 'react';
 import { Link } from "react-router-dom";
-import axios from 'axios';
+// import axios from 'axios';
 
-const Shop = () => {
+const Shop = ({shopList}) => {
 
-  const [shopList, setShopList] = useState([]);
+  // const [shopList, setShopList] = useState([]);
 
 
-  const getShopList = () => {
-    axios.get(`http://localhost:8080/shops/`)
-    .then(res => {
-      setShopList(res.data)
-    });
-  };
+  // const getShopList = () => {
+  //   axios.get(`http://localhost:8080/shops/`)
+  //   .then(res => {
+  //     setShopList(res.data)
+  //   });
+  // };
   
-  useEffect(() => {
-    getShopList();
-  }, []);
+  // useEffect(() => {
+  //   getShopList();
+  // }, []);
 
   return(
 

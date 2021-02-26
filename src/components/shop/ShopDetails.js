@@ -4,17 +4,17 @@ import {Route, useParams, BrowserRouter as Router} from 'react-router-dom';
 
 
 
-const ShopDetails = () => {
+const ShopDetails = ({shop}) => {
 
     const shopId = useParams().shopId;
 
-    const [shop, setShop]= useState(null);
+    // const [shop, setShop]= useState(null);
 
-    useEffect(() => {
-        fetch(`http://localhost:8080/shops/${shopId}`)
-        .then(res => res.json())
-        .then(data => setShop(data))
-    }, []);
+    // useEffect(() => {
+    //     fetch(`http://localhost:8080/shops/${shopId}`)
+    //     .then(res => res.json())
+    //     .then(data => setShop(data))
+    // }, []);
 
     
     // Removes seconds from the time format
@@ -73,9 +73,6 @@ const ShopDetails = () => {
                     : ""}
                 </div>
             </div>
-            
-            {/* <p>{shop.services[0].name}</p>
-            <p>{shop.categories[0].name}</p> */}
         </div>
     )
 

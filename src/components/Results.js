@@ -2,40 +2,31 @@ import React, {useState, useEffect} from 'react';
 import { Link } from "react-router-dom";
 import axios from 'axios';
 import './results.css';
-// import styled from 'styled-components';
 
 const Results = ({keyword}) => {
 
-    const [shops, setShops] = useState([]);
-    const [categories, setCategories] = useState([]);
-    const [services, setServices] = useState([]);
-    const [allResults, setAllResults] = useState([]);
     const [results, setResults] = useState([]);
-
+    
 
     const getResults = () => {
         const getShops = axios.get(`http://localhost:8080/shops/`)
         .then(res => {
         // console.log(res);
-        setShops(res.data);
         return res.data;
         });
         const getCategories = axios.get(`http://localhost:8080/categories/`)
         .then(res => {
         // console.log(res);
-        setCategories(res.data);
         return res.data;
         });
         const getServices = axios.get(`http://localhost:8080/services/`)
         .then(res => {
         // console.log(res);
-        setServices(res.data);
         return res.data;
         });
 
         Promise.all([getShops, getCategories, getServices])
         .then((data) => {
-            setAllResults(data.flat()); 
             const newResults = data.flat().filter((result) => {
                 if(keyword) {
                     return (result.name).toLowerCase().includes(keyword.toLowerCase());
@@ -43,14 +34,15 @@ const Results = ({keyword}) => {
                 }
                 return null;
             })
-            // console.log(newResults)
+            console.log(newResults);
             setResults(newResults);
+
         });
     };
 
     useEffect(() => {
         getResults();
-    }, []);
+    }, [keyword]);
 
     // Removes seconds from the time format
     const prettyDate2 = (time) => {
@@ -61,7 +53,7 @@ const Results = ({keyword}) => {
         });
     }
 
-    if(!keyword) {
+    if(!keyword || keyword === "") {
         return null;
     }
     return(
