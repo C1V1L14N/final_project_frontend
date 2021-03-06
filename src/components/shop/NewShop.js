@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React, { useState } from "react";
 // import axios from 'axios';
 
 function NewShop({categoryList, serviceList}) {
@@ -62,13 +62,15 @@ function NewShop({categoryList, serviceList}) {
 
     // Handlers
     const handleService = function(event) {
+        console.log(event);
         const index = parseInt(event.target.value)
         const selectedService = serviceList[index]
+        // console.log(selectedService);
         let newState = {...formData};
         const newService = [];
         newService.push(selectedService);
         newState['services'] = newService;
-        setFormData(newState)
+        setFormData(newState);
     }
 
     const handleCategory = function(event){
@@ -78,7 +80,7 @@ function NewShop({categoryList, serviceList}) {
         const newCategory = [];
         newCategory.push(selectedCategory);
         newState['categories'] = newCategory
-        setFormData(newState)
+        setFormData(newState);
     }
 
     const handleSubmit = (evt) => {
@@ -95,7 +97,7 @@ function NewShop({categoryList, serviceList}) {
                 'Content-Type': 'application/json'
             }
         })
-        // .then(() => window.location = "/shop")
+        // .then(() => window.location = "/business")
     }
 
     //     useEffect(() => {
@@ -237,7 +239,6 @@ function NewShop({categoryList, serviceList}) {
             </form>
         </div>
     );
-
 }
 
 export default NewShop;

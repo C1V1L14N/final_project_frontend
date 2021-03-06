@@ -111,16 +111,24 @@ code {
 #red {
   text-decoration: none;
   color: #e3e3e3;
+  background-color: transparent;
   font-family: Didot, sans-serif;
   font-size: calc(9px + 0.7vw);
   border-color: red;
 }
+#red:focus {
+  outline: red auto 1px;
+}
 #green {
   text-decoration: none;
   color: #e3e3e3;
+  background-color: transparent;
   font-family: Didot, sans-serif;
   font-size: calc(9px + 0.7vw);
   border-color:limegreen;
+}
+#green:focus {
+  outline: limegreen auto 1px;
 }
 
 .shop-details-container{

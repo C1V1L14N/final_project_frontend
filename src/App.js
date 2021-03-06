@@ -48,8 +48,8 @@ function App() {
     });
     const categoryPromise = axios.get("http://localhost:8080/categories/")
     .then(res => {
-      return res.data;
       // console.log(res);
+      return res.data;
       // setCategoryList(res.data);
     });
     const servicePromise = axios.get("http://localhost:8080/services/")
@@ -107,7 +107,7 @@ function App() {
             <Route path="/business/:businessId" render={(props) => {
               const id = props.match.params.businessId;
               const shop = findShopById(id);
-              return <BusinessDetails shop={shop}/>
+              return <BusinessDetails shop={shop} categoryList={categoryList} serviceList={serviceList}/>
               }} exact/>
             <Route path="/shop" render={() => (<Shop shopList={shopList}/>)} exact/>
             <Route path="/shop/:shopId" render={(props) => {
@@ -134,7 +134,7 @@ function App() {
             <Route path="/new-user" component={NewUser}/>
             <Route path="/new-shop" render={() => (<NewShop categoryList={categoryList} serviceList={serviceList} />)}/>
             <Route path="/new-category" component={NewCategory}/>
-            <Route path="/new-service" component={NewService}/>
+            <Route path="/new-service" render={() => (<NewService/>)} exact/>
             <Route path="/new-booking" component={NewBooking}/>
             <Route path="/new-slot" component={NewSlot}/>
             <Route path="/basket" component={Basket}/>

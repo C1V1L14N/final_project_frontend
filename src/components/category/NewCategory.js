@@ -1,34 +1,59 @@
-import React, {useState} from "react";
+import React, { useState } from 'react';
+// import axios from 'axios';
+import './NewCategory.css';
 
-function NewCategory() {
-    const [formData, setFormData] = useState({
+function NewCategory({ shopId }) {
+
+    const [formCategoryData, setFormCategoryData] = useState({
         name: '',
         description: '',
         image: ''
     });
 
     const handleChange = (evt) => {
-        const newState = {...formData};
+        const newState = {...formCategoryData};
         newState[evt.target.name] = evt.target.value;
-        setFormData(newState);
+        setFormCategoryData(newState);
     }
 
     const handleSubmit = (evt) => {
         evt.preventDefault();
-        onFormSubmit(formData);
+        onFormSubmit(formCategoryData);
     }
 
-    const onFormSubmit = function(){
-        fetch("http://localhost:8080/categories/", {
-            method: 'POST',
-            body: JSON.stringify(formData),
-            headers: {
-              'Content-Type': 'application/json'
+    const addCategory = () => {
+        return new Promise(
+            function(resolve, reject){
+                resolve(
+                    fetch("http://localhost:8080/categories/", {
+                        method: 'POST',
+                        body: JSON.stringify(formCategoryData),
+                        headers: {
+                        'Content-Type': 'application/json'
+                        }
+                    }).then(function(res){
+                        return res.json();
+                    }).then(function(res){
+                        const catId = res.id;
+                        console.log(catId);
+                        fetch(`http://localhost:8080/shops/${shopId}/${catId}`, {
+                            method: 'PATCH',
+                            headers: {
+                                'Content-Type': 'application/json'
+                            }
+                        })
+                    })
+                    // .then(() => window.location = `/business/${shopId}`)
+                )
             }
-        })
-        .then(() => window.location = "/category")
+        )
+    };
+
+    const onFormSubmit = () => {
+        addCategory()
     }
-    
+
+
     return(
         <div className="main-container">
             <h2 className="form-header">Create New Category</h2>
@@ -42,7 +67,7 @@ function NewCategory() {
                     name="name"
                     id="name"
                     placeholder="Name"
-                    value={formData.name}
+                    value={formCategoryData.name}
                     required/>
                 </div>
 
@@ -54,7 +79,7 @@ function NewCategory() {
                     name="description"
                     id="description"
                     placeholder="Description"
-                    value={formData.description}
+                    value={formCategoryData.description}
                     required/>
                 </div>
 
@@ -66,7 +91,7 @@ function NewCategory() {
                     name="image"
                     id="image"
                     placeholder="Image"
-                    value={formData.image}
+                    value={formCategoryData.image}
                     required/>
                 </div>
 
@@ -76,7 +101,6 @@ function NewCategory() {
             </form>
         </div>
     )
-    
 }
 
 

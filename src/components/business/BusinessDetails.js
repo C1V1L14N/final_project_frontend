@@ -1,47 +1,90 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import NewService from "../service/NewService"
 import { Link } from "react-router-dom";
 import {Route, useParams, BrowserRouter as Router} from 'react-router-dom';
 import './business.css'
+import NewCategory from "../category/NewCategory";
 
 
 
-const BusinessDetails = ({shop}) => {
+const BusinessDetails = ({shop, categoryList, serviceList}) => {
+
+    // const [formData, setFormData] = useState({
+    //     name: shop.name,
+    //     address: shop.address,
+    //     postcode: shop.postcode,
+    //     town: shop.town,
+    //     openingHour: shop.openingHour,
+    //     closingHour: shop.closingHour,
+    //     telephoneNumber: shop.telephoneNumber,
+    //     email: shop.email,
+    //     image: shop.image,
+    //     categories: shop.categories,
+    //     services: shop.services
+    // });
+
+    // const handleChange = (evt) => {
+    //     const newState = {...formData};
+    //     newState[evt.target.name] = evt.target.value;
+    //     setFormData(newState);
+    // }
+
+
+    // Handlers
+    // const handleService = function(event) {
+    //     const index = parseInt(event.target.value)
+    //     const selectedService = serviceList[index]
+    //     let newState = {...formData};
+    //     const newService = [];
+    //     newService.push(selectedService);
+    //     newState['services'] = newService;
+    //     setFormData(newState)
+    // }
+
+
+
+    // const handleCategory = function(event){
+    //     const index = parseInt(event.target.value)
+    //     const selectedCategory = categoryList[index]
+    //     let newState = {...formData};
+    //     const newCategory = [];
+    //     newCategory.push(selectedCategory);
+    //     newState['categories'] = newCategory
+    //     setFormData(newState)
+    // }
+
+    // const handleSubmit = (evt) => {
+    //     evt.preventDefault();
+    //     console.log(formData);
+    //     onFormSubmit(formData);
+    // }
 
     const shopId = useParams().businessId;
-    // console.log(shop);
-    // const [shop, setShop]= useState(null);
 
-    // useEffect(() => {
-    //     fetch(`http://localhost:8080/shops/${shopId}`)
-    //     .then(res => res.json())
-    //     .then(data => setShop(data))
-    // }, []);
+    // Add Service to Shop
+    // const onFormSubmit = function(){
+    //     fetch(`http://localhost:8080/shops/${shopId}`, {
+    //         method: 'PATCH',
+    //         body: JSON.stringify(formData),
+    //         headers: {
+    //             'Content-Type': 'application/json'
+    //         }
+    //     })
+    //     // .then(() => window.location = "/shop")
+    // }
 
     
     // Service Form Toggle
     const useToggle = (initialValue = false) => {
         const [value, setValue] = useState(initialValue);
-        const toggle = React.useCallback(() => {
+        const toggle = useCallback(() => {
           setValue(v => !v);
         }, []);
         return [value, toggle];
     }
 
-    const [isOn, toggleIsOn] = useToggle();
-
-
-    // Add Service to Shop
-    const serviceData = (serviceDetails) => {
-        fetch(`http://localhost:8080/shops/${shopId}/`, {
-            method: 'POST',
-            body: JSON.stringify(serviceDetails),
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        })
-        // .then(() => window.location = "/shop")
-    }
+    const [categoryIsOn, categoryToggleIsOn] = useToggle();
+    const [serviceIsOn, serviceToggleIsOn] = useToggle();
     
     // Removes seconds from the time format
     const removeSeconds = (time) => {
@@ -69,14 +112,25 @@ const BusinessDetails = ({shop}) => {
                 <div className="additional-details">
                     <p id="text-p">Category: </p>
                     <div className="link-box-list">
+                        <div className="add-cancel-container">
+                            {categoryIsOn
+                            ? <button className="link-box" id="red" onClick={categoryToggleIsOn}>Cancel</button>
+                            : <button className="link-box" id="green" onClick={categoryToggleIsOn}>Add category</button>}
+                        </div>
+                        {categoryIsOn
+                        ? <div>
+                            <NewCategory shopId={shopId} />
+                        </div>
+                        : null}
                         {shop.categories
-                            ? shop.categories.map((category, index) => {
-                                return(
-                                    <div key={index}>
-                                        <p id="text-p">{category.name}</p>
-                                    </div>
-                                );
-                            })
+                        ? shop.categories.map((category, index) => {
+                            return(
+                                <div className="add-cancel-container" key={index}>
+                                    <Link className="link-box" id="text-link" to={`/category/${category.id}`}>{category.name}</Link>
+                                    {/* <p id="text-p">{category.name}</p> */}
+                                </div>
+                            );
+                        })
                         : ""}
                     </div>
                 </div>
@@ -84,30 +138,27 @@ const BusinessDetails = ({shop}) => {
             <div className="additional-details">
                 <p id="text-p">Services: </p>
                 <div className="link-box-list">
-                    <div className="service-element">
-                            {isOn
-                            ? <a className="link-box" id="red" onClick={toggleIsOn}>Cancel</a>
-                            : <a className="link-box" id="green" onClick={toggleIsOn}>Add service</a>}
+                    <div className="add-cancel-container">
+                        {serviceIsOn
+                        ? <button className="link-box" id="red" onClick={serviceToggleIsOn}>Cancel</button>
+                        : <button className="link-box" id="green" onClick={serviceToggleIsOn}>Add service</button>}
                     </div>
-                    {isOn
-                        ?  <div>
-                            <NewService onSubmit={serviceData}/>
-                        </div>
+                    {serviceIsOn
+                    ?  <div>
+                        <NewService shopId={shopId}/>
+                    </div>
                     : null}
                     {shop.services
-                        ? shop.services.map((service, index) => {
-                            return(
-                                <div className="service-element" key={index}>
-                                    <Link className="link-box" id="text-link" to={`/service/${service.id}`}>{service.name}</Link>
-                                </div>
-                            );
-                        })
+                    ? shop.services.map((service, index) => {
+                        return(
+                            <div className="add-cancel-container" key={index}>
+                                <Link className="link-box" id="text-link" to={`/service/${service.id}`}>{service.name}</Link>
+                            </div>
+                        );
+                    })
                     : ""}
                 </div>
             </div>
-            
-            {/* <p>{shop.services[0].name}</p>
-            <p>{shop.categories[0].name}</p> */}
         </div>
     )
 
