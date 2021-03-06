@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-// import axios from 'axios';
+import axios from 'axios';
 import './NewCategory.css';
 
 function NewCategory({ shopId }) {
@@ -17,6 +17,11 @@ function NewCategory({ shopId }) {
     }
 
     const handleSubmit = (evt) => {
+        for(const[, value] of Object.entries(formCategoryData)) {
+            if(value === "" || value === null){
+                return
+            }
+        }
         evt.preventDefault();
         onFormSubmit(formCategoryData);
     }
@@ -25,25 +30,13 @@ function NewCategory({ shopId }) {
         return new Promise(
             function(resolve, reject){
                 resolve(
-                    fetch("http://localhost:8080/categories/", {
-                        method: 'POST',
-                        body: JSON.stringify(formCategoryData),
-                        headers: {
-                        'Content-Type': 'application/json'
-                        }
-                    }).then(function(res){
-                        return res.json();
-                    }).then(function(res){
-                        const catId = res.id;
-                        console.log(catId);
-                        fetch(`http://localhost:8080/shops/${shopId}/${catId}`, {
-                            method: 'PATCH',
-                            headers: {
-                                'Content-Type': 'application/json'
-                            }
-                        })
+                    axios.post(`http://localhost:8080/categories/`, formCategoryData)
+                    .then(function(res){
+                        const categoryId = res.data.id;
+                        console.log(categoryId);
+                        axios.patch(`http://localhost:8080/shops/${shopId}?category=${categoryId}`)
                     })
-                    // .then(() => window.location = `/business/${shopId}`)
+                    .then(() => window.location = `/business/${shopId}`)
                 )
             }
         )
@@ -67,7 +60,7 @@ function NewCategory({ shopId }) {
                     name="name"
                     id="name"
                     placeholder="Name"
-                    value={formCategoryData.name}
+                    // value={formCategoryData.name}
                     required/>
                 </div>
 
@@ -79,7 +72,7 @@ function NewCategory({ shopId }) {
                     name="description"
                     id="description"
                     placeholder="Description"
-                    value={formCategoryData.description}
+                    // value={formCategoryData.description}
                     required/>
                 </div>
 
@@ -91,7 +84,7 @@ function NewCategory({ shopId }) {
                     name="image"
                     id="image"
                     placeholder="Image"
-                    value={formCategoryData.image}
+                    // value={formCategoryData.image}
                     required/>
                 </div>
 

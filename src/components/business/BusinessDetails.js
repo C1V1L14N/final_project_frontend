@@ -102,13 +102,10 @@ const BusinessDetails = ({shop, categoryList, serviceList}) => {
                 <img src={shop.image} alt="not available"/>
             </div>
             <div className="details">
-                <p>{shop.address}</p>
-                <p>{shop.postcode}</p>
-                <p>{shop.town}</p>
-                <p>Opens: {removeSeconds(shop.openingHour)}</p>
-                <p>Closes: {removeSeconds(shop.closingHour)}</p>
-                <p>{shop.telephoneNumber}</p>
-                <p>{shop.email}</p>
+                <p>Address: {shop.address}, {shop.town} {shop.postcode}</p>
+                <p>Hours: {removeSeconds(shop.openingHour)} - {removeSeconds(shop.closingHour)}</p>
+                <p>Phone: {shop.telephoneNumber}</p>
+                <p>Email: {shop.email}</p>
                 <div className="additional-details">
                     <p id="text-p">Category: </p>
                     <div className="link-box-list">

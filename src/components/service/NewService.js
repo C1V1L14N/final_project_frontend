@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-// import axios from 'axios';
+import axios from 'axios';
 import './NewService.css';
 
 function NewService({ shopId }) {
@@ -18,6 +18,11 @@ function NewService({ shopId }) {
     }
 
     const handleSubmit = (evt) => {
+        for(const[, value] of Object.entries(formServiceData)) {
+            if(value === "" || value === null){
+                return
+            }
+        }
         evt.preventDefault();
         onFormSubmit(formServiceData);
     }
@@ -28,25 +33,13 @@ function NewService({ shopId }) {
         return new Promise(
             function(resolve, reject){
                 resolve(
-                    fetch("http://localhost:8080/services/", {
-                        method: 'POST',
-                        body: JSON.stringify(formServiceData),
-                        headers: {
-                        'Content-Type': 'application/json'
-                        }
-                    }).then(function(res){
-                        return res.json();
-                    }).then(function(res){
-                        const serId = res.id;
-                        console.log(serId);
-                        fetch(`http://localhost:8080/shops/${shopId}/${serId}`, {
-                            method: 'PATCH',
-                            headers: {
-                                'Content-Type': 'application/json'
-                            }
-                        })
+                    axios.post(`http://localhost:8080/services/`, formServiceData)
+                    .then(function(res){
+                        const serviceId = res.data.id;
+                        console.log(serviceId);
+                        axios.patch(`http://localhost:8080/shops/${shopId}?service=${serviceId}`)
                     })
-                    // .then(() => window.location = `/business/${shopId}`)
+                    .then(() => window.location = `/business/${shopId}`)
                 )
             }
         )
@@ -70,7 +63,7 @@ function NewService({ shopId }) {
                     name="name"
                     id="name"
                     placeholder="service name"
-                    value={formServiceData.name}
+                    // value={formServiceData.name}
                     required/>
                 </div>
                 {/* description */}
@@ -82,7 +75,7 @@ function NewService({ shopId }) {
                     name="description"
                     id="description"
                     placeholder="description"
-                    value={formServiceData.description}
+                    // value={formServiceData.description}
                     required/>
                 </div>
                 {/* price */}
@@ -95,7 +88,7 @@ function NewService({ shopId }) {
                     id="price"
                     min="0"
                     placeholder="price in &pound;"
-                    value={formServiceData.price}
+                    // value={formServiceData.price}
                     required/>
                 </div>
                 {/* duration */}
@@ -108,7 +101,7 @@ function NewService({ shopId }) {
                     id="duration"
                     min="0"
                     placeholder="duration in minutes"
-                    value={formServiceData.duration}
+                    // value={formServiceData.duration}
                     required/>
                 </div>
                 {/* submit */}

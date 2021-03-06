@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-// import axios from 'axios';
+import axios from 'axios';
 
 function NewShop({categoryList, serviceList}) {
 
@@ -17,98 +17,69 @@ function NewShop({categoryList, serviceList}) {
         services: []
     });
 
+    // const serviceOptions = serviceList.map((service, index) => {
+    //     return <option key={index} value={index}>{service.name}</option>
+    // })
+
+    // const categoryOptions = categoryList.map((category, index) => {
+    //     return <option key={index} value={index}>{category.name}</option>
+    // })
+
+    // Handlers
     const handleChange = (evt) => {
         const newState = {...formData};
         newState[evt.target.name] = evt.target.value;
         setFormData(newState);
     }
 
-    // // Add Service
-    // const [serviceList, setServiceList] = useState([]);
+    // const handleService = function(event) {
+    //     console.log(event);
+    //     const index = parseInt(event.target.value)
+    //     const selectedService = serviceList[index]
+    //     // console.log(selectedService);
+    //     let newState = {...formData};
+    //     const newService = [];
+    //     newService.push(selectedService);
+    //     newState['services'] = newService;
+    //     setFormData(newState);
+    // }
 
-    // const getServiceList = () => {
-    //     axios.get(`http://localhost:8080/services/`)
-    //     .then(res => {
-    //     // console.log(res);
-    //     setServiceList(res.data)
-    //     });
-    // };
-
-    const serviceOptions = serviceList.map((service, index) => {
-        return <option key={index} value={index}>{service.name}</option>
-    })
-
-    // // Add Category
-    // const [categoryList, setCategoryList] = useState([]);
-
-    // const getCategoryList = () => {
-    //     axios.get(`http://localhost:8080/categories/`)
-    //     .then(res => {
-    //     //   console.log(res);
-    //     setCategoryList(res.data)
-    //     });
-    // };
-
-    const categoryOptions = categoryList.map((category, index) => {
-        return <option key={index} value={index}>{category.name}</option>
-    })
-
-
-    // useEffect(() => {
-    //     getServiceList();
-    //     getCategoryList();
-    //   }, []);
-
-
-    // Handlers
-    const handleService = function(event) {
-        console.log(event);
-        const index = parseInt(event.target.value)
-        const selectedService = serviceList[index]
-        // console.log(selectedService);
-        let newState = {...formData};
-        const newService = [];
-        newService.push(selectedService);
-        newState['services'] = newService;
-        setFormData(newState);
-    }
-
-    const handleCategory = function(event){
-        const index = parseInt(event.target.value)
-        const selectedCategory = categoryList[index]
-        let newState = {...formData};
-        const newCategory = [];
-        newCategory.push(selectedCategory);
-        newState['categories'] = newCategory
-        setFormData(newState);
-    }
+    // const handleCategory = function(event){
+    //     const index = parseInt(event.target.value)
+    //     const selectedCategory = categoryList[index]
+    //     let newState = {...formData};
+    //     const newCategory = [];
+    //     newCategory.push(selectedCategory);
+    //     newState['categories'] = newCategory
+    //     setFormData(newState);
+    // }
 
     const handleSubmit = (evt) => {
-        evt.preventDefault();
         console.log(formData);
+        for(const[key, value] of Object.entries(formData)) {
+            if(value === "" || value === null){
+                return
+            }
+        }
+        evt.preventDefault();
         onFormSubmit(formData);
     }
 
     const onFormSubmit = function(){
-        fetch("http://localhost:8080/shops/", {
-            method: 'POST',
-            body: JSON.stringify(formData),
-            headers: {
-                'Content-Type': 'application/json'
-            }
+        axios.post(`http://localhost:8080/shops/`, formData)
+        .then(function(res){
+            const businessId = res.data.id;
+            console.log(businessId)
+            return businessId;
         })
-        // .then(() => window.location = "/business")
+        .then((businessId) => window.location = `/business/${businessId}`)
     }
-
-    //     useEffect(() => {
-    //     onFormSubmit();
-    //   }, []);
 
 
     return(
         <div className="main-container">
             <h2 className="form-header">Create New Profile</h2>
-            <form className="form-container">
+            <form className="form-container" required>
             {/* name */}
                 <div className="form_wrap">
                     <label className="label" htmlFor="name">Name:</label>
@@ -118,7 +89,6 @@ function NewShop({categoryList, serviceList}) {
                     name="name"
                     id="name"
                     placeholder="Name"
-                    value={formData.name}
                     required/>
                 </div>
             {/* address */}
@@ -130,7 +100,6 @@ function NewShop({categoryList, serviceList}) {
                     name="address"
                     id="address"
                     placeholder="Address"
-                    value={formData.address}
                     required/>
                 </div>
             {/* postcode */}
@@ -142,7 +111,6 @@ function NewShop({categoryList, serviceList}) {
                     name="postcode"
                     id="postcode"
                     placeholder="Postcode"
-                    value={formData.postcode}
                     required/>
                 </div>
             {/* town */}
@@ -154,7 +122,6 @@ function NewShop({categoryList, serviceList}) {
                     name="town"
                     id="town"
                     placeholder="Town"
-                    value={formData.town}
                     required/>
                 </div>
             {/* opening hour */}
@@ -165,7 +132,6 @@ function NewShop({categoryList, serviceList}) {
                     type="time"
                     name="openingHour"
                     id="openingHour"
-                    value={formData.openingHour}
                     required/>
                 </div>
             {/* closing hour */}
@@ -176,7 +142,6 @@ function NewShop({categoryList, serviceList}) {
                     type="time"
                     name="closingHour"
                     id="closingHour"
-                    value={formData.closingHour}
                     required/>
                 </div>
             {/* telephone number */}
@@ -188,7 +153,6 @@ function NewShop({categoryList, serviceList}) {
                     name="telephoneNumber"
                     id="telephoneNumber"
                     placeholder="Telephone Number"
-                    value={formData.telephoneNumber}
                     required/>
                 </div>
             {/* email */}
@@ -200,7 +164,6 @@ function NewShop({categoryList, serviceList}) {
                     name="email"
                     id="email"
                     placeholder="Email"
-                    value={formData.email}
                     required/>
                 </div>
             {/* image */}
@@ -212,30 +175,28 @@ function NewShop({categoryList, serviceList}) {
                     name="image"
                     id="image"
                     placeholder="Image Link"
-                    value={formData.image}
                     required/>
                 </div>
                 {/* services */}
-                <div className="form_wrap">
+                {/* <div className="form_wrap">
                     <label className="label" htmlFor="services">Select service: </label>
                     <select className="input" name="services" onChange={handleService} defaultValue="select-service">
                         <option disabled value="select-service">Select service</option>
                         {serviceOptions}
                     </select>
-                </div>
+                </div> */}
                 {/* categories */}
-                <div className="form_wrap">
+                {/* <div className="form_wrap">
                     <label className="label" htmlFor="categories">Select category: </label>
                     <select className="input" name="categories" onChange={handleCategory} defaultValue="select-category">
                         <option disabled value="select-category">Select category</option>
                         {categoryOptions}
                     </select>
-                </div>
+                </div> */}
                 {/* submit */}
                 <div className="form_wrap" id="submit-wrap">
-                    <input className="input" id="submit-btn" onClick={handleSubmit} type="submit" value="submit" />
+                    <input className="input" id="submit-btn" onClick={handleSubmit} type="submit" value="submit" required/>
                 </div>
-                
             </form>
         </div>
     );
