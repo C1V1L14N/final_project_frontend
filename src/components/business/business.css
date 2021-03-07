@@ -1,4 +1,42 @@
-.add-cancel-container {
+.additional-container {
+    display: flex;
+    justify-content: center;
+    margin: 0 10px;
+}
+.start-container {
+    display: flex;
+    justify-content: flex-start;
+    margin: 0 10px;
+}
+.end-container {
     display: flex;
     justify-content: flex-end;
+    margin: 0 10px;
+}
+.new-icon {
+    position: relative;
+    height: auto;
+    width: calc(15px + 0.5vw);
+    color: limegreen;
+}
+.close-icon {
+    position: relative;
+    height: auto;
+    width: calc(15px + 0.5vw);
+    color: red;
+}
+.edit-icon {
+    position: relative;
+    height: auto;
+    width: calc(15px + 0.5vw);
+    color: white;
+}
+.delete-icon {
+    position: relative;
+    height: auto;
+    width: calc(15px + 0.5vw);
+    color: red;
+}
+.btn {
+    background-color: transparent;
 }

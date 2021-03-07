@@ -6,8 +6,8 @@ function NewShop({categoryList, serviceList}) {
     const [formData, setFormData] = useState({
         name: '',
         address: '',
-        postcode: '',
         town: '',
+        postcode: '',
         openingHour: '',
         closingHour: '',
         telephoneNumber: '',
@@ -79,7 +79,7 @@ function NewShop({categoryList, serviceList}) {
     return(
         <div className="main-container">
             <h2 className="form-header">Create New Profile</h2>
-            <form className="form-container" required>
+            <form className="form-container">
             {/* name */}
                 <div className="form_wrap">
                     <label className="label" htmlFor="name">Name:</label>
@@ -102,17 +102,6 @@ function NewShop({categoryList, serviceList}) {
                     placeholder="Address"
                     required/>
                 </div>
-            {/* postcode */}
-                <div className="form_wrap">
-                    <label className="label" htmlFor="postcode">Postcode:</label>
-                    <input className="input"
-                    onChange={handleChange}
-                    type="text"
-                    name="postcode"
-                    id="postcode"
-                    placeholder="Postcode"
-                    required/>
-                </div>
             {/* town */}
                 <div className="form_wrap">
                     <label className="label" htmlFor="town">Town:</label>
@@ -122,6 +111,17 @@ function NewShop({categoryList, serviceList}) {
                     name="town"
                     id="town"
                     placeholder="Town"
+                    required/>
+                </div>
+            {/* postcode */}
+                <div className="form_wrap">
+                    <label className="label" htmlFor="postcode">Postcode:</label>
+                    <input className="input"
+                    onChange={handleChange}
+                    type="text"
+                    name="postcode"
+                    id="postcode"
+                    placeholder="Postcode"
                     required/>
                 </div>
             {/* opening hour */}

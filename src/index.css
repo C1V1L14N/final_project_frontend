@@ -90,6 +90,7 @@ code {
 }
 
 #text-p {
+  text-align: center;
   text-decoration: none;
   color: #e3e3e3;
   font-family: Didot, sans-serif;
@@ -138,7 +139,8 @@ code {
 }
 .details{
   margin: 10px;
-  max-width: 50%;
+  max-width: 35%;
+  min-width: 320px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -186,11 +188,12 @@ code {
   justify-content: center;
   object-fit: cover;
   height: auto;
-  width: calc(80px + 3vw);
+  width: 100%;
+  min-width: calc(80px + 3vw);
   border-style: solid;
   border-width: 2px;
   border-radius: 6px;
-  margin: 10px 25px;
+  margin: 10px 5px;
   padding: 1px;
 }
 
@@ -203,25 +206,26 @@ code {
 .additional-details {
   position: relative;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
 }
-.additional-details > h4{
+.additional-details > h4 {
   position: relative;
   margin-top: 100px;
   color: #E3E3E3;
   font-family: Didot, sans-serif;
   font-size: 40px;
 }
-.additional-details > p{
+.additional-details > p {
   font-family: Didot, sans-serif;
   color: #E3E3E3;
 }
-.additional-details > div > p{
+.additional-details > div > p {
   font-family: Didot, sans-serif;
   color: #E3E3E3;
 }
 
-.service-text > h4{
+.service-text > h4 {
   font-family: Didot, sans-serif;
   color: #e3e3e3;
   font-size: 40px;
@@ -234,7 +238,7 @@ code {
   padding-left: 15px;
 }
 
-.form-container{
+.form-container {
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -242,13 +246,16 @@ code {
   color: #e3e3e3;
   font-family: Didot, sans-serif;
 }
+.form-header {
+  margin-inline: 10px;
+}
 
-.h2{
+.h2 {
   color: #e3e3e3;
   font-family: Didot, sans-serif;
 }
 
-.label{
+.label {
   /* display: inline-block; */
   float: left;
   clear: left;

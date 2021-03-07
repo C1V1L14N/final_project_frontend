@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { IconContext } from "react-icons";
+import { FaWindowClose } from "react-icons/fa";
 import './NewCategory.css';
 
-function NewCategory({ shopId }) {
+function NewCategory({ shopId, toggle }) {
 
     const [formCategoryData, setFormCategoryData] = useState({
         name: '',
@@ -26,32 +28,25 @@ function NewCategory({ shopId }) {
         onFormSubmit(formCategoryData);
     }
 
-    const addCategory = () => {
-        return new Promise(
-            function(resolve, reject){
-                resolve(
-                    axios.post(`http://localhost:8080/categories/`, formCategoryData)
-                    .then(function(res){
-                        const categoryId = res.data.id;
-                        console.log(categoryId);
-                        axios.patch(`http://localhost:8080/shops/${shopId}?category=${categoryId}`)
-                    })
-                    .then(() => window.location = `/business/${shopId}`)
-                )
-            }
-        )
-    };
-
     const onFormSubmit = () => {
-        addCategory()
-    }
+        axios.post(`http://localhost:8080/categories/`, formCategoryData)
+        .then(function(res){
+            const categoryId = res.data.id;
+            console.log(categoryId);
+            axios.patch(`http://localhost:8080/shops/${shopId}?category=${categoryId}`)
+        })
+        .then(() => window.location = `/business/${shopId}`)
+    };
 
 
     return(
-        <div className="main-container">
-            <h2 className="form-header">Create New Category</h2>
+        <div className="form-container">
+            <div className="end-container">
+                <h2 className="form-header">Create New Category</h2>
+                <IconContext.Provider value={{ className: "close-icon"}}><FaWindowClose onClick={toggle}/></IconContext.Provider>
+            </div>
             <form className="form-container">
-                
+            {/* name */}
                 <div className="form_wrap">
                     <label className="label" htmlFor="name">Name:</label>
                     <input className="input"
@@ -63,7 +58,7 @@ function NewCategory({ shopId }) {
                     // value={formCategoryData.name}
                     required/>
                 </div>
-
+            {/* description */}
                 <div className="form_wrap">
                     <label className="label" htmlFor="description">Description:</label>
                     <input className="input"
@@ -75,7 +70,7 @@ function NewCategory({ shopId }) {
                     // value={formCategoryData.description}
                     required/>
                 </div>
-
+            {/* image */}
                 <div className="form_wrap">
                     <label className="label" htmlFor="image">Image:</label>
                     <input className="input"
@@ -87,7 +82,7 @@ function NewCategory({ shopId }) {
                     // value={formCategoryData.image}
                     required/>
                 </div>
-
+            {/* submit */}
                 <div className="form_wrap" id="submit-wrap">
                     <input className="input" id="submit-btn" onClick={handleSubmit} type="submit" value="submit" />
                 </div>

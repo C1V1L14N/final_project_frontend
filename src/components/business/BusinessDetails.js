@@ -1,9 +1,19 @@
-import React, { useEffect, useState, useCallback } from "react";
-import NewService from "../service/NewService"
+import React, { useState, useCallback } from "react";
 import { Link } from "react-router-dom";
 import {Route, useParams, BrowserRouter as Router} from 'react-router-dom';
-import './business.css'
 import NewCategory from "../category/NewCategory";
+import CategoryEdit from "../category/CategoryDetails";
+import NewService from "../service/NewService";
+import BusinessAddress from "./BusinessAddress";
+import BusinessHours from "./BusinessHours";
+import BusinessPhone from "./BusinessPhone";
+import BusinessEmail from "./BusinessEmail";
+import { IconContext } from "react-icons";
+import { FaPlusSquare } from "react-icons/fa";
+import { FaWindowClose } from "react-icons/fa";
+import { FaEdit } from "react-icons/fa";
+import { FaTrashAlt } from "react-icons/fa";
+import './business.css'
 
 
 
@@ -85,10 +95,16 @@ const BusinessDetails = ({shop, categoryList, serviceList}) => {
 
     const [categoryIsOn, categoryToggleIsOn] = useToggle();
     const [serviceIsOn, serviceToggleIsOn] = useToggle();
+    const [addressIsOn, addressToggleIsOn] = useToggle();
+    const [hoursIsOn, hoursToggleIsOn] = useToggle();
+    const [phoneIsOn, phoneToggleIsOn] = useToggle();
+    const [emailIsOn, emailToggleIsOn] = useToggle();
     
     // Removes seconds from the time format
     const removeSeconds = (time) => {
-        return time.replace(/:[^:]*$/,'');
+        if(time) {
+            return time.replace(/:[^:]*$/,'');
+        }
     }
     
 
@@ -102,54 +118,75 @@ const BusinessDetails = ({shop, categoryList, serviceList}) => {
                 <img src={shop.image} alt="not available"/>
             </div>
             <div className="details">
-                <p>Address: {shop.address}, {shop.town} {shop.postcode}</p>
-                <p>Hours: {removeSeconds(shop.openingHour)} - {removeSeconds(shop.closingHour)}</p>
-                <p>Phone: {shop.telephoneNumber}</p>
-                <p>Email: {shop.email}</p>
-                <div className="additional-details">
-                    <p id="text-p">Category: </p>
-                    <div className="link-box-list">
-                        <div className="add-cancel-container">
-                            {categoryIsOn
-                            ? <button className="link-box" id="red" onClick={categoryToggleIsOn}>Cancel</button>
-                            : <button className="link-box" id="green" onClick={categoryToggleIsOn}>Add category</button>}
-                        </div>
-                        {categoryIsOn
-                        ? <div>
-                            <NewCategory shopId={shopId} />
-                        </div>
-                        : null}
-                        {shop.categories
-                        ? shop.categories.map((category, index) => {
-                            return(
-                                <div className="add-cancel-container" key={index}>
-                                    <Link className="link-box" id="text-link" to={`/category/${category.id}`}>{category.name}</Link>
-                                    {/* <p id="text-p">{category.name}</p> */}
-                                </div>
-                            );
-                        })
-                        : ""}
-                    </div>
-                </div>
+                {addressIsOn
+                ? <BusinessAddress shop={shop} toggle={addressToggleIsOn}/>
+                : <div className="start-container">
+                    <IconContext.Provider value={{ className: "edit-icon"}}><FaEdit onClick={addressToggleIsOn}/></IconContext.Provider>
+                    <p className="form-header">Address: {shop.address}, {shop.town} {shop.postcode}</p>
+                </div>}
+                {hoursIsOn
+                ? <BusinessHours shop={shop} toggle={hoursToggleIsOn}/>
+                :<div className="start-container">
+                    <IconContext.Provider value={{ className: "edit-icon"}}><FaEdit onClick={hoursToggleIsOn}/></IconContext.Provider>
+                    <p className="form-header">Hours: {removeSeconds(shop.openingHour)} - {removeSeconds(shop.closingHour)}</p>
+                </div>}
+                {phoneIsOn
+                ? <BusinessPhone shop={shop} toggle={phoneToggleIsOn}/>
+                : <div className="start-container">
+                    <IconContext.Provider value={{ className: "edit-icon"}}><FaEdit onClick={phoneToggleIsOn}/></IconContext.Provider>
+                    <p className="form-header">Phone: {shop.telephoneNumber}</p>
+                </div>}
+                {emailIsOn
+                ? <BusinessEmail shop={shop} toggle={emailToggleIsOn}/>
+                : <div className="start-container">
+                    <IconContext.Provider value={{ className: "edit-icon"}}><FaEdit onClick={emailToggleIsOn}/></IconContext.Provider>
+                    <p className="form-header">Email: {shop.email}</p>
+                </div>}
             </div>
             <div className="additional-details">
-                <p id="text-p">Services: </p>
                 <div className="link-box-list">
-                    <div className="add-cancel-container">
+                        {categoryIsOn
+                        ? <NewCategory shopId={shopId} toggle={categoryToggleIsOn} />
+                        : <div className="additional-container">
+                            <p id="text-p">Categories: </p>
+                            <IconContext.Provider value={{ className: "new-icon"}}><FaPlusSquare onClick={categoryToggleIsOn}/></IconContext.Provider>
+                        </div>}
+                    {shop.categories
+                    ? shop.categories.map((category, index) => {
+                        return(
+                            <div className="additional-container" key={index}>
+                                <div className="start-container">
+                                    <IconContext.Provider value={{ className: "edit-icon"}}><FaEdit/></IconContext.Provider>
+                                </div>
+                                <Link className="link-box" id="text-link" to={`/category/${category.id}`}>{category.name}</Link>
+                                <div className="end-container">
+                                    <IconContext.Provider value={{ className: "delete-icon"}}><FaTrashAlt/></IconContext.Provider>
+                                </div>
+                            </div>
+                        );
+                    })
+                    : ""}
+                </div>
+                <div className="link-box-list">
                         {serviceIsOn
-                        ? <button className="link-box" id="red" onClick={serviceToggleIsOn}>Cancel</button>
-                        : <button className="link-box" id="green" onClick={serviceToggleIsOn}>Add service</button>}
-                    </div>
-                    {serviceIsOn
-                    ?  <div>
-                        <NewService shopId={shopId}/>
-                    </div>
-                    : null}
+                        ? <div className="additional-container">
+                            <NewService shopId={shopId} toggle={serviceToggleIsOn}/>
+                        </div>
+                        : <div className="additional-container">
+                            <p id="text-p">Services: </p>
+                            <IconContext.Provider value={{ className: "new-icon"}}><FaPlusSquare onClick={serviceToggleIsOn}/></IconContext.Provider>
+                        </div>}
                     {shop.services
                     ? shop.services.map((service, index) => {
                         return(
-                            <div className="add-cancel-container" key={index}>
+                            <div className="additional-container" key={index}>
+                                <div className="start-container">
+                                    <IconContext.Provider value={{ className: "edit-icon"}}><FaEdit/></IconContext.Provider>
+                                </div>
                                 <Link className="link-box" id="text-link" to={`/service/${service.id}`}>{service.name}</Link>
+                                <div className="end-container">
+                                    <IconContext.Provider value={{ className: "delete-icon"}}><FaTrashAlt/></IconContext.Provider>
+                                </div>
                             </div>
                         );
                     })

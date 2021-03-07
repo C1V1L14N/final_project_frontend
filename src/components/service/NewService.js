@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import axios from 'axios';
+import { IconContext } from "react-icons";
+import { FaWindowClose } from "react-icons/fa";
 import './NewService.css';
 
-function NewService({ shopId }) {
+function NewService({ shopId, toggle }) {
 
     const [formServiceData, setFormServiceData] = useState({
         name: '',
@@ -29,32 +31,24 @@ function NewService({ shopId }) {
 
 
 
-    const addService = () => {
-        return new Promise(
-            function(resolve, reject){
-                resolve(
-                    axios.post(`http://localhost:8080/services/`, formServiceData)
-                    .then(function(res){
-                        const serviceId = res.data.id;
-                        console.log(serviceId);
-                        axios.patch(`http://localhost:8080/shops/${shopId}?service=${serviceId}`)
-                    })
-                    .then(() => window.location = `/business/${shopId}`)
-                )
-            }
-        )
-    };
-
     const onFormSubmit = () => {
-        addService()
-    }
+        axios.post(`http://localhost:8080/services/`, formServiceData)
+        .then(function(res){
+            const serviceId = res.data.id;
+            console.log(serviceId);
+            axios.patch(`http://localhost:8080/shops/${shopId}?service=${serviceId}`)
+        })
+    };
 
  
     return(
-        <div className="main-container">
-            <h2 className="form-header" >Create New Service</h2> 
+        <div className="form-container">
+            <div className="end-container">
+                <h2 className="form-header" >Create New Service</h2>
+                <IconContext.Provider value={{ className: "close-icon"}}><FaWindowClose onClick={toggle}/></IconContext.Provider>
+            </div>
             <form className="form-container">
-                {/* name */}
+            {/* name */}
                 <div className="form_wrap">
                     <label className="label" htmlFor="name">Name:</label>
                     <input className="input"
@@ -66,7 +60,7 @@ function NewService({ shopId }) {
                     // value={formServiceData.name}
                     required/>
                 </div>
-                {/* description */}
+            {/* description */}
                 <div className="form_wrap">
                     <label className="label" htmlFor="description">Description:</label>
                     <input className="input"
@@ -78,7 +72,7 @@ function NewService({ shopId }) {
                     // value={formServiceData.description}
                     required/>
                 </div>
-                {/* price */}
+            {/* price */}
                 <div className="form_wrap">
                     <label className="label" htmlFor="price">Price:</label>
                     <input className="input"
@@ -91,7 +85,7 @@ function NewService({ shopId }) {
                     // value={formServiceData.price}
                     required/>
                 </div>
-                {/* duration */}
+            {/* duration */}
                 <div className="form_wrap">
                     <label className="label" htmlFor="duration">Duration:</label>
                     <input className="input"
@@ -104,7 +98,7 @@ function NewService({ shopId }) {
                     // value={formServiceData.duration}
                     required/>
                 </div>
-                {/* submit */}
+            {/* submit */}
                 <div className="form_wrap" id="submit-wrap">
                     <input className="input" id="submit-btn" onClick={handleSubmit} type="submit" value="submit" />
                 </div>

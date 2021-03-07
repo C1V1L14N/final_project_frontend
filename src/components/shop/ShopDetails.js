@@ -11,7 +11,9 @@ const ShopDetails = ({shop}) => {
     
     // Removes seconds from the time format
     const removeSeconds = (time) => {
-        return time.replace(/:[^:]*$/,'');
+        if(time) {
+            return time.replace(/:[^:]*$/,'');
+        }
     }
     
 
@@ -25,31 +27,26 @@ const ShopDetails = ({shop}) => {
                 <img src={shop.image} alt="not available"/>
             </div>
             <div className="details">
-                <p>{shop.address}</p>
-                <p>{shop.postcode}</p>
-                <p>{shop.town}</p>
-                <p>Opens: {removeSeconds(shop.openingHour)}</p>
-                <p>Closes: {removeSeconds(shop.closingHour)}</p>
-                <p>{shop.telephoneNumber}</p>
-                <p>{shop.email}</p>
-                <div className="additional-details">
-                    <p id="text-p">Category: </p>
-                    <div className="link-box-list">
-                        {shop.categories
-                            ? shop.categories.map((category, index) => {
-                                return(
-                                    <div key={index}>
-                                        <p id="text-p">{category.name}</p>
-                                    </div>
-                                );
-                            })
-                        : ""}
-                    </div>
-                </div>
+                <p>Address: {shop.address}, {shop.town} {shop.postcode}</p>
+                <p>Hours: {removeSeconds(shop.openingHour)} - {removeSeconds(shop.closingHour)}</p>
+                <p>Phone: {shop.telephoneNumber}</p>
+                <p>Email: {shop.email}</p>
             </div>
             <div className="additional-details">
-                <p id="text-p">Services: </p>
                 <div className="link-box-list">
+                    <p id="text-p">Category: </p>
+                    {shop.categories
+                        ? shop.categories.map((category, index) => {
+                            return(
+                                <div key={index}>
+                                    <p id="text-p">{category.name}</p>
+                                </div>
+                            );
+                        })
+                    : ""}
+                </div>
+                <div className="link-box-list">
+                    <p id="text-p">Services: </p>
                     {shop.services
                         ? shop.services.map((service, index) => {
                             return(
