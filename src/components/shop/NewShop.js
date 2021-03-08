@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import axios from 'axios';
+import { IconContext } from "react-icons";
+import { FaCheckSquare } from "react-icons/fa";
 
 function NewShop({categoryList, serviceList}) {
 
@@ -81,7 +83,7 @@ function NewShop({categoryList, serviceList}) {
             <h2 className="form-header">Create New Profile</h2>
             <form className="form-container">
             {/* name */}
-                <div className="form_wrap">
+                <div className="form-wrap">
                     <label className="label" htmlFor="name">Name:</label>
                     <input className="input"
                     onChange={handleChange}
@@ -92,7 +94,7 @@ function NewShop({categoryList, serviceList}) {
                     required/>
                 </div>
             {/* address */}
-                <div className="form_wrap">
+                <div className="form-wrap">
                     <label className="label" htmlFor="address">Address:</label>
                     <input className="input"
                     onChange={handleChange}
@@ -103,7 +105,7 @@ function NewShop({categoryList, serviceList}) {
                     required/>
                 </div>
             {/* town */}
-                <div className="form_wrap">
+                <div className="form-wrap">
                     <label className="label" htmlFor="town">Town:</label>
                     <input className="input"
                     onChange={handleChange}
@@ -114,7 +116,7 @@ function NewShop({categoryList, serviceList}) {
                     required/>
                 </div>
             {/* postcode */}
-                <div className="form_wrap">
+                <div className="form-wrap">
                     <label className="label" htmlFor="postcode">Postcode:</label>
                     <input className="input"
                     onChange={handleChange}
@@ -125,7 +127,7 @@ function NewShop({categoryList, serviceList}) {
                     required/>
                 </div>
             {/* opening hour */}
-                <div className="form_wrap">
+                <div className="form-wrap">
                     <label className="label" htmlFor="openingHour">Opening Hour:</label>
                     <input className="input"
                     onChange={handleChange}
@@ -135,7 +137,7 @@ function NewShop({categoryList, serviceList}) {
                     required/>
                 </div>
             {/* closing hour */}
-                <div className="form_wrap">
+                <div className="form-wrap">
                     <label className="label" htmlFor="closingHour">Closing Hour:</label>
                     <input className="input"
                     onChange={handleChange}
@@ -145,7 +147,7 @@ function NewShop({categoryList, serviceList}) {
                     required/>
                 </div>
             {/* telephone number */}
-                <div className="form_wrap">
+                <div className="form-wrap">
                     <label className="label" htmlFor="telephoneNumber">Telephone Number:</label>
                     <input className="input"
                     onChange={handleChange}
@@ -156,7 +158,7 @@ function NewShop({categoryList, serviceList}) {
                     required/>
                 </div>
             {/* email */}
-                <div className="form_wrap">
+                <div className="form-wrap">
                     <label className="label" htmlFor="email">Email address:</label>
                     <input className="input"
                     onChange={handleChange}
@@ -167,7 +169,7 @@ function NewShop({categoryList, serviceList}) {
                     required/>
                 </div>
             {/* image */}
-                <div className="form_wrap">
+                <div className="form-wrap">
                     <label className="label" htmlFor="image">Image Link:</label>
                     <input className="input"
                     onChange={handleChange}
@@ -178,7 +180,7 @@ function NewShop({categoryList, serviceList}) {
                     required/>
                 </div>
                 {/* services */}
-                {/* <div className="form_wrap">
+                {/* <div className="form-wrap">
                     <label className="label" htmlFor="services">Select service: </label>
                     <select className="input" name="services" onChange={handleService} defaultValue="select-service">
                         <option disabled value="select-service">Select service</option>
@@ -186,7 +188,7 @@ function NewShop({categoryList, serviceList}) {
                     </select>
                 </div> */}
                 {/* categories */}
-                {/* <div className="form_wrap">
+                {/* <div className="form-wrap">
                     <label className="label" htmlFor="categories">Select category: </label>
                     <select className="input" name="categories" onChange={handleCategory} defaultValue="select-category">
                         <option disabled value="select-category">Select category</option>
@@ -194,7 +196,7 @@ function NewShop({categoryList, serviceList}) {
                     </select>
                 </div> */}
                 {/* submit */}
-                <div className="form_wrap" id="submit-wrap">
+                <div className="form-wrap" id="submit-wrap">
                     <input className="input" id="submit-btn" onClick={handleSubmit} type="submit" value="submit" required/>
                 </div>
             </form>

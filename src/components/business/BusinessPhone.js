@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { IconContext } from "react-icons";
 import { FaWindowClose } from "react-icons/fa";
+import { FaCheckSquare } from "react-icons/fa";
 
 function BusinessPhone({ shop, toggle }) {
 
@@ -35,11 +36,11 @@ function BusinessPhone({ shop, toggle }) {
         <div className="form-container">
             <div className="end-container">
                 <h2 className="form-header">Edit Telephone Number</h2>
-                <IconContext.Provider value={{ className: "close-icon"}}><FaWindowClose onClick={toggle}/></IconContext.Provider>
+                <IconContext.Provider value={{ className: "close-icon icon"}}><FaWindowClose onClick={toggle}/></IconContext.Provider>
             </div>
             <form className="form-container" required>
             {/* telephone number */}
-                <div className="form_wrap">
+                <div className="form-wrap">
                     <label className="label" htmlFor="telephoneNumber">Telephone Number:</label>
                     <input className="input"
                     onChange={handleChange}
@@ -51,8 +52,8 @@ function BusinessPhone({ shop, toggle }) {
                     required/>
                 </div>
             {/* submit */}
-                <div className="form_wrap" id="submit-wrap">
-                    <input className="input" id="submit-btn" onClick={handleSubmit} type="submit" value="submit" required/>
+                <div className="form-wrap" id="submit-wrap">
+                <IconContext.Provider value={{ className: "checked-icon icon"}}><FaCheckSquare onClick={handleSubmit}/></IconContext.Provider>
                 </div>
             </form>
         </div>

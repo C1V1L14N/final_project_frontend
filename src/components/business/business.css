@@ -2,6 +2,8 @@
     display: flex;
     justify-content: center;
     margin: 0 10px;
+    width: 100%;
+    max-width: 100%;
 }
 .start-container {
     display: flex;
@@ -13,28 +15,25 @@
     justify-content: flex-end;
     margin: 0 10px;
 }
-.new-icon {
+.icon {
     position: relative;
     height: auto;
-    width: calc(15px + 0.5vw);
+    width: calc(18px + 0.5vw);
+    margin-inline: 5px;
+}
+.new-icon {
     color: limegreen;
 }
 .close-icon {
-    position: relative;
-    height: auto;
-    width: calc(15px + 0.5vw);
     color: red;
 }
 .edit-icon {
-    position: relative;
-    height: auto;
-    width: calc(15px + 0.5vw);
     color: white;
 }
+.checked-icon {
+    color: limegreen;
+}
 .delete-icon {
-    position: relative;
-    height: auto;
-    width: calc(15px + 0.5vw);
     color: red;
 }
 .btn {

@@ -1,6 +1,8 @@
 import React, {useState, useEffect} from 'react';
 // import { Link } from "react-router-dom";
 import axios from 'axios';
+import { IconContext } from "react-icons";
+import { FaCheckSquare } from "react-icons/fa";
 
 function NewBooking() {
 
@@ -68,7 +70,7 @@ function NewBooking() {
             <h2 className="form-header" >Create New Booking</h2>
             <form className="form-container">
                 
-                <div className="form_wrap">
+                <div className="form-wrap">
                     <label className="label" htmlFor="comments">Comments:</label>
                     <input className="input"
                     onChange={handleChange}
@@ -80,7 +82,7 @@ function NewBooking() {
                     required/>  
                 </div>
 
-                <div className="form_wrap">
+                <div className="form-wrap">
                 <label className="label" htmlFor="user">Select User: </label>
                     <select className="input" name="user" onChange={handleUser} defaultValue="select-user">
                         <option disabled value="select-user">Select a user</option>
@@ -90,7 +92,7 @@ function NewBooking() {
                 
                 {/* SERVICES */}
 
-                <div className="form_wrap">
+                <div className="form-wrap">
                     <label className="label" htmlFor="date_booking_made">Booking issued on:</label>
                     <input className="input"
                     onChange={handleChange}
@@ -101,7 +103,7 @@ function NewBooking() {
                     required/>
                 </div>
 
-                <div className="form_wrap">
+                <div className="form-wrap">
                     <label className="label" htmlFor="date_of_booking">Booking date for:</label>
                     <input className="input"
                     onChange={handleChange}
@@ -112,7 +114,7 @@ function NewBooking() {
                     required/>
                 </div>
 
-                <div className="form_wrap">
+                <div className="form-wrap">
                     <label className="label" htmlFor="arrival_time">Arrival Time:</label>
                     <input className="input"
                     onChange={handleChange}
@@ -123,7 +125,7 @@ function NewBooking() {
                     required/>
                 </div>
 
-                <div className="form_wrap">
+                <div className="form-wrap">
                     <label className="label" htmlFor="departure_time">Departure Time:</label>
                     <input className="input"
                     onChange={handleChange}
@@ -134,7 +136,7 @@ function NewBooking() {
                     required/>
                 </div>
             
-                <div className="form_wrap" id="submit-wrap">
+                <div className="form-wrap" id="submit-wrap">
                     <input className="input" onClick={handleSubmit} type="submit" value="submit" />
                 </div>
             </form>

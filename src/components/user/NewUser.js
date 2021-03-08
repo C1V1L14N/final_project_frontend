@@ -1,4 +1,7 @@
 import React, {useState} from "react";
+import axios from 'axios';
+import { IconContext } from "react-icons";
+import { FaCheckSquare } from "react-icons/fa";
 
 function NewUser() {
     const [formData, setFormData] = useState({
@@ -42,7 +45,7 @@ function NewUser() {
             <h2 className="form-header">Create New Profile</h2>
             <form className="form-container">
 
-                <div className="form_wrap">
+                <div className="form-wrap">
                     <label className="label" htmlFor="firstName">First Name:</label>
                     <input className="input"
                         onChange={handleChange}
@@ -54,7 +57,7 @@ function NewUser() {
                         required/>
                 </div>
 
-                <div className="form_wrap">
+                <div className="form-wrap">
                     <label className="label" htmlFor="lastName">Last Name:</label>
                     <input className="input"
                         onChange={handleChange}
@@ -66,7 +69,7 @@ function NewUser() {
                         required/>
                 </div>
 
-                <div className="form_wrap">
+                <div className="form-wrap">
                     <label className="label" htmlFor="age">Age:</label>
                     <input className="input"
                         onChange={handleChange}
@@ -78,7 +81,7 @@ function NewUser() {
                         required/>
                 </div>
 
-                <div className="form_wrap">
+                <div className="form-wrap">
                     <label className="label" htmlFor="address">Address:</label>
                     <input className="input"
                         onChange={handleChange}
@@ -90,7 +93,7 @@ function NewUser() {
                         required/>
                 </div>
 
-                <div className="form_wrap">
+                <div className="form-wrap">
                     <label className="label" htmlFor="postcode">Postcode:</label>
                     <input className="input"
                         onChange={handleChange}
@@ -102,7 +105,7 @@ function NewUser() {
                         required/>
                 </div>
 
-                <div className="form_wrap">
+                <div className="form-wrap">
                     <label className="label" htmlFor="town">Town:</label>
                     <input className="input"
                         onChange={handleChange}
@@ -114,7 +117,7 @@ function NewUser() {
                         required/>
                 </div>
 
-                <div className="form_wrap">
+                <div className="form-wrap">
                     <label className="label" htmlFor="telephoneNumber">Telephone Number:</label>
                     <input className="input"
                         onChange={handleChange}
@@ -126,7 +129,7 @@ function NewUser() {
                         required/>
                 </div>
 
-                <div className="form_wrap">
+                <div className="form-wrap">
                     <label className="label" htmlFor="email">Email:</label>
                     <input className="input"
                         onChange={handleChange}
@@ -138,7 +141,7 @@ function NewUser() {
                         required/>
                 </div>
 
-                <div className="form_wrap">
+                <div className="form-wrap">
                     <label className="label" htmlFor="password">Password:</label>
                     <input className="input"
                         onChange={handleChange}
@@ -150,7 +153,7 @@ function NewUser() {
                         required/>
                 </div>
 
-                {/* <div className="form_wrap">
+                {/* <div className="form-wrap">
                     <label className="label" htmlFor="access">Access:</label>
                     <input
                         onChange={handleChange}

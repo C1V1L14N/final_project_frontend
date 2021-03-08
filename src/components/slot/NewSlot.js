@@ -1,6 +1,8 @@
 import React, {useState, useEffect} from "react";
 // import { Link } from "react-router-dom";
 import axios from 'axios';
+import { IconContext } from "react-icons";
+import { FaCheckSquare } from "react-icons/fa";
 
 function NewSlot() {
 
@@ -67,7 +69,7 @@ function NewSlot() {
             <h2 className="form-header">Create New Time Slot</h2>
             <form className="form-container">
                 
-                <div className="form_wrap">
+                <div className="form-wrap">
                     <label className="label" htmlFor="startTime">Start Time:</label>
                     <input className="input"
                     onChange={handleChange}
@@ -78,7 +80,7 @@ function NewSlot() {
                     required/>
                 </div>
 
-                <div className="form_wrap">
+                <div className="form-wrap">
                     <label className="label" htmlFor="endTime">End Time:</label>
                     <input className="input"
                     onChange={handleChange}
